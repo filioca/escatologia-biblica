@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.api = void 0;
+exports.apiV1 = void 0;
 const functions = __importStar(require("firebase-functions/v1"));
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
@@ -72,5 +72,5 @@ ${message}`;
     }
 });
 // Usando runWith para acionar o suporte a secrets nativo da v1
-exports.api = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
+exports.apiV1 = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
 //# sourceMappingURL=index.js.map

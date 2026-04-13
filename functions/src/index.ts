@@ -41,4 +41,4 @@ ${message}`;
 });
 
 // Usando runWith para acionar o suporte a secrets nativo da v1
-export const api = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
+export const apiV1 = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
