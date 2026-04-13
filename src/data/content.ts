@@ -540,65 +540,6 @@ export const eschatologyData = {
           "**1 Enoque (composição em estratos, séc. III a.C. – I d.C.):** Antologia de cinco livros. Destaca-se o **Livro das Parábolas** (1 En 37–71), onde aparece a figura do 'Filho do Homem' pré-existente, sentado no trono de glória, que julgará os mortos — paralelo imediato com o uso que Jesus faz do título (Mc 14.62). Citado uma vez no NT (Jd 14–15).",
           "**4 Esdras (c. 100 d.C.):** Visões apocalípticas sobre destruição de Jerusalém, Messias que morre, ressurreição geral, juízo final. Contemporâneo do Apocalipse de João — resposta judaica ao trauma de 70 d.C. paralela à resposta cristã.",
           "**2 Baruque / Apocalipse Siríaco de Baruque (c. 100 d.C.):** Próximo de 4 Esdras. Dois eons distintos; Messias; ressurreição; juízo; mundo vindouro transformado.",
-          "**Função da apocalíptica judaica:** Não é predição historicista, mas *teologia da história sob opressão*. Desenvolve-se especialmente em períodos de crise (domínio selêucida, ocupação romana). Apresenta a soberania de Deus sobre impérios aparentemente invencíveis, prometendo irrupção divina decisiva.",
-          "**Continuidade cristã:** Apocalipse de João é o único livro propriamente apocalíptico incorporado ao cânon cristão, mas Mc 13, 2Ts 2, partes de Paulo e das epístolas católicas todos operam com vocabulário e imagens da tradição apocalíptica judaica. Ler o NT sem esse substrato é como ler Shakespeare sem conhecer o inglês elisabetano."
-        ],
-        refs: "Jd 14–15 · Mc 13 · Mc 14.62 · 2Ts 2.1–12 · Dn 7.13–14 · 1Co 15.51–52"
-      },
-      {
-        id: "ev-qumran",
-        title: "Qumran e os Manuscritos do Mar Morto",
-        body: [
-          "**A comunidade essênia (c. 150 a.C. – 68 d.C.):** Seita judaica separatista, provavelmente essênia, que viveu no deserto da Judeia aguardando a consumação escatológica iminente. Autoidentificavam-se como o 'remanescente' fiel, os 'filhos da luz' em batalha contra os 'filhos das trevas'.",
-          "**1QM (*Regra da Guerra*):** Descreve batalha escatológica final, com duração de 40 anos, em que os filhos da luz (Israel fiel + anjos) derrotam os filhos das trevas (Kittim = Roma, gentios ímpios). Estrutura dualista que ressoa diretamente em Ef 6.12 e Ap 19.",
-          "**Expectativa messiânica dupla:** Qumran esperava **dois messias** — um sacerdotal ('Messias de Arão', descendente sacerdotal) e um davídico-régio ('Messias de Israel'). O NT funde as três figuras em Cristo (Hb 7 — sacerdote segundo a ordem de Melquisedeque; Lc 1.32 — filho de Davi; At 3.22 — o profeta).",
-          "**Estrutura dos dois eons:** Presente dominado pela 'iniquidade de Belial'; futuro imediato: 'tempo da visitação'; eon vindouro: 'criação nova' (*chadashot*). Terminologia escatológica praticamente idêntica à do NT.",
-          "**4Q521 ('Apocalipse Messiânico'):** Fala explicitamente de ressurreição dos mortos em contexto messiânico — paralelo notável com a resposta de Jesus aos discípulos de João Batista (Mt 11.4–5; Lc 7.22).",
-          "**Relevância histórica:** Qumran demonstra que a escatologia do NT não era invenção cristã nem inovação isolada — era conversa dentro do judaísmo do Segundo Templo. O NT *distingue-se* não por introduzir conceitos estranhos, mas por identificar Jesus como cumprimento dos conceitos já em circulação."
-        ],
-        refs: "Ef 6.12 · Mt 11.4–5 · Lc 7.22 · Hb 7.1–17 · Lc 1.32 · At 3.22"
-      },
-      {
-        id: "ev-messianismos",
-        title: "Messianismos Judaicos — Uma Pluralidade de Expectativas",
-        body: [
-          "**Mito do messias unívoco:** É erro frequente assumir que o judaísmo do Segundo Templo esperava *um* tipo específico de Messias e que Jesus simplesmente preencheu (ou falhou em preencher) esse molde. A realidade histórica: havia **múltiplas expectativas messiânicas** simultâneas, parcialmente concorrentes.",
-          "**Tipos principais:**",
-          "① **Messias Davídico-Régio:** Descendente de Davi (2Sm 7; Sl 2; 110), rei político-militar que expulsa os opressores e restaura o reino de Israel. Expectativa mais popular e política; domina os Salmos de Salomão (séc. I a.C.) e expectativas populares do tempo de Jesus (cf. Jo 6.15; At 1.6).",
-          "② **Messias Sacerdotal:** Descendente de Arão/Levi, figura cultual que purifica o templo e restaura o culto. Central em Qumran e em Testamento de Levi. Hebreus retoma essa categoria aplicando-a a Cristo via Melquisedeque (Hb 5–7).",
-          "③ **Filho do Homem celestial:** Figura pré-existente, celestial, que desce em julgamento (Dn 7.13–14 + 1 Enoque 37–71). Não é figura política nem sacerdotal, mas cósmica e transcendente. Jesus utiliza este título como sua autodesignação preferida (mais de 80 ocorrências nos evangelhos) — fundindo humildade ('simples ser humano') com autoridade escatológica absoluta.",
-          "④ **Profeta como Moisés (Dt 18.15–18):** Expectativa de profeta escatológico que superaria Moisés — associada ao retorno de Elias (Ml 4.5) e à voz no deserto (Is 40.3). João Batista e Jesus são relacionados a essas expectativas (Jo 1.21; Mt 11.14). Pedro aplica explicitamente a Jesus em At 3.22.",
-          "⑤ **Servo Sofredor (Is 52–53):** No período do Segundo Templo, o Servo Sofredor era interpretado diversamente — como Israel coletivo, como figura profética individual, raramente como Messias. O NT é radical ao identificar o Messias glorioso (Dn 7) com o Servo Sofredor (Is 53) na mesma Pessoa — síntese inédita no judaísmo.",
-          "**A novidade cristológica:** Jesus não 'falhou' em preencher as expectativas messiânicas — ele as *recombinou* de forma que nenhuma corrente judaica antecipava. A entrada em Jerusalém (messias davídico) + expulsão dos vendilhões (messias sacerdotal) + ensino com autoridade (profeta) + morte expiatória (servo sofredor) + ressurreição e exaltação (filho do homem celestial) — tudo em um único evento pascal."
-        ],
-        refs: "Dn 7.13–14 · Is 52.13–53.12 · Dt 18.15–18 · Ml 4.5 · Jo 1.21 · Mt 11.14 · At 3.22"
-      }
-    ]
-  },
-  raizesJudaicas: {
-    title: "Raízes Judaicas da Escatologia Cristã",
-    intro: "Jesus, Paulo, Pedro e João não inventaram escatologia — herdaram categorias desenvolvidas no judaísmo do Segundo Templo (c. 515 a.C. – 70 d.C.) e as ressignificaram em torno de Cristo. Ressurreição dos mortos, juízo final, Messias, Reino de Deus, dois eons, vida eterna — todos esses conceitos têm história anterior ao NT. Compreender essa história é pré-requisito para ler o NT sem anacronismo: Jesus e seus discípulos falavam como judeus do Segundo Templo, usando um vocabulário que seu público reconhecia.",
-    events: [
-      {
-        id: "ev-ressurrecaoAT",
-        title: "O Desenvolvimento da Ressurreição no AT",
-        body: [
-          "**Silêncio antigo:** O AT mais antigo (Torá, profetas iniciais) fala pouco sobre vida após a morte diferenciada. O Sheol é destino universal dos mortos (Gn 37.35; 1Sm 28.19). Eclesiastes representa o extremo desse agnosticismo relativo: 'os vivos sabem que hão de morrer, mas os mortos não sabem coisa nenhuma' (Ec 9.5).",
-          "**Primeiros vislumbres proféticos:** Is 26.19 ('os teus mortos viverão, juntamente com o meu corpo morto ressuscitarão; despertai e exultai, vós que habitais no pó') é provavelmente o texto mais antigo com doutrina reconhecível de ressurreição individual — c. séc. VII–VI a.C.",
-          "**Ezequiel 37 — os ossos secos:** Visão dos ossos que ganham tendões, carne e espírito. Primariamente alegoria da restauração nacional de Israel, mas a imagem prepara conceitualmente a ressurreição individual.",
-          "**Daniel 12.2 — texto paradigmático:** 'Muitos dos que dormem no pó da terra ressuscitarão, uns para a vida eterna, e outros para vergonha e desprezo eterno.' Datado geralmente do séc. II a.C. (contexto macabeu). Pela primeira vez no AT hebraico canônico: (a) ressurreição individual explícita; (b) diferenciação moral do destino; (c) vocabulário 'eterno' aplicado ao pós-morte. Este é o *texto fundador* da doutrina da ressurreição no AT.",
-          "**2 Macabeus 7 (deuterocanônico, séc. II a.C.):** O martírio dos sete irmãos macabeus articula explicitamente a esperança de ressurreição corporal — 'o Rei do universo nos ressuscitará para uma vida eterna' (2Mc 7.9). Mesmo para protestantes que não recebem o livro como canônico, é testemunho histórico precioso do pensamento judaico no período intertestamentário."
-        ],
-        refs: "Is 26.19 · Ez 37.1–14 · Dn 12.1–3 · Jó 19.25–27 · Sl 16.10 · 2Mc 7.9"
-      },
-      {
-        id: "ev-apocSegundoTemplo",
-        title: "Apocalíptica do Segundo Templo",
-        body: [
-          "Entre os séculos III a.C. e II d.C., o judaísmo produziu ampla literatura apocalíptica que desenvolve os temas escatológicos de forma sem precedentes. Jesus e os apóstolos foram formados neste universo conceitual.",
-          "**1 Enoque (composição em estratos, séc. III a.C. – I d.C.):** Antologia de cinco livros. Destaca-se o **Livro das Parábolas** (1 En 37–71), onde aparece a figura do 'Filho do Homem' pré-existente, sentado no trono de glória, que julgará os mortos — paralelo imediato com o uso que Jesus faz do título (Mc 14.62). Citado uma vez no NT (Jd 14–15).",
-          "**4 Esdras (c. 100 d.C.):** Visões apocalípticas sobre destruição de Jerusalém, Messias que morre, ressurreição geral, juízo final. Contemporâneo do Apocalipse de João — resposta judaica ao trauma de 70 d.C. paralela à resposta cristã.",
-          "**2 Baruque / Apocalipse Siríaco de Baruque (c. 100 d.C.):** Próximo de 4 Esdras. Dois eons distintos; Messias; ressurreição; juízo; mundo vindouro transformado.",
           "**Apocalipse de Abraão, Assunção de Moisés, Testamento dos Doze Patriarcas:** Cada um contribui elementos — viagens celestes, revelações angelicais, dualismo ético, esperança messiânica.",
           "**Função da apocalíptica judaica:** Não é predição historicista, mas *teologia da história sob opressão*. Desenvolve-se especialmente em períodos de crise (domínio selêucida, ocupação romana). Apresenta a soberania de Deus sobre impérios aparentemente invencíveis, prometendo irrupção divina decisiva.",
           "**Continuidade cristã:** Apocalipse de João é o único livro propriamente apocalíptico incorporado ao cânon cristão, mas Mc 13 (Pequeno Apocalipse Sinótico), 2Ts 2, partes de Paulo e das epístolas católicas todos operam com vocabulário e imagens da tradição apocalíptica judaica. Ler o NT sem esse substrato é como ler Shakespeare sem conhecer o inglês elisabetano."
