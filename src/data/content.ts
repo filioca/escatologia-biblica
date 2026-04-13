@@ -274,8 +274,8 @@ export const eschatologyData = {
         title: "Preterismo",
         body: [
           "**Preterismo Parcial:** A maioria das profecias escatológicas (incluindo Mt 24, Mc 13, Lc 21 e grande parte de Apocalipse) foi cumprida na destruição de Jerusalém em 70 d.C. A Segunda Vinda e a ressurreição corporal ainda são futuras. Posição de muitos reformados (R.C. Sproul, por exemplo).",
-          "**Preterismo Pleno (Hiperespiritual):** *Todo* o Apocalipse, inclusive a ressurreição e a Segunda Vinda de Cristo, já se cumpriu em 70 d.C. Posição considerada **herética** pela esmagadora maioria das denominações cristãs, pois nega a ressurreição corporal futura (contra 1Co 15).",
-          "**Argumento central:** Os textos de iminência do NT ('em breve', 'não passará esta geração') implicam cumprimento no século I. Nerão = Besta de Ap 13. O número 666 = Nero Caesar em gematria hebraica."
+          "**Preterismo Pleno (Hiperespiritual):** *Todo* o Apocalipse, inclusive a ressurreição e a Segunda Vinda de Cristo, já se cumpriu em 70 d.C. Posição considerada **heterodoxa ou herética** pelo consenso ecumênico cristão, por negar a ressurreição corporal futura — doutrina definida nos concílios antigos e defendida exegeticamente em 1Co 15.",
+          "**Argumento central:** Os textos de iminência do NT ('em breve', 'não passará esta geração') implicam cumprimento no século I. Nero = Besta de Ap 13. O número 666 = *Nero Caesar* em gematria hebraica (נרון קסר = 50+200+6+50+100+60+200 = 666). **Variante 616:** alguns manuscritos antigos (Papiro 115, Codex Ephraemi Rescriptus) trazem 616 em vez de 666 — precisamente o resultado da transliteração latina *Nero* (sem o *nun* final: נרו קסר = 616). Essa variante textual é considerada pelos preteristas um dos argumentos mais fortes a favor da identificação neroniana."
         ],
         refs: "Mt 24.34 · Ap 1.1,3 · Ap 22.6,10 · Dn 9.26 · Lc 21.20–22",
         color: "var(--color-sys-red)"
@@ -295,7 +295,7 @@ export const eschatologyData = {
   },
   arrebatamento: {
     title: "O Arrebatamento",
-    intro: "Do latim rapturo (rapto, arrebatamento) — tradução da Vulgata do grego ἁρπαγησόμεθα (harpagēsómetha) em 1 Ts 4.17. O debate central: em que momento os crentes são arrebatados em relação à Grande Tribulação?",
+    intro: "Do latim *rapiemur* ('seremos arrebatados') — verbo usado pela Vulgata para traduzir o grego ἁρπαγησόμεθα (harpagēsómetha) em 1 Ts 4.17. Do mesmo radical latino deriva o substantivo *raptura*, popularizado em inglês como *Rapture*. O debate central: em que momento os crentes são arrebatados em relação à Grande Tribulação?",
     quote: {
       text: "Porque o Senhor mesmo descerá do céu com alarido, e com voz de arcanjo, e com a trombeta de Deus; e os que morreram em Cristo ressuscitarão primeiro. Depois nós, os que ficarmos vivos, seremos arrebatados juntamente com eles nas nuvens, para o encontro do Senhor no ar.",
       cite: "1 Tessalonicenses 4.16–17"
@@ -384,7 +384,7 @@ export const eschatologyData = {
         body: [
           "**Os 144.000 (Ap 7.4–8; 14.1–5):**",
           "*Dispensacional:* 144.000 judeus étnicos (12.000 de cada tribo), literais, evangelizadores durante a Tribulação após o arrebatamento da Igreja. Representam uma 'Igreja judaica de transição.'",
-          "*Amilenarista/Reformado:* Número simbólico (12 × 12 × 1.000 = perfeição × completude) representando a totalidade do povo de Deus da era da Igreja — o 'Israel de Deus' (Gl 6.16).",
+          "*Amilenarista/Reformado:* Número simbólico (12 × 12 × 1.000 = perfeição × completude) representando a totalidade do povo de Deus da era da Igreja — o 'Israel de Deus' (Gl 6.16). **Nota exegética sobre Gl 6.16:** a leitura majoritária reformada identifica 'Israel de Deus' com a Igreja (judeus e gentios em Cristo); uma leitura minoritária mas exegeticamente defensável (S. Lewis Johnson, *Paul and 'The Israel of God'*) sustenta que o καί em Gl 6.16 é conjuntivo, não epexegético, de modo que o texto distingue 'quantos andarem conforme esta regra' (a Igreja) *e* 'o Israel de Deus' (judeus-cristãos especificamente). Essa distinção lexical tem implicações não triviais para o debate Israel–Igreja.",
           "*Testemunhas de Jeová:* 144.000 literais que reinarão no céu; os demais fiéis habitarão a Terra — posição rejeitada pela totalidade do cristianismo histórico.",
           "**Os Dois Testemunhos (Ap 11.3–12):**",
           "*Futurismo:* Dois profetas literais (Elias e Moisés, ou Elias e Enoque) que profetizarão por 1.260 dias durante a Tribulação.",
@@ -423,7 +423,7 @@ export const eschatologyData = {
         title: "Visão Histórica — O Papado Romano",
         body: [
           "**Reformadores Protestantes:** Lutero, Calvino, Knox, e a esmagadora maioria dos reformadores identificavam o Papado como o Anticristo de 2Ts 2 — a instituição que se assenta 'no lugar de Deus', que reclama autoridade sobre toda a Igreja, e que por séculos perseguiu os cristãos.",
-          "A Confissão de Westminster (1646), em sua versão original, afirmava explicitamente que 'o Papa de Roma é esse Anticristo.' O 'retentor' era identificado como o Império Romano — cuja queda abriu caminho para a ascensão do poder papal.",
+          "A Confissão de Fé de Westminster (1646), em sua versão original, afirmava explicitamente no capítulo 25.6 que 'o Papa de Roma… é esse Anticristo, aquele homem do pecado e filho da perdição, que se levanta na Igreja contra Cristo e tudo o que é chamado Deus.' O 'retentor' era identificado como o Império Romano — cuja queda abriu caminho para a ascensão do poder papal. (A Igreja Presbiteriana dos EUA em 1903 e várias outras denominações reformadas contemporâneas abrandaram ou removeram essa cláusula.)",
           "Esta posição é hoje minoritária mesmo entre presbiterianos e reformados, embora ainda presente em denominações confessionalmente estritas."
         ],
         refs: "2Ts 2.3–10 · Ap 17 · Dn 7.8,25 · Ap 13.11–18"
