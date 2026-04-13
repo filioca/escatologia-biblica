@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Cinzel", ui-serif, Georgia, serif;
+
+  --color-gold: var(--theme-gold);
+  --color-gold-light: var(--theme-gold-light);
+  --color-gold-pale: var(--theme-gold-pale);
+  --color-deep: var(--theme-deep);
+  --color-dark: var(--theme-dark);
+  --color-surface: var(--theme-surface);
+  --color-surface2: var(--theme-surface2);
+  --color-surface3: var(--theme-surface3);
+  --color-border: var(--theme-border);
+  --color-text-main: var(--theme-text-main);
+  --color-text-dim: var(--theme-text-dim);
+  --color-text-muted: var(--theme-text-muted);
+  
+  --color-sys-blue: var(--theme-sys-blue);
+  --color-sys-green: var(--theme-sys-green);
+  --color-sys-purple: var(--theme-sys-purple);
+  --color-sys-teal: var(--theme-sys-teal);
+  --color-sys-red: var(--theme-sys-red);
+}
+
+:root {
+  /* Parchment / Light Theme Colors */
+  --theme-gold: #9c7a27;
+  --theme-gold-light: #b8972a;
+  --theme-gold-pale: #f0ebe1;
+  --theme-deep: #fcfaf5;
+  --theme-dark: #f5f0e6;
+  --theme-surface: #ffffff;
+  --theme-surface2: #f5f0e6;
+  --theme-surface3: #ebe3d5;
+  --theme-border: #dcd3c4;
+  --theme-text-main: #2c2822;
+  --theme-text-dim: #4a443b;
+  --theme-text-muted: #7a7161;
+  
+  --theme-sys-blue: #2b5c96;
+  --theme-sys-green: #387547;
+  --theme-sys-purple: #6a3b96;
+  --theme-sys-teal: #246666;
+  --theme-sys-red: #a82e2e;
+}
+
+.dark {
+  /* Dark Theme Colors */
+  --theme-gold: #b8972a;
+  --theme-gold-light: #d4b04a;
+  --theme-gold-pale: #f0dfa0;
+  --theme-deep: #0d0c0a;
+  --theme-dark: #141210;
+  --theme-surface: #1c1914;
+  --theme-surface2: #252118;
+  --theme-surface3: #2e2920;
+  --theme-border: #3a3228;
+  --theme-text-main: #e8dfc8;
+  --theme-text-dim: #a89878;
+  --theme-text-muted: #6a5e48;
+  
+  --theme-sys-blue: #4a7ab5;
+  --theme-sys-green: #5a9a6a;
+  --theme-sys-purple: #8a5ab5;
+  --theme-sys-teal: #3a8a8a;
+  --theme-sys-red: #cc4444;
+}
+
+body {
+  background-color: var(--color-deep);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1.125rem; /* Increased base font size to 18px */
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-deep); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
