@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { eschatologyData } from '../data/content';
+import { GoogleGenAI } from '@google/genai';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export default function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,19 +32,23 @@ export default function AIChat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: userMessage,
-          context: JSON.stringify(eschatologyData)
-        })
+      const context = JSON.stringify(eschatologyData);
+      const prompt = `Você é um assistente teológico especializado em Escatologia Bíblica. 
+Responda à pergunta do usuário com base no seguinte contexto do material de estudo.
+Seja claro, objetivo e mantenha um tom respeitoso e acadêmico.
+
+Contexto do material:
+${context}
+
+Pergunta do usuário:
+${userMessage}`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
       });
 
-      if (!response.ok) throw new Error('Failed to fetch');
-
-      const data = await response.json();
-      setMessages(prev => [...prev, { role: 'ai', text: data.reply }]);
+      setMessages(prev => [...prev, { role: 'ai', text: response.text ?? '' }]);
     } catch (error) {
       console.error(error);
       setMessages(prev => [...prev, { role: 'ai', text: 'Desculpe, ocorreu um erro ao processar sua pergunta. Tente novamente mais tarde.' }]);
