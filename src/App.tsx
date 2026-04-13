@@ -77,7 +77,7 @@ export default function App() {
         {/* Render Quote */}
         {'quote' in sectionData && (
           <blockquote className="border-l-2 border-gold my-10 pl-6 py-2 font-serif text-2xl italic text-text-dim">
-            "{sectionData.quote.text}"
+            “{sectionData.quote.text}”
             <cite className="block mt-3 text-base not-italic text-text-muted font-sans">— {sectionData.quote.cite}</cite>
           </blockquote>
         )}
@@ -163,13 +163,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative z-10 transition-colors duration-300">
-      <header className="relative text-center pt-16 pb-12 px-6 border-b border-border bg-[radial-gradient(ellipse_at_top,#ffffff_0%,var(--theme-deep)_70%)] dark:bg-[radial-gradient(ellipse_at_top,#2a2010_0%,var(--theme-deep)_70%)] overflow-hidden transition-colors duration-300">
+      <header className="relative text-center pt-16 pb-12 px-6 border-b border-border bg-[radial-gradient(ellipse_at_top,var(--color-surface)_0%,var(--color-deep)_70%)] dark:bg-[radial-gradient(ellipse_at_top,#2a2010_0%,var(--color-deep)_70%)] overflow-hidden transition-colors duration-300">
         <button
           onClick={() => setIsDark(!isDark)}
-          className="absolute top-6 right-6 p-2 text-gold hover:text-gold-light transition-colors"
+          className="absolute top-6 right-6 p-2 text-gold hover:text-gold-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full"
           aria-label="Alternar tema"
         >
-          {isDark ? <Sun size={24} /> : <Moon size={24} />}
+          {isDark ? <Sun size={24} aria-hidden="true" /> : <Moon size={24} aria-hidden="true" />}
         </button>
         <div className="absolute top-6 left-1/2 -translate-x-1/2 text-gold opacity-60 tracking-[2rem] text-lg">✦</div>
         <h1 className="font-display text-5xl md:text-6xl font-bold text-gold tracking-widest uppercase mb-4">
@@ -181,8 +181,34 @@ export default function App() {
         <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-8" />
       </header>
 
-      <nav className="sticky top-0 z-40 bg-deep/95 backdrop-blur-md border-b border-border px-4 overflow-x-auto no-scrollbar transition-colors duration-300">
-        <div className="flex max-w-6xl mx-auto md:justify-center">
+      <nav className="sticky top-0 z-40 bg-deep/95 backdrop-blur-md border-b border-border transition-colors duration-300">
+        {/* Mobile Dropdown Menu (only visible on small screens) */}
+        <div className="md:hidden p-4">
+          <label htmlFor="mobile-nav" className="sr-only">Navegar para seção</label>
+          <div className="relative">
+            <select
+              id="mobile-nav"
+              value={activeSection}
+              onChange={(e) => {
+                setActiveSection(e.target.value);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="w-full appearance-none bg-surface border border-border text-text-main py-3 px-4 pr-10 rounded-lg font-display text-sm tracking-widest uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              {navItems.map(item => (
+                <option key={item.id} value={item.id}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gold">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Tabs (only visible on medium screens and up) */}
+        <div className="hidden md:flex max-w-6xl mx-auto justify-start px-4 overflow-x-auto no-scrollbar">
           {navItems.map(item => (
             <button
               key={item.id}
@@ -190,7 +216,7 @@ export default function App() {
                 setActiveSection(item.id);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`whitespace-nowrap px-6 py-4 font-display text-sm font-semibold tracking-widest uppercase transition-colors border-b-2 ${
+              className={`whitespace-nowrap px-6 py-4 font-display text-sm font-semibold tracking-widest uppercase transition-colors border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold ${
                 activeSection === item.id 
                   ? 'text-gold border-gold' 
                   : 'text-text-dim border-transparent hover:text-gold'

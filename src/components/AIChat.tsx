@@ -61,7 +61,7 @@ ${userMessage}`;
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 p-4 bg-gold text-white rounded-full shadow-lg hover:bg-gold-light transition-colors z-50 flex items-center justify-center"
+        className="fixed bottom-6 right-6 p-4 bg-gold text-white rounded-full shadow-lg hover:bg-gold-light transition-colors z-50 flex items-center justify-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-gold/50"
         aria-label="Abrir assistente teológico"
       >
         <MessageCircle size={28} />
@@ -81,8 +81,8 @@ ${userMessage}`;
                 <h3 className="font-display text-gold text-sm tracking-wider uppercase">Assistente Teológico</h3>
                 <p className="text-xs text-text-dim">Tire suas dúvidas sobre escatologia</p>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-text-muted hover:text-text-main transition-colors">
-                <X size={20} />
+              <button onClick={() => setIsOpen(false)} className="text-text-muted hover:text-text-main transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded" aria-label="Fechar assistente">
+                <X size={20} aria-hidden="true" />
               </button>
             </div>
 
@@ -112,20 +112,25 @@ ${userMessage}`;
             </div>
 
             <div className="p-4 bg-surface2 border-t border-border flex gap-3">
+              <label htmlFor="chat-input" className="sr-only">Faça uma pergunta</label>
               <input
+                id="chat-input"
+                name="chat-input"
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Faça uma pergunta..."
-                className="flex-1 bg-surface border border-border rounded-md px-4 py-3 text-base text-text-main focus:outline-none focus:border-gold transition-colors"
+                autoComplete="off"
+                className="flex-1 bg-surface border border-border rounded-md px-4 py-3 text-base text-text-main focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus:border-gold transition-colors"
               />
               <button
                 onClick={handleSend}
                 disabled={isLoading || !input.trim()}
-                className="p-3 bg-gold text-white rounded-md hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Enviar mensagem"
+                className="p-3 bg-gold text-white rounded-md hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
-                <Send size={20} />
+                <Send size={20} aria-hidden="true" />
               </button>
             </div>
           </motion.div>
