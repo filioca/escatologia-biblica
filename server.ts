@@ -57,8 +57,9 @@ ${message}`;
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  const port = typeof PORT === 'string' ? parseInt(PORT, 10) : PORT;
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on http://localhost:${port}`);
   });
 }
 

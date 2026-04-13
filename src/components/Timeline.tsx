@@ -12,7 +12,7 @@ interface EventProps {
   color?: string;
 }
 
-export function TimelineEvent({ num, title, body, refs, color = 'var(--color-gold)' }: EventProps) {
+export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, color = 'var(--color-gold)' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

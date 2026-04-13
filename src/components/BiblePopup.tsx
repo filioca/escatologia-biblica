@@ -4,7 +4,7 @@ import { X, Loader2, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { parseBibleRef } from '../utils/bibleMapper';
 
-export function VerseLink({ reference }: { reference: string }) {
+export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [verseData, setVerseData] = useState<{ text: string; ref: string } | null>(null);

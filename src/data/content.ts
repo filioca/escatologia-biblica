@@ -1,11 +1,14 @@
 export const eschatologyData = {
   visaoGeral: {
     title: "Visão Geral",
-    intro: "A escatologia (gr. ἔσχατος + λόγος) é o ramo da teologia que estuda os eventos finais da história humana, da criação e da redenção. A Bíblia não oferece uma narrativa escatológica linear e unívoca, razão pela qual surgiram sistemas interpretativos distintos ao longo da história da Igreja.",
+    intro: 'A escatologia (gr. *ἔσχατος* + *λόγος*, "discurso sobre as últimas coisas") é o ramo da teologia que estuda a consumação da história — o juízo, a ressurreição, o reino vindouro — e, indissociavelmente, o destino individual do ser humano após a morte. Longe de ser apêndice especulativo, ela é pressuposto estrutural de toda a Escritura: o Antigo Testamento aponta para o Dia do Senhor, o Novo anuncia o Reino inaugurado em Cristo e consumado em sua volta, e a Igreja confessa, desde o Credo, que Ele "há de vir julgar os vivos e os mortos".',
     body: [
-      "A escatologia bíblica envolve dois grandes eixos de debate: **(1) a natureza e o momento do Milênio** (Ap 20.1–6) e **(2) a relação entre Israel e a Igreja** nas profecias. Esses dois eixos geram sistemas interpretativos que divergem em pontos cruciais, mas compartilham a esperança no retorno literal e pessoal de Jesus Cristo.",
-      "Os eventos proféticos centrais — Arrebatamento, Grande Tribulação, Segunda Vinda, Milênio, Ressurreição, Julgamento e Novo Mundo — são interpretados de formas radicalmente diferentes conforme o sistema adotado. Esta análise percorre cada um desses eventos com rigor textual e apresenta todas as posições teológicas relevantes."
-    ]
+      'Este app percorre a escatologia em quatro movimentos: **(1) Fundamentos** — raízes veterotestamentárias, tensão "já e ainda não", pacto vs. dispensacionalismo; **(2) Sistemas** — pré-, pós- e amilenarismo, pré-, meso- e pós-tribulacionismo, preterismo, historicismo, futurismo, idealismo; **(3) Eventos** — arrebatamento, tribulação, anticristo, segunda vinda, milênio, julgamentos, estado eterno; **(4) História e contemporaneidade** — desenvolvimento patrístico, virada agostiniana, Reforma, escatologia contemporânea (Moltmann, Wright, Ratzinger, Beale), escatologia ortodoxa, sistemas heterodoxos e o estado intermediário. O objetivo não é impor uma síntese, mas expor com rigor as linhas interpretativas, suas bases exegéticas e suas consequências pastorais.'
+    ],
+    quote: {
+      text: "E, assim como aos homens está ordenado morrerem uma só vez, vindo, depois disto, o juízo, assim também Cristo, tendo-se oferecido uma vez para sempre para tirar os pecados de muitos, aparecerá segunda vez, sem pecado, aos que o aguardam para a salvação.",
+      cite: "Hebreus 9.27–28",
+    }
   },
   jaEAindaNao: {
     title: "'Já e Ainda Não' — Escatologia Inaugurada",
