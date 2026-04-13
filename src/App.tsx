@@ -8,6 +8,9 @@ import { RichText } from './components/RichText';
 
 const navItems = [
   { id: 'visaoGeral', label: 'Visão Geral' },
+  { id: 'jaEAindaNao', label: 'Já e Ainda Não' },
+  { id: 'diaDoSenhor', label: 'Dia do Senhor' },
+  { id: 'pactoVsDispensacional', label: 'Pacto vs. Dispensacionalismo' },
   { id: 'sistemas', label: 'Sistemas' },
   { id: 'arrebatamento', label: 'Arrebatamento' },
   { id: 'tribulacao', label: 'Grande Tribulação' },

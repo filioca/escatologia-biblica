@@ -7,6 +7,214 @@ export const eschatologyData = {
       "Os eventos proféticos centrais — Arrebatamento, Grande Tribulação, Segunda Vinda, Milênio, Ressurreição, Julgamento e Novo Mundo — são interpretados de formas radicalmente diferentes conforme o sistema adotado. Esta análise percorre cada um desses eventos com rigor textual e apresenta todas as posições teológicas relevantes."
     ]
   },
+  jaEAindaNao: {
+    title: "'Já e Ainda Não' — Escatologia Inaugurada",
+    intro: "A escatologia bíblica não trata apenas de eventos futuros. Desde Geerhardus Vos (1862–1949) e, de forma decisiva, Oscar Cullmann, George Eldon Ladd, Herman Ridderbos e G.K. Beale, consolidou-se na teologia bíblica moderna a compreensão de que o Reino de Deus foi inaugurado na primeira vinda de Cristo, mas será consumado apenas em sua segunda vinda. Essa tensão — 'já' e 'ainda não' — é a chave hermenêutica que articula toda a escatologia do Novo Testamento.",
+    quote: {
+      text: "Mas, se eu expulso os demônios pelo Espírito de Deus, é chegado a vós o reino de Deus.",
+      cite: "Mateus 12.28"
+    },
+    events: [
+      {
+        id: "ev-doisEons",
+        title: "A Estrutura dos Dois Eons",
+        body: [
+          "O judaísmo do Segundo Templo organizava a história em **dois eons** (αἰῶνες): *ha-olam ha-ze* (עוֹלָם הַזֶּה — 'este século, presente') e *ha-olam ha-ba* (עוֹלָם הַבָּא — 'o século vindouro'). O primeiro é marcado por pecado, morte, sofrimento e domínio de poderes hostis; o segundo, pelo reino de Deus, ressurreição e justiça consumada. A transição entre os dois ocorreria no 'Dia do Senhor'.",
+          "**A ruptura do NT:** Jesus e os apóstolos preservam essa estrutura, mas introduzem um deslocamento radical — os dois eons **se sobrepõem**. O século vindouro irrompeu no presente com a vinda, morte e ressurreição de Cristo, sem que o século presente tenha sido removido. Os crentes vivem simultaneamente em dois eons (1Co 10.11: 'sobre nós, outros, os fins dos séculos têm chegado').",
+          "**Vocabulário-chave:** Hebreus 6.5 fala de crentes que já 'provaram… os poderes do mundo futuro' (δυνάμεις τε μέλλοντος αἰῶνος). Não se trata de antecipação mental — é participação real, embora parcial, na realidade escatológica consumada."
+        ],
+        refs: "Mt 12.28 · 1Co 10.11 · Hb 6.5 · Gl 1.4 · Ef 1.21 · Mt 13.39–40"
+      },
+      {
+        id: "ev-jaInaugurado",
+        title: "O 'Já' — O que Cristo Inaugurou",
+        body: [
+          "**Reino de Deus presente:** 'Se eu expulso os demônios pelo Espírito de Deus, é chegado a vós o reino de Deus' (Mt 12.28). 'O reino de Deus está entre vós' (Lc 17.21). Os milagres, exorcismos e a pregação do evangelho são as *manifestações atuais* do poder do século vindouro.",
+          "**Ressurreição inaugurada em Cristo:** Cristo é chamado 'primícias dos que dormem' (1Co 15.20,23). Sua ressurreição não é apenas garantia futura — é o *início* da ressurreição escatológica, da qual a ressurreição geral é a conclusão.",
+          "**Espírito Santo como penhor:** O Espírito é descrito como ἀρραβών (arrabōn — penhor, depósito) e ἀπαρχή (aparkhē — primícias) da herança escatológica (2Co 1.22; 5.5; Ef 1.13–14; Rm 8.23). A presença do Espírito é a presença parcial do eon vindouro.",
+          "**Nova criação em Cristo:** 'Se alguém está em Cristo, nova criatura é' (2Co 5.17). A *kainē ktisis* escatológica (cf. Ap 21.1,5) já começou a se manifestar em cada crente regenerado.",
+          "**Justificação escatológica antecipada:** A sentença do juízo final é *antecipada* ao crente no presente (Rm 8.1,30–34) — o veredicto do Último Dia é proclamado agora pela fé."
+        ],
+        refs: "Mt 12.28 · Lc 17.21 · 1Co 15.20,23 · 2Co 1.22 · Rm 8.23 · 2Co 5.17 · Rm 8.1"
+      },
+      {
+        id: "ev-aindaNao",
+        title: "O 'Ainda Não' — O que Resta Consumar",
+        body: [
+          "**Ressurreição corporal:** Embora Cristo tenha ressuscitado como primícias, o crente ainda aguarda 'a redenção do nosso corpo' (Rm 8.23). A ressurreição corporal universal é evento escatológico futuro, não presente.",
+          "**Derrota final da morte:** 'Ora, o último inimigo que há de ser aniquilado é a morte' (1Co 15.26). A morte ainda opera — pastoral, fisicamente, universalmente — mesmo sob o reinado inaugurado de Cristo.",
+          "**Renovação cósmica:** A criação inteira 'geme' (συστενάζει) esperando 'a manifestação dos filhos de Deus' (Rm 8.19–22). A nova criação está presente em Cristo, mas a ordem cósmica ainda está sujeita à corrupção.",
+          "**Visão face a face:** 'Agora vemos como por espelho, em enigma, mas então veremos face a face' (1Co 13.12). O conhecimento de Deus é real no presente mas ainda indireto, mediado.",
+          "**Aniquilação do mal:** Satanás já foi derrotado na Cruz (Jo 12.31; Cl 2.15), mas ainda age como 'leão que ruge' (1Pe 5.8). A derrota inaugurada aguarda execução final (Rm 16.20; Ap 20.10)."
+        ],
+        refs: "Rm 8.19–23 · 1Co 15.26 · 1Co 13.12 · Rm 16.20 · 1Pe 5.8 · Cl 3.3–4"
+      },
+      {
+        id: "ev-implicacoesHerm",
+        title: "Implicações Hermenêuticas",
+        body: [
+          "**① Leitura cristocêntrica da profecia:** As promessas do AT não são cumpridas de forma exclusivamente futura nem exclusivamente passada — são cumpridas *em Cristo* de forma inaugurada, e consumadas em sua segunda vinda. Isso evita tanto o literalismo futurista extremo quanto o preterismo pleno.",
+          "**② Tensão constitutiva da vida cristã:** O crente vive *entre os tempos* (Cullmann). Isso explica a experiência paradoxal de santificação progressiva (Fp 3.12–14), de sofrimento presente com glória futura (Rm 8.17–18), de vitória garantida mas combate atual (Ef 6.10–18).",
+          "**③ Correção de desvios opostos:** A 'escatologia subrealizada' (apenas 'ainda não') reduz o evangelho a promessa futura, esvaziando o presente. A 'escatologia superrealizada' (apenas 'já' — erro dos coríntios em 1Co 4.8; e de Himeneu e Fileto em 2Tm 2.17–18) confunde a consumação com a inauguração, produzindo triunfalismo, perfeccionismo ou negação da ressurreição futura.",
+          "**④ Compatibilidade com vários sistemas:** O 'já e ainda não' não se identifica com um único sistema milenarista — é adotado por amilenaristas (Hoekema, Beale), pré-milenaristas históricos (Ladd) e até dispensacionalistas progressivos (Blaising, Bock). É categoria estrutural, anterior aos debates sobre o Milênio."
+        ],
+        refs: "Fp 3.12–14 · Rm 8.17–18 · 1Co 4.8 · 2Tm 2.17–18 · Ef 6.10–18 · Cl 3.1–4"
+      }
+    ]
+  },
+  diaDoSenhor: {
+    title: "O Dia do Senhor (Yom YHWH)",
+    intro: "A escatologia do Novo Testamento não nasce no vácuo — ela é colhida da expectativa profética do Antigo Testamento sobre o 'Dia do Senhor' (יוֹם יְהוָה, Yom YHWH). Desenvolvido pelos profetas a partir do século VIII a.C., esse conceito é o substrato sobre o qual Jesus, Paulo e Pedro constroem o discurso escatológico cristão. Sem compreendê-lo, a escatologia do NT parece desconectada de suas raízes proféticas.",
+    quote: {
+      text: "Ai de vós que desejais o Dia do Senhor! Para que quereis vós este dia do Senhor? É trevas e não luz.",
+      cite: "Amós 5.18"
+    },
+    events: [
+      {
+        id: "ev-yomOrigem",
+        title: "Origem e Desenvolvimento Profético",
+        body: [
+          "**Primeira ocorrência documentada:** Amós 5.18 (c. 760 a.C.) é o primeiro uso profético explícito do termo. Significativamente, Amós *subverte* uma expectativa popular prévia — o povo de Israel já esperava o Yom YHWH como dia de *vitória nacional*, e Amós anuncia que será, ao contrário, dia de *juízo sobre Israel*. O conceito, portanto, já era tradicional antes de Amós.",
+          "**Raiz teológica:** O Dia do Senhor pressupõe a doutrina de YHWH como Rei-Guerreiro (Êx 15.3; Dt 33.2) que intervém decisivamente na história para julgar os ímpios e libertar seu povo. É a manifestação soberana de Deus dentro da história e contra ela.",
+          "**Vocabulário associado:** 'Naquele dia' (*ba-yom ha-hu'* — mais de 200 ocorrências nos profetas), 'dias vindouros' (*yamim ba'im*), 'dia da ira', 'dia da visitação' (*yom peqūdā*), 'dia da vingança' (*yom naqam*). Todas essas expressões convergem para a mesma realidade escatológica."
+        ],
+        refs: "Am 5.18–20 · Is 2.12 · Jr 46.10 · Ez 30.3 · Jl 1.15 · Sf 1.7,14"
+      },
+      {
+        id: "ev-diaDuplo",
+        title: "A Dupla Face do Dia — Juízo e Salvação",
+        body: [
+          "O Dia do Senhor possui **duas faces inseparáveis**, como anverso e reverso da mesma moeda: é simultaneamente dia de **juízo** sobre os inimigos de Deus (e sobre Israel infiel) e dia de **salvação** para o remanescente fiel.",
+          "**Face de juízo:** Sf 1.14–18: 'Está perto o grande Dia do Senhor… dia de ira aquele dia, dia de angústia e de ansiedade, dia de alvoroço e de devastação, dia de trevas e de escuridão.' Is 13.9: 'Eis que vem o Dia do Senhor, horrendo, com furor e ira ardente.' O juízo recai sobre as nações (Is 13 contra a Babilônia; Ez 30 contra o Egito; Obadias contra Edom) e sobre Israel apóstata (Am 5; Jl 2.1–11).",
+          "**Face de salvação:** Jl 2.28–32 (LXX 3.1–5) descreve o mesmo Dia como derramamento do Espírito, livramento do remanescente que invocar o nome do Senhor, e restauração de Sião. Is 4.2–6 pinta o 'Renovo do Senhor' trazendo purificação e glória. Zc 14.8–9: 'naquele dia sairão de Jerusalém águas vivas… e o Senhor será rei sobre toda a terra.'",
+          "**Princípio teológico:** A justiça de Deus exige que seu juízo e sua salvação sejam o *mesmo ato*. Não há redenção do remanescente sem destruição dos opressores — nem destruição dos ímpios sem libertação dos oprimidos (Is 61.2)."
+        ],
+        refs: "Sf 1.14–18 · Is 13.6–13 · Jl 2.28–32 · Zc 14 · Ml 4.1–6 · Is 61.2"
+      },
+      {
+        id: "ev-diaProfetas",
+        title: "Nos Principais Profetas",
+        body: [
+          "**Amós (c. 760 a.C.):** Primeiro a inverter a expectativa popular. O Dia é 'trevas e não luz' para Israel infiel (Am 5.18–20). Juízo a partir de dentro da aliança.",
+          "**Isaías (c. 740–680 a.C.):** Dimensão cósmica e universal. O Dia atinge 'todo soberbo e altivo' (Is 2.12–22), abala céus e terra (Is 13.10,13), mas culmina no 'monte do Senhor' exaltado e nas nações peregrinando a Sião (Is 2.2–4).",
+          "**Joel (data disputada, c. 830 ou c. 400 a.C.):** O livro inteiro gira em torno do Dia do Senhor. Uma praga de gafanhotos histórica se torna tipo do Dia escatológico (Jl 1–2). Culmina no derramamento do Espírito sobre 'toda carne' (Jl 2.28) — texto citado por Pedro em At 2.17–21 como cumprido em Pentecostes.",
+          "**Sofonias (c. 630 a.C.):** Descrição mais densa e terrível do Dia (Sf 1.14–18). O *Dies Irae* medieval é construído diretamente desse texto.",
+          "**Zacarias (c. 520 a.C.):** Zc 14 descreve um Dia final com o Senhor descendo pessoalmente ao Monte das Oliveiras, batalha escatológica em Jerusalém e reinado universal. Esse texto é central no pré-milenarismo futurista.",
+          "**Malaquias (c. 430 a.C.):** O último profeta do AT fecha com o anúncio de Elias que virá 'antes que venha o grande e terrível Dia do Senhor' (Ml 4.5–6) — ponte direta ao NT em João Batista (Mt 11.14; 17.11–13)."
+        ],
+        refs: "Am 5.18–20 · Is 2.12–22 · Jl 2.28–32 · Sf 1.14–18 · Zc 14 · Ml 4.1–6"
+      },
+      {
+        id: "ev-diaSenhorNT",
+        title: "Transposição ao Novo Testamento",
+        body: [
+          "O NT assume integralmente a categoria profética do Dia do Senhor, mas o centraliza **em Cristo**. 'Dia do Senhor' (*hēmera tou Kyriou*) no AT era dia de YHWH; no NT é dia do *Kyrios* Jesus — identificação direta que pressupõe a divindade de Cristo.",
+          "**Pentecostes como inauguração (At 2.16–21):** Pedro cita Jl 2.28–32 e afirma 'mas isto é o que foi dito pelo profeta Joel'. O derramamento do Espírito **já inaugura** o Dia do Senhor, embora a consumação final permaneça futura. Clara expressão do 'já e ainda não' escatológico.",
+          "**Em Paulo:** 'Dia do Senhor' (1Ts 5.2; 2Ts 2.2; 1Co 5.5), 'Dia de Cristo' (Fp 1.10; 2.16), 'Dia de Jesus Cristo' (Fp 1.6), 'Dia de nosso Senhor Jesus Cristo' (1Co 1.8). Virá 'como o ladrão de noite' (1Ts 5.2) — imagem que remonta à surpresa do Dia profético.",
+          "**Em Pedro:** 2Pe 3.10–13 descreve o Dia do Senhor com imagens cósmicas tipicamente proféticas (céus desaparecendo, elementos ardendo), culminando em 'novos céus e nova terra'. Herda diretamente Is 65.17; 66.22.",
+          "**Em Apocalipse:** Ap 1.10 (João está 'no Dia do Senhor' — provavelmente o domingo, mas com clara ressonância escatológica) e Ap 6.17 ('chegou o grande Dia da ira deles'). Todo o Apocalipse é a descrição expandida do Dia do Senhor profético."
+        ],
+        refs: "At 2.16–21 · 1Ts 5.2 · 2Pe 3.10–13 · Fp 1.6,10 · Ap 6.17 · 1Co 1.8"
+      },
+      {
+        id: "ev-diaSenhorDiaCristo",
+        title: "'Dia do Senhor' e 'Dia de Cristo' — Distinção Dispensacional",
+        body: [
+          "**Posição dispensacional clássica:** Alguns dispensacionalistas (Scofield, Pentecost, Walvoord) distinguem **dois dias escatológicos** no NT: o 'Dia de Cristo' (ou 'Dia de Jesus Cristo') refere-se ao arrebatamento e às bênçãos da Igreja (Fp 1.6,10; 2.16; 1Co 1.8; 2Co 1.14); o 'Dia do Senhor' refere-se à Tribulação e ao juízo final sobre as nações (1Ts 5.2; 2Ts 2.2; 2Pe 3.10).",
+          "**Argumento:** Coerência com a separação entre Igreja e Israel. Dois povos, dois programas, dois dias.",
+          "**Crítica (pós-tribulacionistas, reformados, amilenaristas):** A distinção é artificial. Os textos usam os termos **intercambiavelmente**. 2Pe 3.10 usa 'Dia do Senhor' para o julgamento dos céus e da terra, que inclui o destino final dos crentes. 1Ts 5.2–10 fala do 'Dia do Senhor' como evento do qual os crentes não devem ser pegos de surpresa — os crentes participam do evento. Não há texto que **contraste** os dois termos; o contraste é assumido pela pressuposição sistemática.",
+          "**Posição majoritária:** Os vários nomes do Dia ('do Senhor', 'de Cristo', 'daquele Dia', 'Dia de Jesus Cristo') descrevem o **mesmo evento escatológico** visto de ângulos diferentes — ora enfatizando juízo, ora redenção, mas sempre o mesmo Dia."
+        ],
+        refs: "1Ts 5.2 · 2Ts 2.2 · Fp 1.6,10 · 1Co 1.8 · 2Pe 3.10 · 2Co 1.14"
+      }
+    ]
+  },
+  pactoVsDispensacional: {
+    title: "Teologia do Pacto vs. Teologia Dispensacional",
+    intro: "As divergências escatológicas raramente são apenas exegéticas — são pactuais e hermenêuticas. Dois grandes sistemas organizam a leitura cristã da história bíblica: a Teologia do Pacto (Reformada) e a Teologia Dispensacional. A maneira como cada sistema estrutura a relação entre Antigo e Novo Testamento, Israel e Igreja, lei e graça, determina praticamente toda a arquitetura escatológica que dele decorre. Sem compreender esses pressupostos, os debates sobre Milênio, Arrebatamento e Anticristo permanecem opacos.",
+    events: [
+      {
+        id: "ev-pactoOrigem",
+        title: "Teologia do Pacto — Origem e Arquitetura",
+        body: [
+          "**Origem:** Sistematizada no século XVI por reformadores como Heinrich Bullinger (*De testamento seu foedere Dei unico et aeterno*, 1534), Caspar Olevianus e Johannes Cocceius (1603–1669). Codificada na Confissão de Fé de Westminster (1646), cap. 7. Dominante no Presbiterianismo, Reformados Continentais, Batistas Reformados (Confissão de Londres de 1689) e Anglicanismo clássico.",
+          "**Princípio central:** Deus se relaciona com a humanidade por meio de **pactos** (*berith* / διαθήκη). A história redentora é uma unidade progressiva sob um único **Pacto da Graça**, administrado de formas diferentes no AT e NT, mas sempre com o mesmo Mediador (Cristo) e o mesmo meio (fé).",
+          "**Continuidade fundamental:** Não há descontinuidade essencial entre AT e NT. O povo de Deus é *um só* em todas as eras — patriarcas, Israel e Igreja formam uma única comunidade redimida, ainda que sob administrações distintas. Circuncisão e batismo são sinais do mesmo pacto em eras diferentes.",
+          "**Hermenêutica:** O NT interpreta o AT — as promessas veterotestamentárias são cumpridas em Cristo e na Igreja de forma escatológica e espiritual, não necessariamente em Israel étnico-nacional. Gl 3.29: 'se sois de Cristo, também sois descendência de Abraão.'"
+        ],
+        refs: "Gn 17.7 · Jr 31.31–34 · Hb 8.6–13 · Gl 3.15–29 · Rm 4.11–16 · Ef 2.11–22"
+      },
+      {
+        id: "ev-pactos",
+        title: "Os Pactos Bíblicos",
+        body: [
+          "A Teologia do Pacto identifica dois (ou três) pactos teológicos fundamentais e vários pactos históricos.",
+          "**Pactos teológicos:**",
+          "① **Pacto das Obras** (*foedus operum*): estabelecido com Adão na criação — obediência perfeita resultaria em vida eterna confirmada. Adão falhou como cabeça federal da humanidade (Rm 5.12–21).",
+          "② **Pacto da Graça** (*foedus gratiae*): após a Queda, Deus promete redenção por meio de um Mediador (Gn 3.15 — *protoevangelium*). Todos os pactos históricos subsequentes são administrações deste único Pacto da Graça.",
+          "③ **Pacto da Redenção** (*pactum salutis* — na versão cocceiana e de John Owen): pacto *intratrinitário* eterno entre o Pai e o Filho, no qual o Filho se compromete a redimir os eleitos. Fundamento eterno do Pacto da Graça na história.",
+          "**Pactos históricos:** Adâmico (Gn 1–3), Noético (Gn 9), Abraâmico (Gn 12; 15; 17), Mosaico (Êx 19–24), Davídico (2Sm 7) e **Nova Aliança** (Jr 31; Hb 8). Todos progressivamente revelam e administram o mesmo Pacto da Graça, consumado em Cristo."
+        ],
+        refs: "Gn 3.15 · Gn 17.7 · Jr 31.31–34 · 2Sm 7.12–16 · Rm 5.12–21 · Hb 8.6–13"
+      },
+      {
+        id: "ev-dispensOrigem",
+        title: "Teologia Dispensacional — Origem e Arquitetura",
+        body: [
+          "**Origem:** John Nelson Darby (1800–1882), dos Irmãos de Plymouth na Irlanda. Sistematizada para o público americano por C.I. Scofield (*Scofield Reference Bible*, 1909; revisada em 1917). Desenvolvida academicamente em Lewis Sperry Chafer (*Systematic Theology*, 1947–48) e no Dallas Theological Seminary (Walvoord, Ryrie, Pentecost). Dominante no evangelicalismo norte-americano do século XX e em grande parte do protestantismo brasileiro.",
+          "**Princípio central:** A história redentora é dividida em **dispensações** — períodos distintos nos quais Deus testa a humanidade sob uma administração específica de suas relações com o mundo. Cada dispensação termina em fracasso humano e juízo divino, abrindo caminho para a seguinte.",
+          "**Descontinuidade fundamental:** Há distinção **radical e permanente** entre Israel e Igreja — 'dois povos, dois programas, dois destinos'. Israel é o povo *terreno* de Deus, com promessas terrenas (terra, trono, templo); a Igreja é o povo *celestial* de Deus, com promessas celestiais. Nunca são fundidos, nem nesta era nem na eternidade.",
+          "**Hermenêutica literal consistente:** Charles Ryrie (*Dispensationalism*, 1965) define três *sine qua non* do dispensacionalismo: (1) distinção Israel/Igreja; (2) hermenêutica gramatical-histórica-literal consistente, incluindo profecias; (3) o propósito final de Deus na história é *sua própria glória*, manifestada em múltiplos povos e domínios."
+        ],
+        refs: "Gn 12.1–3 · Jr 31.35–37 · Rm 11.25–29 · Ef 3.1–6 · Ap 21.9–14 · 1Co 10.32"
+      },
+      {
+        id: "ev-seteDispensacoes",
+        title: "As Sete Dispensações de Scofield",
+        body: [
+          "O sistema clássico de Scofield divide a história em sete dispensações, cada uma com revelação específica, teste, fracasso e juízo. Outros dispensacionalistas variam o número (4, 6, 8), mas o esquema de sete é o mais difundido.",
+          "① **Inocência** (Gn 1.28–3.6) — Adão no Éden; fracasso: desobediência; juízo: expulsão.",
+          "② **Consciência** (Gn 3.7–8.14) — De Adão ao Dilúvio; fracasso: corrupção universal; juízo: Dilúvio.",
+          "③ **Governo Humano** (Gn 8.15–11.32) — Pacto noético, autoridade civil; fracasso: Babel; juízo: confusão das línguas.",
+          "④ **Promessa** (Gn 12–Êx 18) — Patriarcas e promessa abraâmica; fracasso: descida ao Egito e escravidão; juízo: cativeiro egípcio.",
+          "⑤ **Lei** (Êx 19–At 2) — Do Sinai a Pentecostes; fracasso: rejeição do Messias; juízo: destruição de Jerusalém em 70 d.C.",
+          "⑥ **Graça / Igreja** (At 2 – Arrebatamento) — Era atual; fracasso futuro: apostasia da cristandade; juízo: Tribulação.",
+          "⑦ **Reino / Milênio** (Segunda Vinda → eternidade) — Reino literal de Cristo sobre a Terra; fracasso final: rebelião de Gogue e Magogue; juízo: Trono Branco, estado eterno.",
+          "**Crítica reformada:** A Teologia do Pacto objeta que esse esquema fragmenta artificialmente a unidade da obra redentora. Hebreus 1.1–2 apresenta apenas duas eras ('antigamente… nestes últimos dias'), não sete. A Nova Aliança (Jr 31) é única, inaugurada em Cristo e desfrutada pela Igreja."
+        ],
+        refs: "Hb 1.1–2 · Gl 3.23–29 · Ef 2.14–16 · Cl 2.16–17 · Hb 8.6–13"
+      },
+      {
+        id: "ev-israelIgreja",
+        title: "Israel e Igreja — O Ponto de Inflexão",
+        body: [
+          "Esta é a divergência que, sozinha, gera a maior parte dos debates escatológicos.",
+          "**Posição dispensacional:** Israel e Igreja são **permanentemente distintos**. A Igreja é um 'mistério' não revelado no AT (Ef 3.1–6) e constitui um *parêntese* na história profética de Israel. As promessas veterotestamentárias a Israel (terra de Canaã, trono davídico, templo reconstruído) são **literais e nacionais**, e serão cumpridas em Israel étnico no Milênio. A Igreja não herda essas promessas — tem promessas próprias, celestiais.",
+          "**Posição reformada / pactual:** A Igreja é o **Israel de Deus** (Gl 6.16), o 'verdadeiro Israel' (Rm 9.6–8), a 'descendência de Abraão' pela fé (Gl 3.29). As promessas abraâmicas são cumpridas em Cristo (Gl 3.16) e estendidas a todos os que estão nele — judeus e gentios, 'um novo homem' (Ef 2.15). Isso não nega lugar especial ao Israel étnico (Rm 9–11), mas nega paralelismo permanente entre dois povos.",
+          "**Textos-chave em disputa:**",
+          "• **Rm 11.25–27** ('todo o Israel será salvo') — Israel étnico futuro (dispensacional), totalidade dos eleitos judeus e gentios (Calvino, alguns reformados) ou remanescente judeu ao longo da história (outros reformados)?",
+          "• **Gl 6.16** ('Israel de Deus') — judeus-cristãos especificamente (S. Lewis Johnson) ou toda a Igreja (maioria reformada)?",
+          "• **Ef 2.11–22** — muro entre Israel e gentios 'derribado' definitivamente (reformada) ou apenas nesta era (dispensacional)?",
+          "• **Profecias de restauração de Israel** (Ez 36–48; Zc 12–14; Is 60–66) — cumprimento literal em Israel étnico no Milênio (dispensacional), cumprimento em Cristo e na Igreja (reformada) ou duplo cumprimento (dispensacionalismo progressivo)?"
+        ],
+        refs: "Rm 9.6–8 · Rm 11.25–29 · Gl 3.16,29 · Gl 6.16 · Ef 2.11–22 · Ef 3.1–6"
+      },
+      {
+        id: "ev-novaAlianca",
+        title: "Dispensacionalismo Progressivo e Nova Teologia do Pacto",
+        body: [
+          "A partir dos anos 1980, uma geração de dispensacionalistas começou a suavizar as antíteses clássicas, dando origem ao **Dispensacionalismo Progressivo** (Craig Blaising, Darrell Bock, Robert Saucy).",
+          "**Modificações:**",
+          "① A Igreja **já participa** das bênçãos espirituais da Nova Aliança prometida a Israel (Jr 31; Hb 8) — não apenas 'se aplica' a ela, mas está *dentro* da Nova Aliança.",
+          "② Cristo **já reina** como Rei Davídico em sua sessão à direita do Pai (At 2.30–36), embora a consumação territorial do reino seja ainda futura. O 'já e ainda não' é assimilado.",
+          "③ Há uma **unidade do povo de Deus** mais robusta, embora ainda se preserve papel distintivo para Israel étnico futuro na consumação escatológica.",
+          "**Crítica pactual:** Mesmo o dispensacionalismo progressivo ainda retém a expectativa de cumprimento territorial-nacional das promessas abraâmicas em Israel étnico futuro — o que, para reformados, é negar o cumprimento cristológico definitivo dessas promessas (Gl 3; Hb 11.16).",
+          "**Nova Teologia do Pacto** (*New Covenant Theology*): via intermediária (Fred Zaspel, Tom Wells) — rejeita a continuidade reformada da Lei moral (Decálogo como norma permanente) mas também rejeita as dispensações. Sustenta que a Nova Aliança substitui a Antiga de forma mais radical do que os reformados admitem, com a lei de Cristo substituindo a lei mosaica."
+        ],
+        refs: "Jr 31.31–34 · Hb 8.6–13 · At 2.30–36 · Gl 3.16 · Hb 11.13–16 · 2Co 3.6–11"
+      }
+    ]
+  },
   sistemas: {
     title: "Sistemas Escatológicos",
     intro: "Cinco grandes sistemas organizam a escatologia cristã. Cada um resulta de uma hermenêutica distinta — a forma como se interpreta a profecia bíblica determina a arquitetura completa dos eventos finais.",
