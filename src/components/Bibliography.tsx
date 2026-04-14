@@ -41,7 +41,7 @@ export function filterByCategory(categories: BibCategory[], categoryId: BibCateg
 const levelColors: Record<string, string> = {
   "introdutório": "bg-sys-green/10 text-sys-green border-sys-green/20",
   "intermediário": "bg-sys-blue/10 text-sys-blue border-sys-blue/20",
-  "avançado": "bg-sys-purple/10 text-sys-purple border-sys-purple/20",
+  "avançado": "bg-sys-emerald/10 text-sys-emerald border-sys-emerald/20",
   "acadêmico": "bg-sys-red/10 text-sys-red border-sys-red/20",
   "fonte primária": "bg-gold/10 text-gold border-gold/20"
 };

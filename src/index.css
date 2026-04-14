@@ -21,7 +21,7 @@
   
   --color-sys-blue: var(--theme-sys-blue);
   --color-sys-green: var(--theme-sys-green);
-  --color-sys-purple: var(--theme-sys-purple);
+  --color-sys-emerald: var(--theme-sys-emerald);
   --color-sys-teal: var(--theme-sys-teal);
   --color-sys-red: var(--theme-sys-red);
 }
@@ -43,7 +43,7 @@
   
   --theme-sys-blue: #2b5c96;
   --theme-sys-green: #387547;
-  --theme-sys-purple: #6a3b96;
+  --theme-sys-emerald: #10b981;
   --theme-sys-teal: #246666;
   --theme-sys-red: #a82e2e;
 }
@@ -65,7 +65,7 @@
   
   --theme-sys-blue: #4a7ab5;
   --theme-sys-green: #5a9a6a;
-  --theme-sys-purple: #8a5ab5;
+  --theme-sys-emerald: #34d399;
   --theme-sys-teal: #3a8a8a;
   --theme-sys-red: #cc4444;
 }
