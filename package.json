@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "seed": "tsx scripts/seed-bibliography.ts"
+    "seed": "tsx scripts/seed-bibliography.ts",
+    "promote": "tsx scripts/promote-subscriber.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

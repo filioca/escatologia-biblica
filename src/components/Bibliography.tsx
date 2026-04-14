@@ -3,6 +3,7 @@ import { Search, Book, User, ExternalLink, Bookmark, AlertCircle, Lock } from 'l
 import { BibEntry, BibCategory, BibCategoryId, FirestoreEntry, FirestoreCategory } from '../types/bibliography';
 import { db } from '../lib/firebase';
 import { getBibliographyService } from '../services/BibliographyService';
+import { useAuth } from '../context/AuthContext';
 
 // ============================================================================
 // Utilitários Puros (Exportados para Testes) — PRESERVADOS INTEGRALMENTE
@@ -193,6 +194,8 @@ export const Bibliography: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"thematic" | "author">("thematic");
 
+  const { isSubscriber } = useAuth();
+
   // ── Estado de dados Firestore ──
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -207,7 +210,7 @@ export const Bibliography: React.FC = () => {
       const service = getBibliographyService(db);
       const [cats, entries] = await Promise.all([
         service.listCategories(),
-        service.listAllEntries(),
+        service.listAllEntries(isSubscriber),
       ]);
       setFirestoreCategories(cats);
       setAllEntries(entries);
@@ -217,7 +220,7 @@ export const Bibliography: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [isSubscriber]);
 
   useEffect(() => {
     void loadData();

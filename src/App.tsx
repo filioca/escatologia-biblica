@@ -9,6 +9,9 @@ import { TimelineEvent } from './components/Timeline';
 import AIChat from './components/AIChat';
 import { RichText } from './components/RichText';
 import { Bibliography } from './components/Bibliography';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { LoginButton } from './components/auth/LoginButton';
+import { UserMenu } from './components/auth/UserMenu';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -91,6 +94,14 @@ const navGroups: NavGroup[] = [
     ],
   },
 ];
+
+// ─── Auth Header Widget ───────────────────────────────────────────────────────
+// Componente interno que usa useAuth() — deve ser filho de AuthProvider.
+
+function AuthHeaderWidget() {
+  const { user } = useAuth();
+  return user ? <UserMenu /> : <LoginButton />;
+}
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 
@@ -299,19 +310,23 @@ export default function App() {
   // ─── Render ───────────────────────────────────────────────────────────────────
 
   return (
+    <AuthProvider>
     <div className="min-h-screen flex flex-col relative z-10 transition-colors duration-300">
 
       {/* ── Header (full-width) ─────────────────────────────────────── */}
       <header className="relative text-center pt-16 pb-12 px-6 border-b border-border bg-[radial-gradient(ellipse_at_top,var(--color-surface)_0%,var(--color-deep)_70%)] dark:bg-[radial-gradient(ellipse_at_top,#2a2010_0%,var(--color-deep)_70%)] overflow-hidden transition-colors duration-300">
 
-        {/* Dark/light toggle */}
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="absolute top-6 right-6 p-2 text-gold hover:text-gold-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full"
-          aria-label="Alternar tema"
-        >
-          {isDark ? <Sun size={24} aria-hidden="true" /> : <Moon size={24} aria-hidden="true" />}
-        </button>
+        {/* Header right actions: auth widget + dark/light toggle */}
+        <div className="absolute top-6 right-6 flex items-center gap-2">
+          <AuthHeaderWidget />
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="p-2 text-gold hover:text-gold-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full"
+            aria-label="Alternar tema"
+          >
+            {isDark ? <Sun size={24} aria-hidden="true" /> : <Moon size={24} aria-hidden="true" />}
+          </button>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -404,5 +419,6 @@ export default function App() {
       {/* ── AI Chat (fixed, unaffected by layout) ───────────────────── */}
       <AIChat />
     </div>
+    </AuthProvider>
   );
 }
