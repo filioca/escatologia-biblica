@@ -8,7 +8,7 @@ import { eschatologyData } from '../src/data/content.js';
 
 const PROJECT_ID = 'apocalipse-biblico';
 const DATABASE_ID = 'apocalipse-biblico';
-const EMBED_MODEL = 'text-embedding-004';
+const EMBED_MODEL = 'gemini-embedding-001';
 const OUTPUT_DIM = 768;
 
 initializeApp({
