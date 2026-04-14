@@ -1,0 +1,30 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "bibliography_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "categoryId", "order": "ASCENDING" },
+        { "fieldPath": "entryOrder", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bibliography_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isPremium", "order": "ASCENDING" },
+        { "fieldPath": "categoryId", "order": "ASCENDING" },
+        { "fieldPath": "entryOrder", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bibliography_entries",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isPremium", "order": "ASCENDING" },
+        { "fieldPath": "authorNormalized", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

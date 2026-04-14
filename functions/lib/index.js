@@ -36,11 +36,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.apiV1 = void 0;
+exports.assignUserRole = exports.apiV1 = void 0;
 const functions = __importStar(require("firebase-functions/v1"));
+const admin = __importStar(require("firebase-admin"));
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const genai_1 = require("@google/genai");
+admin.initializeApp();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({ origin: true }));
 app.use(express_1.default.json());
@@ -73,4 +75,42 @@ ${message}`;
 });
 // Usando runWith para acionar o suporte a secrets nativo da v1
 exports.apiV1 = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
+// ============================================================================
+// Auth & Identity Management
+// ============================================================================
+exports.assignUserRole = functions.https.onCall(async (data, context) => {
+    // Check if user is authenticated
+    if (!context.auth) {
+        throw new functions.https.HttpsError("unauthenticated", "User must be logged in.");
+    }
+    // Enforce caller MUST be an admin
+    // (During bootstrapping, you might manually set the initial admin from the Firebase Console)
+    const isCallerAdmin = context.auth.token.admin === true;
+    if (!isCallerAdmin) {
+        throw new functions.https.HttpsError("permission-denied", "Only admins can assign roles.");
+    }
+    const targetUid = data.uid;
+    const role = data.role; // 'GUEST', 'SUBSCRIBER', 'ADMIN'
+    if (!targetUid || !role) {
+        throw new functions.https.HttpsError("invalid-argument", "Missing target uid or role.");
+    }
+    const validRoles = ["GUEST", "SUBSCRIBER", "ADMIN"];
+    if (!validRoles.includes(role)) {
+        throw new functions.https.HttpsError("invalid-argument", "Role must be GUEST, SUBSCRIBER, or ADMIN.");
+    }
+    // Create progressive claims
+    const customClaims = {
+        guest: role === "GUEST",
+        subscriber: role === "SUBSCRIBER" || role === "ADMIN",
+        admin: role === "ADMIN"
+    };
+    try {
+        await admin.auth().setCustomUserClaims(targetUid, customClaims);
+        return { message: `Successfully assigned role ${role} to user ${targetUid}.` };
+    }
+    catch (error) {
+        console.error("Error setting custom claims:", error);
+        throw new functions.https.HttpsError("internal", "Failed to assign role.");
+    }
+});
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls c:/dev/escatologia-biblica/node_modules/.bin/tsc*)"
+      "Bash(ls c:/dev/escatologia-biblica/node_modules/.bin/tsc*)",
+      "Bash(firebase --version)",
+      "Bash(firebase projects:list)",
+      "Bash(npx firebase:*)",
+      "Bash(node_modules/.bin/firebase --version)"
     ]
   }
 }

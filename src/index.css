@@ -24,6 +24,7 @@
   --color-sys-emerald: var(--theme-sys-emerald);
   --color-sys-teal: var(--theme-sys-teal);
   --color-sys-red: var(--theme-sys-red);
+  --color-sys-purple: #a78bfa;
 }
 
 :root {

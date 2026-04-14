@@ -1,0 +1,68 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    // Funções auxiliares reutilizadas nas regras abaixo
+    // -------------------------------------------------------------------------
+
+    // Retorna true se o usuário autenticado possui o custom claim 'subscriber'
+    // definido como true pelo backend (Cloud Functions via Stripe webhook).
+    // IMPORTANTE: este claim é validado server-side pelo Firestore Security Rules;
+    // nunca confiar em flags client-side para controle de acesso.
+    function isSubscriber() {
+      return request.auth != null
+          && request.auth.token.subscriber == true;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection: bibliography_entries
+    // Documentos de livros/obras individuais dentro de uma categoria.
+    // -------------------------------------------------------------------------
+    match /bibliography_entries/{entryId} {
+
+      // Leitura pública: somente entradas com isPremium == false.
+      // Leitura autenticada com claim subscriber: qualquer entrada.
+      // IMPORTANTE: queries client-side DEVEM incluir
+      // where('isPremium', '==', false) quando usuário não-assinante,
+      // caso contrário o Firestore retorna permission-denied.
+      // Escrita: bloqueada para todos — seed feito exclusivamente via Admin SDK.
+      allow read: if resource.data.isPremium == false
+                  || isSubscriber();
+      allow write: if false;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection: bibliography_categories
+    // Metadados das categorias (título, intro, ordem, isPremium).
+    // Leitura pública para montar o menu de navegação sem autenticação.
+    // -------------------------------------------------------------------------
+    match /bibliography_categories/{categoryId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection: users
+    // Perfil do usuário (displayName, email, photoURL, preferências, etc.).
+    // Cada usuário acessa apenas o próprio documento.
+    // -------------------------------------------------------------------------
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+                         && request.auth.uid == userId;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection: subscriptions
+    // Registros de assinatura gerenciados pelo webhook do Stripe (Cloud Function).
+    // Usuário pode LER apenas o próprio registro; escrita exclusiva via Admin SDK.
+    // -------------------------------------------------------------------------
+    match /subscriptions/{userId} {
+      allow read: if request.auth != null
+                  && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+  }
+}

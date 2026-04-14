@@ -72,3 +72,67 @@ export interface BibliographyData {
   categories: BibCategory[];
   authorIndex: BibAuthorIndexItem[];
 }
+
+// ---------------------------------------------------------------------------
+// Tipos Firestore — adicionados na Fase 1 (não substituem os tipos acima)
+// ---------------------------------------------------------------------------
+
+/**
+ * Documento na collection `bibliography_entries` do Firestore.
+ * Shape produzido pelo seed e consumido pelo BibliographyService.
+ */
+export interface FirestoreEntry {
+  id: string;
+  categoryId: BibCategoryId;
+  categoryOrder: number;
+  entryOrder: number;
+  author: string;
+  authorNormalized: string;
+  coAuthors: string[];
+  title: string;
+  subtitle: string | null;
+  publisher: string | null;
+  year: number | string;
+  isbn: string | null;
+  originalLanguage: BibLanguage;
+  translationPT: BibTranslationPT | null;
+  level: BibLevel;
+  review: string;
+  onlineLinks: BibOnlineLink[];
+  crossReferences: string[];
+  citedInEventIds: string[];
+  recommendedFor: string[];
+  isPremium: boolean;
+  createdAt: unknown; // Firestore Timestamp — não tipado aqui para evitar dep. no SDK
+  updatedAt: unknown;
+}
+
+/**
+ * Documento na collection `bibliography_categories` do Firestore.
+ */
+export interface FirestoreCategory {
+  id: BibCategoryId;
+  title: string;
+  intro: string;
+  order: number;
+  isPremium: boolean;
+  updatedAt: unknown;
+}
+
+/**
+ * Resultado de listEntriesByCategory quando o acesso é negado pelas rules.
+ */
+export interface AccessDeniedResult {
+  accessDenied: true;
+  entries: [];
+}
+
+/**
+ * Resultado bem-sucedido de listEntriesByCategory.
+ */
+export interface EntriesResult {
+  accessDenied: false;
+  entries: FirestoreEntry[];
+}
+
+export type EntriesQueryResult = EntriesResult | AccessDeniedResult;
