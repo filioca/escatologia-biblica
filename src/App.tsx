@@ -163,21 +163,21 @@ export default function App() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -20 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.4 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-3xl mx-auto"
       >
-        <h2 className="font-display text-4xl font-semibold text-gold tracking-wider uppercase mb-4">
+        <h2 className="font-display text-4xl font-semibold text-gold tracking-wider uppercase mb-4" style={{ textWrap: 'balance' }}>
           {sectionData.title}
         </h2>
 
         {sectionData.intro && (
-          <p className="font-serif text-2xl text-text-dim italic mb-10 pb-6 border-b border-border">
+          <p className="font-serif text-xl md:text-2xl text-text-dim italic mb-10 pb-6 border-b border-border leading-relaxed" style={{ textWrap: 'pretty' }}>
             {sectionData.intro}
           </p>
         )}
 
         {/* Body Paragraphs (Overview) */}
         {'body' in sectionData && Array.isArray(sectionData.body) && !('events' in sectionData) && !('table' in sectionData) && (
-          <div className="space-y-5 text-lg text-text-dim leading-relaxed text-justify">
+          <div className="space-y-6 text-base text-text-dim leading-[1.85]">
             {sectionData.body.map((p, idx) => (
               <p key={idx}><RichText text={p} /></p>
             ))}
@@ -236,7 +236,7 @@ export default function App() {
 
         {/* Millennium Body */}
         {'table' in sectionData && 'body' in sectionData && (
-          <div className="space-y-5 text-lg text-text-dim leading-relaxed mt-8 text-justify">
+          <div className="space-y-6 text-base text-text-dim leading-[1.85] mt-8">
             {sectionData.body.map((p, idx) => (
               <p key={idx}><RichText text={p} /></p>
             ))}
@@ -341,10 +341,10 @@ export default function App() {
 
         <div className="absolute top-6 left-1/2 -translate-x-1/2 text-gold opacity-60 tracking-[2rem] text-lg">✦</div>
 
-        <h1 className="font-display text-5xl md:text-6xl font-bold text-gold tracking-widest uppercase mb-4">
+        <h1 className="font-display text-5xl md:text-6xl font-bold text-gold tracking-widest uppercase mb-4" style={{ textWrap: 'balance' }}>
           {PAGE_TITLE}
         </h1>
-        <p className="font-serif text-2xl md:text-3xl italic text-text-dim tracking-wide">
+        <p className="font-serif text-xl md:text-2xl italic text-text-dim tracking-wide" style={{ textWrap: 'pretty' }}>
           {PAGE_SUBTITLE}
         </p>
         <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-8" />
@@ -362,7 +362,7 @@ export default function App() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 px-6 py-12 pb-32 min-w-0">
+        <main className="flex-1 px-6 md:px-10 py-12 pb-32 min-w-0">
           <AnimatePresence mode="wait">
             {renderContent()}
           </AnimatePresence>

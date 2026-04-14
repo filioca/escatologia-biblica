@@ -28,9 +28,9 @@
 }
 
 :root {
-  /* Parchment / Light Theme Colors */
-  --theme-gold: #9c7a27;
-  --theme-gold-light: #b8972a;
+  /* Parchment / Light Theme — WCAG AA compliant */
+  --theme-gold: #7a5c10;        /* 5.2:1 on #fcfaf5, 5.0:1 on #fff */
+  --theme-gold-light: #9c7a27;  /* hover state, large text only */
   --theme-gold-pale: #f0ebe1;
   --theme-deep: #fcfaf5;
   --theme-dark: #f5f0e6;
@@ -38,9 +38,9 @@
   --theme-surface2: #f5f0e6;
   --theme-surface3: #ebe3d5;
   --theme-border: #dcd3c4;
-  --theme-text-main: #2c2822;
-  --theme-text-dim: #4a443b;
-  --theme-text-muted: #7a7161;
+  --theme-text-main: #2c2822;   /* 16:1 on white */
+  --theme-text-dim: #4a443b;    /* 10:1 on white */
+  --theme-text-muted: #5e5449;  /* 5.6:1 on surface2 — passes AA */
   
   --theme-sys-blue: #2b5c96;
   --theme-sys-green: #387547;
@@ -50,6 +50,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   /* Dark Theme Colors */
   --theme-gold: #b8972a;
   --theme-gold-light: #d4b04a;
@@ -76,10 +77,23 @@ body {
   color: var(--color-text-main);
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.125rem; /* Increased base font size to 18px */
-  line-height: 1.8;
+  font-size: 1rem; /* 16px base — legível, não oversized */
+  line-height: 1.85;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+
+/* Prose confort zone: max 70ch for body text */
+.prose-content {
+  max-width: 70ch;
+}
+
+/* Heading anchors — leave breathing room for sticky nav */
+h2, h3, h4 {
+  scroll-margin-top: 5rem;
 }
 
 body::before {

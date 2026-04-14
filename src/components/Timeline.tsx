@@ -14,6 +14,7 @@ interface EventProps {
 
 export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, color = 'var(--color-gold)' }) => {
   const [isOpen, setIsOpen] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks -- component is always a FC
 
   return (
     <div className="relative mb-10 pl-10">
@@ -29,14 +30,17 @@ export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, co
       <div className="bg-surface border border-border rounded-md overflow-hidden transition-colors hover:border-gold/50">
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full text-left px-6 py-5 flex items-center gap-4 hover:bg-surface2 transition-colors"
+          aria-expanded={isOpen}
+          aria-controls={`timeline-body-${num}`}
+          className="w-full text-left px-6 py-5 flex items-center gap-4 hover:bg-surface2 transition-colors duration-150"
         >
           <span className="font-display text-sm font-semibold text-gold opacity-80 tracking-widest min-w-[2rem]">{num}</span>
           <span className="font-serif text-2xl font-semibold text-text-main flex-1">{title}</span>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             className="text-text-muted"
+            aria-hidden="true"
           >
             <ChevronDown size={18} />
           </motion.div>
@@ -51,8 +55,8 @@ export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, co
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="px-6 pb-6 border-t border-border/50 pt-5">
-                <div className="space-y-4 text-lg text-text-dim leading-relaxed text-justify">
+              <div id={`timeline-body-${num}`} className="px-6 pb-6 border-t border-border/50 pt-5">
+                <div className="space-y-4 text-base text-text-dim leading-[1.85]">
                   {body.map((paragraph, idx) => (
                     <p key={idx}><RichText text={paragraph} /></p>
                   ))}
