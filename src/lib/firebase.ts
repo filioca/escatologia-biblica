@@ -57,3 +57,16 @@ setPersistence(auth, browserLocalPersistence).catch((err: unknown) => {
 });
 
 export { app, auth, db, googleProvider };
+
+// ---------------------------------------------------------------------------
+// Helper de DEBUG — remover antes de produção
+// ---------------------------------------------------------------------------
+// Expõe auth globalmente para facilitar testes manuais via DevTools.
+// SOMENTE em modo dev (import.meta.env.DEV é true apenas em `npm run dev`).
+if (import.meta.env.DEV) {
+  (window as unknown as { __auth: typeof auth }).__auth = auth;
+  console.info(
+    '[debug] window.__auth exposto. Use: ' +
+      'await window.__auth.currentUser.getIdToken(true)',
+  );
+}

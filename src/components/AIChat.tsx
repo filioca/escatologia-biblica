@@ -1,15 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { eschatologyData } from '../data/content';
-import { GoogleGenAI } from '@google/genai';
+import { useAuth } from '../context/AuthContext';
 
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+const CHAT_API_URL = 'https://us-central1-apocalipse-biblico.cloudfunctions.net/apiV1/api/chat';
 
 export default function AIChat() {
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai'; text: string }[]>([
-    { role: 'ai', text: 'Olá! Sou seu assistente teológico. Como posso ajudar você a entender melhor a escatologia bíblica hoje?' }
+    {
+      role: 'ai',
+      text: 'Olá! Sou seu assistente teológico. Como posso ajudar você a entender melhor a escatologia bíblica hoje?',
+    },
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -26,32 +29,72 @@ export default function AIChat() {
   const handleSend = async () => {
     if (!input.trim()) return;
 
+    if (!user) {
+      setMessages((prev) => [
+        ...prev,
+        { role: 'user', text: input.trim() },
+        {
+          role: 'ai',
+          text: 'Você precisa estar logado para usar o assistente teológico. Por favor, faça login clicando no ícone de perfil no topo da página.',
+        },
+      ]);
+      setInput('');
+      return;
+    }
+
     const userMessage = input.trim();
     setInput('');
-    setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
+    setMessages((prev) => [...prev, { role: 'user', text: userMessage }]);
     setIsLoading(true);
 
     try {
-      const context = JSON.stringify(eschatologyData);
-      const prompt = `Você é um assistente teológico especializado em Escatologia Bíblica. 
-Responda à pergunta do usuário com base no seguinte contexto do material de estudo.
-Seja claro, objetivo e mantenha um tom respeitoso e acadêmico.
+      const idToken = await user.getIdToken();
 
-Contexto do material:
-${context}
+      // Mapeia o histórico para o formato esperado pelo backend (RAG)
+      const chatHistory = messages.map(m => ({
+        role: m.role === 'ai' ? 'assistant' : 'user',
+        content: m.text
+      }));
 
-Pergunta do usuário:
-${userMessage}`;
-
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: prompt,
+      const response = await fetch(CHAT_API_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // Enviamos o histórico completo + a nova mensagem para o backend recuperar o contexto
+          messages: [...chatHistory, { role: 'user', content: userMessage }]
+        }),
       });
 
-      setMessages(prev => [...prev, { role: 'ai', text: response.text ?? '' }]);
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (response.status === 429) {
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: 'ai',
+              text: data.message || 'Sua quota de mensagens deste mês esgotou.',
+            },
+          ]);
+        } else {
+          throw new Error(data.message || 'Erro no servidor');
+        }
+        return;
+      }
+
+      setMessages((prev) => [...prev, { role: 'ai', text: data.reply }]);
     } catch (error) {
-      console.error(error);
-      setMessages(prev => [...prev, { role: 'ai', text: 'Desculpe, ocorreu um erro ao processar sua pergunta. Tente novamente mais tarde.' }]);
+      console.error('[AIChat] Erro ao chamar backend:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'ai',
+          text: 'Desculpe, ocorreu um erro ao processar sua pergunta. Tente novamente mais tarde.',
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }

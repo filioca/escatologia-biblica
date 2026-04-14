@@ -64,5 +64,26 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // -------------------------------------------------------------------------
+    // Subcollection: users/{uid}/usage/*
+    // Contadores de uso (ex: chat quota) gerenciados exclusivamente pelo
+    // backend via Admin SDK. Usuário pode LER o próprio para exibir status
+    // de quota no frontend; NÃO pode escrever diretamente.
+    // -------------------------------------------------------------------------
+    match /users/{userId}/usage/{docId} {
+      allow read: if request.auth != null
+                  && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection: content_chunks
+    // Chunks de texto com embeddings para RAG.
+    // Acesso exclusivo via Admin SDK para segurança e proteção de contexto.
+    // -------------------------------------------------------------------------
+    match /content_chunks/{chunkId} {
+      allow read, write: if false; // Acesso exclusivo via Admin SDK (Backend)
+    }
+
   }
 }

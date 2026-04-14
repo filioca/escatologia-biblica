@@ -36,81 +36,288 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assignUserRole = exports.apiV1 = void 0;
+exports.apiV1 = void 0;
 const functions = __importStar(require("firebase-functions/v1"));
-const admin = __importStar(require("firebase-admin"));
+const app_1 = require("firebase-admin/app");
+const auth_1 = require("firebase-admin/auth");
+const firestore_1 = require("firebase-admin/firestore");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const genai_1 = require("@google/genai");
-admin.initializeApp();
+const chatPrompt_1 = require("./chatPrompt");
+// ---------------------------------------------------------------------------
+// Configurações Globais
+// ---------------------------------------------------------------------------
+const DATABASE_ID = "apocalipse-biblico";
+const EMBED_MODEL = "gemini-embedding-001";
+const CHAT_MODEL = "gemini-2.5-flash";
+const OUTPUT_DIM = 768;
+// ---------------------------------------------------------------------------
+// Firebase Admin — inicialização idempotente
+// ---------------------------------------------------------------------------
+if ((0, app_1.getApps)().length === 0) {
+    (0, app_1.initializeApp)();
+}
+const db = (0, firestore_1.getFirestore)(DATABASE_ID);
+// ---------------------------------------------------------------------------
+// Constantes de quota
+// ---------------------------------------------------------------------------
+const FREE_QUOTA = 10;
+const SUBSCRIBER_QUOTA = 500;
+// ---------------------------------------------------------------------------
+// Helpers — Autenticação e Quota
+// ---------------------------------------------------------------------------
+async function verifyToken(authHeader) {
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        throw new Error("Token ausente ou malformado.");
+    }
+    const token = authHeader.slice(7);
+    const decoded = await (0, auth_1.getAuth)().verifyIdToken(token);
+    return {
+        uid: decoded.uid,
+        isSubscriber: decoded["subscriber"] === true,
+    };
+}
+function currentMonthKey() {
+    const now = new Date();
+    const year = now.getUTCFullYear();
+    const month = String(now.getUTCMonth() + 1).padStart(2, "0");
+    return `${year}-${month}`;
+}
+async function checkAndIncrementQuota(uid, isSubscriber) {
+    const limit = isSubscriber ? SUBSCRIBER_QUOTA : FREE_QUOTA;
+    const monthKey = currentMonthKey();
+    const now = new Date();
+    const nextMonthDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
+    const resetsAt = nextMonthDate.toISOString().split("T")[0];
+    const docRef = db
+        .collection("users")
+        .doc(uid)
+        .collection("usage")
+        .doc("chat");
+    let used = 0;
+    let allowed = false;
+    await db.runTransaction(async (transaction) => {
+        const snap = await transaction.get(docRef);
+        if (!snap.exists) {
+            transaction.set(docRef, {
+                monthKey,
+                count: 1,
+                updatedAt: firestore_1.Timestamp.now(),
+            });
+            used = 1;
+            allowed = true;
+            return;
+        }
+        const data = snap.data();
+        const storedMonth = data["monthKey"];
+        const currentCount = data["count"];
+        if (storedMonth !== monthKey) {
+            transaction.set(docRef, {
+                monthKey,
+                count: 1,
+                updatedAt: firestore_1.Timestamp.now(),
+            });
+            used = 1;
+            allowed = true;
+            return;
+        }
+        if (currentCount >= limit) {
+            used = currentCount;
+            allowed = false;
+            return;
+        }
+        transaction.update(docRef, {
+            count: firestore_1.FieldValue.increment(1),
+            updatedAt: firestore_1.Timestamp.now(),
+        });
+        used = currentCount + 1;
+        allowed = true;
+    });
+    return { allowed, used, limit, resetsAt };
+}
+async function decrementQuota(uid) {
+    try {
+        const docRef = db
+            .collection("users")
+            .doc(uid)
+            .collection("usage")
+            .doc("chat");
+        await docRef.update({
+            count: firestore_1.FieldValue.increment(-1),
+            updatedAt: firestore_1.Timestamp.now(),
+        });
+    }
+    catch (err) {
+        console.error("[chat] Falha na compensação de quota:", err);
+    }
+}
+// ---------------------------------------------------------------------------
+// Helpers — RAG (Retrieval-Augmented Generation)
+// ---------------------------------------------------------------------------
+/**
+ * Gera o embedding do query usando o padrão GoogleGenAI.
+ */
+async function embedQuery(ai, text) {
+    const result = await ai.models.embedContent({
+        model: EMBED_MODEL,
+        contents: text,
+        config: {
+            taskType: "RETRIEVAL_QUERY",
+            outputDimensionality: OUTPUT_DIM,
+        }
+    });
+    return result.embeddings[0].values;
+}
+/**
+ * Recupera o contexto relevante do Firestore usando busca vetorial.
+ */
+async function retrieveContext(ai, userQuery) {
+    try {
+        const vector = await embedQuery(ai, userQuery);
+        const collectionRef = db.collection("content_chunks");
+        const snapshot = await collectionRef.findNearest({
+            vectorField: "embedding",
+            queryVector: vector,
+            distanceMeasure: "COSINE",
+            limit: 5
+        }).get();
+        if (snapshot.empty)
+            return "";
+        let contextParts = [];
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            const titleStr = data.chunkTitle ? `${data.sectionTitle} - ${data.chunkTitle}` : data.sectionTitle;
+            contextParts.push(`[Seção: ${titleStr}] ${data.text}`);
+        });
+        return contextParts.join("\n\n");
+    }
+    catch (err) {
+        console.error("[RAG] Erro ao recuperar contexto:", err);
+        throw new Error("Falha na recuperação de contexto teológico.");
+    }
+}
+// ---------------------------------------------------------------------------
+// Express App
+// ---------------------------------------------------------------------------
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({ origin: true }));
 app.use(express_1.default.json());
-app.get("/api/health", (req, res) => {
+// GET /api/health
+app.get("/api/health", (_req, res) => {
     res.json({ status: "ok" });
 });
+// POST /api/chat
 app.post("/api/chat", async (req, res) => {
+    // ── 1. Autenticação ──
+    let uid;
+    let isSubscriber;
     try {
-        const ai = new genai_1.GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-        const { message, context } = req.body;
-        const prompt = `Você é um assistente teológico especializado em Escatologia Bíblica. 
-Responda à pergunta do usuário com base no seguinte contexto do material de estudo.
-Seja claro, objetivo e mantenha um tom respeitoso e acadêmico.
-
-Contexto do material:
-${context}
-
-Pergunta do usuário:
-${message}`;
-        const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: prompt,
+        const tokenResult = await verifyToken(req.headers.authorization);
+        uid = tokenResult.uid;
+        isSubscriber = tokenResult.isSubscriber;
+    }
+    catch (err) {
+        console.error("[chat] Falha ao verificar token:", err);
+        res.status(401).json({ error: "unauthorized", message: "Autenticação necessária." });
+        return;
+    }
+    // ── 2. Quota ──
+    let quota;
+    try {
+        quota = await checkAndIncrementQuota(uid, isSubscriber);
+    }
+    catch (err) {
+        console.error("[chat] Falha ao verificar quota:", err);
+        res.status(500).json({ error: "internal_error", message: "Erro ao verificar quota." });
+        return;
+    }
+    if (!quota.allowed) {
+        res.status(429).json({
+            error: "quota_exceeded",
+            message: `Limite de ${quota.limit} mensagens atingido.`,
+            quota: { used: quota.used, limit: quota.limit, resetsAt: quota.resetsAt },
         });
-        res.json({ reply: response.text });
+        return;
     }
-    catch (error) {
-        console.error("Error generating content:", error);
-        res.status(500).json({ error: "Failed to generate response" });
+    // ── 3. Extração e Validação de Mensagens ──
+    const { message, messages } = req.body;
+    const chatHistory = messages || [];
+    let lastUserQuery = "";
+    if (message) {
+        lastUserQuery = message.trim();
     }
-});
-// Usando runWith para acionar o suporte a secrets nativo da v1
-exports.apiV1 = functions.runWith({ secrets: ["GEMINI_API_KEY"] }).https.onRequest(app);
-// ============================================================================
-// Auth & Identity Management
-// ============================================================================
-exports.assignUserRole = functions.https.onCall(async (data, context) => {
-    // Check if user is authenticated
-    if (!context.auth) {
-        throw new functions.https.HttpsError("unauthenticated", "User must be logged in.");
+    else if (chatHistory.length > 0) {
+        for (let i = chatHistory.length - 1; i >= 0; i--) {
+            if (chatHistory[i].role === "user") {
+                lastUserQuery = chatHistory[i].content.trim();
+                break;
+            }
+        }
     }
-    // Enforce caller MUST be an admin
-    // (During bootstrapping, you might manually set the initial admin from the Firebase Console)
-    const isCallerAdmin = context.auth.token.admin === true;
-    if (!isCallerAdmin) {
-        throw new functions.https.HttpsError("permission-denied", "Only admins can assign roles.");
+    if (!lastUserQuery) {
+        await decrementQuota(uid);
+        res.status(400).json({ error: "bad_request", message: "Pergunta do usuário não encontrada." });
+        return;
     }
-    const targetUid = data.uid;
-    const role = data.role; // 'GUEST', 'SUBSCRIBER', 'ADMIN'
-    if (!targetUid || !role) {
-        throw new functions.https.HttpsError("invalid-argument", "Missing target uid or role.");
-    }
-    const validRoles = ["GUEST", "SUBSCRIBER", "ADMIN"];
-    if (!validRoles.includes(role)) {
-        throw new functions.https.HttpsError("invalid-argument", "Role must be GUEST, SUBSCRIBER, or ADMIN.");
-    }
-    // Create progressive claims
-    const customClaims = {
-        guest: role === "GUEST",
-        subscriber: role === "SUBSCRIBER" || role === "ADMIN",
-        admin: role === "ADMIN"
-    };
+    // ── 4. Retrieval (RAG) ──
+    let contextStr = "";
+    const ai = new genai_1.GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     try {
-        await admin.auth().setCustomUserClaims(targetUid, customClaims);
-        return { message: `Successfully assigned role ${role} to user ${targetUid}.` };
+        contextStr = await retrieveContext(ai, lastUserQuery);
     }
-    catch (error) {
-        console.error("Error setting custom claims:", error);
-        throw new functions.https.HttpsError("internal", "Failed to assign role.");
+    catch (err) {
+        console.error("[chat] Erro no RAG:", err);
+        await decrementQuota(uid);
+        res.status(500).json({
+            error: "rag_error",
+            message: "Falha ao buscar contexto teológico. Tente novamente."
+        });
+        return;
+    }
+    // ── 5. Geração de Resposta ──
+    try {
+        const systemInstruction = (0, chatPrompt_1.buildSystemPrompt)(contextStr);
+        const result = await ai.models.generateContent({
+            model: CHAT_MODEL,
+            contents: [
+                { role: "user", parts: [{ text: systemInstruction }] },
+                { role: "model", parts: [{ text: "Compreendido. Sou o assistente da Enciclopédia Escatológica Bíblica e responderei estritamente com base nos fatos e contextos fornecidos." }] },
+                ...chatHistory.map(m => ({
+                    role: m.role === "assistant" ? "model" : "user",
+                    parts: [{ text: m.content }]
+                })),
+                ...(message ? [{ role: "user", parts: [{ text: message }] }] : [])
+            ]
+        });
+        const replyText = result.text ?? "";
+        console.log(`[chat] uid=${uid} quota=${quota.used}/${quota.limit} contextSize=${contextStr.length}`);
+        res.json({
+            reply: replyText,
+            quota: {
+                used: quota.used,
+                limit: quota.limit,
+                resetsAt: quota.resetsAt,
+            },
+        });
+    }
+    catch (err) {
+        console.error("[chat] Falha na geração Gemini:", err);
+        await decrementQuota(uid);
+        res.status(500).json({
+            error: "gemini_error",
+            message: "Falha ao gerar resposta. Sua cota foi preservada.",
+        });
     }
 });
+// ---------------------------------------------------------------------------
+// Export
+// ---------------------------------------------------------------------------
+exports.apiV1 = functions
+    .runWith({
+    secrets: ["GEMINI_API_KEY"],
+    memory: "512MB",
+    timeoutSeconds: 60
+})
+    .https.onRequest(app);
 //# sourceMappingURL=index.js.map

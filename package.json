@@ -11,7 +11,9 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "seed": "tsx scripts/seed-bibliography.ts",
-    "promote": "tsx scripts/promote-subscriber.ts"
+    "promote": "tsx scripts/promote-subscriber.ts",
+    "embed": "tsx scripts/embed-content.ts",
+    "test:retrieval": "tsx scripts/test-retrieval.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
