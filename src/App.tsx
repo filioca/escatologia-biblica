@@ -8,6 +8,7 @@ import { eschatologyData } from './data/content';
 import { TimelineEvent } from './components/Timeline';
 import AIChat from './components/AIChat';
 import { RichText } from './components/RichText';
+import { Bibliography } from './components/Bibliography';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -86,6 +87,7 @@ const navGroups: NavGroup[] = [
     icon: <GitBranch size={15} aria-hidden="true" />,
     items: [
       { id: 'cronologias', label: 'Cronologias' },
+      { id: 'bibliografia', label: 'Bibliografia' },
     ],
   },
 ];
@@ -125,6 +127,21 @@ export default function App() {
   // ─── Render Content ──────────────────────────────────────────────────────────
 
   const renderContent = () => {
+    if (activeSection === 'bibliografia') {
+      return (
+        <motion.div
+          key="bibliografia"
+          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: prefersReducedMotion ? 0 : -20 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.4 }}
+          className="w-full"
+        >
+          <Bibliography />
+        </motion.div>
+      );
+    }
+
     const sectionData = eschatologyData[activeSection as keyof typeof eschatologyData];
     if (!sectionData) return null;
 
