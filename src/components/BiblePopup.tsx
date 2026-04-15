@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Loader2, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -10,7 +10,6 @@ import {
   TRANSLATIONS,
   TRANSLATION_STORAGE_KEY,
   type Translation,
-  type ParsedBibleRef,
 } from '../utils/bibleMapper';
 
 interface ChapterData {
@@ -19,49 +18,37 @@ interface ChapterData {
 }
 
 export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
-  const [isOpen,  setIsOpen]  = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error,   setError]   = useState('');
-  const [mounted, setMounted] = useState(false);
+  const [isOpen,      setIsOpen]      = useState(false);
+  const [loading,     setLoading]     = useState(false);
+  const [error,       setError]       = useState('');
   const [translation, setTranslation] = useState<Translation>(
     () => (localStorage.getItem(TRANSLATION_STORAGE_KEY) as Translation) || 'pt_acf'
   );
   const [chaptersData, setChaptersData] = useState<ChapterData[] | null>(null);
 
-  // Per-component cache: "{translation}:{reference}" → ChapterData[]
-  const cache     = useRef<Map<string, ChapterData[]>>(new Map());
-  const parsedRef = useRef<ParsedBibleRef | null>(parseRef(reference));
-
-  useEffect(() => { setMounted(true); }, []);
+  const parsedRef = useMemo(() => parseRef(reference), [reference]);
 
   const fetchFor = async (trans: Translation) => {
-    const key = `${trans}:${reference}`;
-    const hit  = cache.current.get(key);
-    if (hit) { setChaptersData(hit); return; }
-
-    const parsed = parsedRef.current;
-    if (!parsed) { setError('Referência não reconhecida'); return; }
+    if (!parsedRef) { setError('Referência não reconhecida'); return; }
 
     setLoading(true);
     setError('');
     setChaptersData(null);
 
     try {
-      // Load full Bible JSON (~3-4 MB, cached after first use per translation)
-      const books = await loadBible(trans);
-      const isRange = parsed.chapters.length > 1;
+      const index   = await loadBible(trans);
+      const isRange = parsedRef.chapters.length > 1;
 
-      const results: ChapterData[] = parsed.chapters.map((chapterNum: number) => {
-        const verses = lookupChapter(books, parsed.abbr, chapterNum, trans);
+      const results: ChapterData[] = parsedRef.chapters.map((chapterNum: number) => {
+        const verses = lookupChapter(index, parsedRef.abbr, chapterNum, trans);
         const html   = buildVerseHtml(
           verses,
-          isRange ? undefined : parsed.verseStart,
-          isRange ? undefined : parsed.verseEnd,
+          isRange ? undefined : parsedRef.verseStart,
+          isRange ? undefined : parsedRef.verseEnd,
         );
         return { chapterNum, html };
       });
 
-      cache.current.set(key, results);
       setChaptersData(results);
     } catch {
       setError('Não foi possível carregar a passagem.');
@@ -82,10 +69,9 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
     fetchFor(newTrans);
   };
 
-  const parsed       = parsedRef.current;
   const restPart     = reference.includes(' ') ? reference.slice(reference.indexOf(' ') + 1) : '';
-  const displayTitle = parsed ? `${parsed.bookName} ${restPart}` : reference;
-  const isMulti      = (parsed?.chapters.length ?? 0) > 1;
+  const displayTitle = parsedRef ? `${parsedRef.bookName} ${restPart}` : reference;
+  const isMulti      = (parsedRef?.chapters.length ?? 0) > 1;
 
   return (
     <>
@@ -96,7 +82,7 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
         {reference}
       </button>
 
-      {mounted && createPortal(
+      {createPortal(
         <AnimatePresence>
           {isOpen && (
             <div
@@ -110,7 +96,6 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                 onClick={(e: React.MouseEvent) => e.stopPropagation()}
                 className="bg-surface border border-border rounded-xl shadow-2xl max-w-lg w-full max-h-[80vh] flex flex-col overflow-hidden"
               >
-                {/* ── Header ── */}
                 <div className="px-4 py-3 border-b border-border bg-surface2 flex items-center gap-3 flex-wrap">
                   <div className="flex items-center gap-2 text-gold flex-1 min-w-0">
                     <BookOpen size={18} className="shrink-0" />
@@ -119,7 +104,6 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                     </h3>
                   </div>
 
-                  {/* Translation tabs */}
                   <div className="flex rounded-lg overflow-hidden border border-border shrink-0">
                     {TRANSLATIONS.map(t => (
                       <button
@@ -145,7 +129,6 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                   </button>
                 </div>
 
-                {/* ── Body ── */}
                 <div className="p-6 overflow-y-auto">
                   {loading ? (
                     <div className="flex items-center justify-center py-8 gap-3 text-gold">

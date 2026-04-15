@@ -16,9 +16,9 @@ export const TRANSLATION_STORAGE_KEY = 'bible-translation';
 // ─── Abbreviation maps ────────────────────────────────────────────────────────
 //
 // Portuguese abbreviation → JSON abbreviation used in thiagobodruk/bible files.
-// pt_acf and pt_nvi share the same abbreviations; en_kjv uses a different set.
+// pt_acf and pt_nvi share the same abbreviations; en_kjv overrides ~20 entries.
 
-const ptToPortAbbr: Record<string, string> = {
+const baseAbbr: Record<string, string> = {
   'Gn':'gn',  'Êx':'ex',  'Lv':'lv',  'Nm':'nm',  'Dt':'dt',
   'Js':'js',  'Jz':'jz',  'Rt':'rt',  '1Sm':'1sm','2Sm':'2sm',
   '1Rs':'1rs','2Rs':'2rs','1Cr':'1cr','2Cr':'2cr',
@@ -36,26 +36,18 @@ const ptToPortAbbr: Record<string, string> = {
   '1Jo':'1jo','2Jo':'2jo','3Jo':'3jo','Jd':'jd',  'Ap':'ap',
 };
 
-const ptToKjvAbbr: Record<string, string> = {
-  'Gn':'gn',  'Êx':'ex',  'Lv':'lv',  'Nm':'nm',  'Dt':'dt',
-  'Js':'js',  'Jz':'jud', 'Rt':'rt',  '1Sm':'1sm','2Sm':'2sm',
-  '1Rs':'1kgs','2Rs':'2kgs','1Cr':'1ch','2Cr':'2ch',
-  'Ed':'ezr', 'Ne':'ne',  'Et':'et',  'Jó':'job', 'Sl':'ps',
-  'Pv':'prv', 'Ec':'ec',  'Ct':'so',  'Is':'is',
-  'Jr':'jr',  'Lm':'lm',  'Ez':'ez',  'Dn':'dn',
-  'Os':'ho',  'Jl':'jl',  'Am':'am',  'Ob':'ob',  'Jn':'jn',
-  'Mq':'mi',  'Na':'na',  'Hc':'hk',  'Sf':'zp',  'Ag':'hg',
-  'Zc':'zc',  'Ml':'ml',
-  'Mt':'mt',  'Mc':'mk',  'Lc':'lk',  'Jo':'jo',  'At':'act',
-  'Rm':'rm',  '1Co':'1co','2Co':'2co','Gl':'gl',
-  'Ef':'eph', 'Fp':'ph',  'Cl':'cl',  '1Ts':'1ts',
-  '2Ts':'2ts','1Tm':'1tm','2Tm':'2tm','Tt':'tt',
-  'Fm':'phm', 'Hb':'hb',  'Tg':'jm',  '1Pe':'1pe','2Pe':'2pe',
-  '1Jo':'1jo','2Jo':'2jo','3Jo':'3jo','Jd':'jd',  'Ap':'re',
+const kjvOverrides: Record<string, string> = {
+  'Jz':'jud', '1Rs':'1kgs','2Rs':'2kgs','1Cr':'1ch','2Cr':'2ch',
+  'Ed':'ezr', 'Jó':'job',  'Sl':'ps',   'Pv':'prv', 'Ct':'so',
+  'Os':'ho',  'Mq':'mi',   'Hc':'hk',   'Sf':'zp',  'Ag':'hg',
+  'Mc':'mk',  'Lc':'lk',   'At':'act',  'Ef':'eph', 'Fp':'ph',
+  'Fm':'phm', 'Tg':'jm',   'Ap':'re',
 };
 
+const kjvAbbr: Record<string, string> = { ...baseAbbr, ...kjvOverrides };
+
 function getJsonAbbrev(ptAbbr: string, translation: Translation): string {
-  return (translation === 'en_kjv' ? ptToKjvAbbr : ptToPortAbbr)[ptAbbr] ?? ptAbbr.toLowerCase();
+  return (translation === 'en_kjv' ? kjvAbbr : baseAbbr)[ptAbbr] ?? ptAbbr.toLowerCase();
 }
 
 // ─── Book name map (for display) ──────────────────────────────────────────────
@@ -131,23 +123,38 @@ export function parseRef(ptRef: string): ParsedBibleRef | null {
 // ─── Bible data loading (lazy, cached) ───────────────────────────────────────
 
 interface BibleBook { abbrev: string; chapters: string[][] }
+type BookIndex = Map<string, string[][]>; // abbrev → chapters array
 
-const bibleCache = new Map<Translation, BibleBook[]>();
+const bibleCache  = new Map<Translation, BookIndex>();
+// Prevents duplicate in-flight fetches for the same translation
+const pendingFetch = new Map<Translation, Promise<BookIndex>>();
 
 const GITHUB_BASE = 'https://raw.githubusercontent.com/thiagobodruk/bible/master/json';
 
-/**
- * Loads the full Bible JSON for a translation (~3-4 MB).
- * Result is cached in memory; subsequent calls are instant.
- */
-export async function loadBible(translation: Translation): Promise<BibleBook[]> {
-  const cached = bibleCache.get(translation);
-  if (cached) return cached;
+async function fetchBible(translation: Translation): Promise<BookIndex> {
   const res = await fetch(`${GITHUB_BASE}/${translation}.json`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data: BibleBook[] = await res.json();
-  bibleCache.set(translation, data);
-  return data;
+  const index: BookIndex = new Map(data.map(b => [b.abbrev, b.chapters]));
+  bibleCache.set(translation, index);
+  pendingFetch.delete(translation);
+  return index;
+}
+
+/**
+ * Loads the full Bible JSON for a translation (~3-4 MB).
+ * Result is cached in memory; concurrent calls share a single in-flight fetch.
+ */
+export async function loadBible(translation: Translation): Promise<BookIndex> {
+  const cached = bibleCache.get(translation);
+  if (cached) return cached;
+
+  const pending = pendingFetch.get(translation);
+  if (pending) return pending;
+
+  const promise = fetchBible(translation);
+  pendingFetch.set(translation, promise);
+  return promise;
 }
 
 /**
@@ -155,14 +162,13 @@ export async function loadBible(translation: Translation): Promise<BibleBook[]> 
  * The returned array is 0-indexed: index 0 = verse 1.
  */
 export function lookupChapter(
-  books: BibleBook[],
+  index: BookIndex,
   ptAbbr: string,
   chapter: number,
   translation: Translation,
 ): string[] {
   const jsonAbbrev = getJsonAbbrev(ptAbbr, translation);
-  const book = books.find(b => b.abbrev === jsonAbbrev);
-  return book?.chapters[chapter - 1] ?? [];
+  return index.get(jsonAbbrev)?.[chapter - 1] ?? [];
 }
 
 // ─── HTML builder ─────────────────────────────────────────────────────────────
@@ -179,17 +185,10 @@ export function buildVerseHtml(
   verseEnd?: number,
 ): string {
   return verses
-    .map((text, i) => ({ verse: i + 1, text }))
-    .filter(v => verseStart === undefined || (v.verse >= verseStart && v.verse <= (verseEnd ?? verseStart)))
-    .map(v => `<sup style="${SUP}">${v.verse}</sup>${v.text.trim()}`)
+    .flatMap((text, i) => {
+      const verse = i + 1;
+      if (verseStart !== undefined && (verse < verseStart || verse > (verseEnd ?? verseStart))) return [];
+      return [`<sup style="${SUP}">${verse}</sup>${text.trim()}`];
+    })
     .join(' ');
-}
-
-// ─── Legacy export ────────────────────────────────────────────────────────────
-
-/** @deprecated */
-export function parseBibleRef(ptRef: string): string {
-  const p = parseRef(ptRef);
-  if (!p) return ptRef;
-  return `${p.bookName} ${p.chapters[0]}${p.verseStart ? ':' + p.verseStart : ''}`;
 }
