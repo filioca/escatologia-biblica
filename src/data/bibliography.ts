@@ -60,6 +60,7 @@ export const categories: BibCategory[] = [
         level: 'avançado',
         review:
           'Cunhou a metáfora do "Dia D e Dia da Vitória" para expressar a tensão entre a vitória decisiva de Cristo na cruz/ressurreição e a consumação futura. Obra fundacional para todos os tratamentos posteriores da escatologia inaugurada, incluindo Ladd e Ridderbos. A tradução brasileira mais recente é de Daniel Costa (2ª ed. 2020); há edição anterior pela Editora Custom (2003).',
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/christtimeprimit0000cull' }],
         citedInEventIds: ['ev-jaEAindaNao', 'ev-doisEons'],
         recommendedFor: ['jaEAindaNao'],
       },
@@ -76,7 +77,6 @@ export const categories: BibCategory[] = [
           'Tratamento exaustivo da pregação do Reino nos Evangelhos Sinóticos a partir da tradição reformada holandesa. Complementa Vos e Ladd com rigor exegético acentuado e análise minuciosa das parábolas e do Sermão do Monte. Obra de referência para a categoria "Reino de Deus" em chave neocalvinista; sem tradução brasileira conhecida.',
         onlineLinks: [
           { label: 'Archive.org', url: 'https://archive.org/details/comingofkingdom0000herm' },
-          { label: 'Paideia Press (PDF)', url: 'https://www.feedingonchrist.com/blog/post/free-pdfs-paideia-press-2' },
         ],
         recommendedFor: ['jaEAindaNao', 'visaoGeral'],
       },
@@ -97,6 +97,7 @@ export const categories: BibCategory[] = [
         level: 'intermediário',
         review:
           'Obra magna da escatologia amilenarista reformada do séc. XX. Hoekema estrutura toda a discussão na dicotomia escatologia inaugurada / escatologia futura, dedicando a primeira parte à presença do Reino e do Espírito e a segunda à morte, ressurreição, juízo e nova terra. Primeira tradução brasileira pela Casa Editora Presbiteriana (1989, tradutor Karl H. Kepler); 3ª edição pela Cultura Cristã (2012).',
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/biblefuture0000hoek' }],
         recommendedFor: ['visaoGeral', 'jaEAindaNao', 'sistemas', 'estadoIntermediario'],
       },
       {
@@ -111,6 +112,7 @@ export const categories: BibCategory[] = [
         level: 'avançado',
         review:
           'Desenvolvimento da tese vossiana aplicada à soteriologia paulina: a ressurreição de Cristo é o evento escatológico central, e a salvação do crente se estrutura em união com esse evento. Ponte essencial entre a teologia bíblica do "já e ainda não" e a ordem da salvação (ordo salutis) da tradição reformada. Sem tradução brasileira confirmada.',
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/resurrectionrede00gaff' }],
         recommendedFor: ['jaEAindaNao'],
       },
     ],
@@ -165,6 +167,7 @@ export const categories: BibCategory[] = [
         level: "avançado",
         review:
           "A obra mais completa de escatologia sistemática reformada amilenarista disponível em pt-BR. Venema (PhD, Princeton Theological Seminary) cobre estado intermediário, milênio (Ap 20), segunda vinda, ressurreição, julgamento, estado eterno e destino dos ímpios, sempre em diálogo com as confissões reformadas. Ao contrário de Riddlebarger e Storms, Venema adota tom mais enciclopédico que polêmico, o que o torna ideal como texto-base para seminários. Sinclair Ferguson o apresentou como a introdução mais completa à escatologia bíblica disponível.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/promiseoffuture0000vene' }],
       },
       {
         id: "mathison-postmillennialism",
@@ -191,6 +194,7 @@ export const categories: BibCategory[] = [
         level: "acadêmico",
         review:
           "Texto canônico do dispensacionalismo clássico, escrito por John Walvoord durante sua presidência do Dallas Theological Seminary. Examina as três posições em seus contextos histórico-teológicos, mas dedica o corpo principal à defesa do pré-milenarismo dispensacional a partir das profecias. A ênfase no literalismo hermenêutico — Israel e Igreja como entidades distintas com promessas distintas — é o ponto de maior contraste com Riddlebarger, Storms e Venema.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/millennialkingdo0000walv' }],
       },
       {
         id: "blaising-bock-progressive-dispensationalism",
@@ -204,6 +208,7 @@ export const categories: BibCategory[] = [
         level: "avançado",
         review:
           "Marco no desenvolvimento interno do dispensacionalismo. Rejeita o dualismo absoluto Israel/Igreja do dispensacionalismo clássico em favor de uma unidade progressiva do plano redentor. A obra é dividida em história, hermenêutica, exposição e implicações eclesiológicas. Gerry Breshears descreveu-a como 'marco para discussões futuras'. Lida em conjunto com Walvoord, permite ao leitor rastrear a evolução interna do dispensacionalismo do séc. XX ao XXI.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/progressivedispe0000blai' }],
       },
       {
         id: "bock-ed-three-views-millennium",
@@ -217,6 +222,7 @@ export const categories: BibCategory[] = [
         level: "introdutório",
         review:
           "Volume da série Counterpoints que apresenta, critica e responde às três posições milenaristas centrais: pré-milenarismo dispensacional progressivo (Craig Blaising), pós-milenarismo reconstrucionista (Kenneth Gentry Jr.) e amilenarismo (Robert Strimple). Darrell Bock fornece o panorama introdutório e o ensaio de síntese. É a obra mais indicada como primeiro passo para leitores que desejam entender por que essas posições divergem antes de aprofundar-se.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/threeviewsonmill0000unse' }],
       },
     ],
   },
@@ -242,7 +248,8 @@ export const categories: BibCategory[] = [
           isbn: "978-85-8038-052-1"
         },
         level: "acadêmico",
-        review: "Obra seminal de Ladd (PhD, Harvard; professor de NT no Fuller Theological Seminary) que lançou o debate moderno sobre o arrebatamento. A tese central é que a 'esperança abençoada' do NT é a Parusia de Cristo, não um arrebatamento pré-tribulacionista. Em 167 páginas densas, Ladd rastreia a história do pré-tribucionismo (originado nos Plymouth Brethren do séc. XIX, não na patrística), examina as passagens de 1Ts 4, Mt 24 e Ap, e argumenta que o pós-tribucionismo é a posição natural da exegese. O livro desafiou o consenso dispensacional de sua geração e foi o ponto de partida necessário para Walvoord (*The Rapture Question*), para Gundry (*The Church and the Tribulation*) e para o debate contemporâneo reunido no volume *Three Views on the Rapture* (Hultberg)."
+        review: "Obra seminal de Ladd (PhD, Harvard; professor de NT no Fuller Theological Seminary) que lançou o debate moderno sobre o arrebatamento. A tese central é que a 'esperança abençoada' do NT é a Parusia de Cristo, não um arrebatamento pré-tribulacionista. Em 167 páginas densas, Ladd rastreia a história do pré-tribucionismo (originado nos Plymouth Brethren do séc. XIX, não na patrística), examina as passagens de 1Ts 4, Mt 24 e Ap, e argumenta que o pós-tribucionismo é a posição natural da exegese. O livro desafiou o consenso dispensacional de sua geração e foi o ponto de partida necessário para Walvoord (*The Rapture Question*), para Gundry (*The Church and the Tribulation*) e para o debate contemporâneo reunido no volume *Three Views on the Rapture* (Hultberg).",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/blessedhopebibl00ladd' }]
       },
       {
         id: "walvoord-rapture-question",
@@ -253,7 +260,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-310-34151-2",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Resposta direta de Walvoord (ThD, Dallas Theological Seminary) ao pós-tribucionismo de Ladd e Alexander Reese. A edição revista de 1979 examina as quatro posições sobre o arrebatamento da Igreja (arrebatamento parcial, pré-, meso- e pós-tribucionismo) e adiciona tratamentos exegéticos de 1Ts 4–5, 2Ts, 1Co 15 e Ap. A estratégia central de Walvoord é mostrar que a imobilidade do arrebatamento pré-tribulacionista decorre da distinção dispensacional entre Israel e Igreja — quem dissolve essa distinção não tem razão exegética para separar os dois eventos. Lido em par com Ladd, constitui o eixo do debate pré- vs. pós-tribucionismo do séc. XX e é a referência canônica da posição pré-trib."
+        review: "Resposta direta de Walvoord (ThD, Dallas Theological Seminary) ao pós-tribucionismo de Ladd e Alexander Reese. A edição revista de 1979 examina as quatro posições sobre o arrebatamento da Igreja (arrebatamento parcial, pré-, meso- e pós-tribucionismo) e adiciona tratamentos exegéticos de 1Ts 4–5, 2Ts, 1Co 15 e Ap. A estratégia central de Walvoord é mostrar que a imobilidade do arrebatamento pré-tribulacionista decorre da distinção dispensacional entre Israel e Igreja — quem dissolve essa distinção não tem razão exegética para separar os dois eventos. Lido em par com Ladd, constitui o eixo do debate pré- vs. pós-tribucionismo do séc. XX e é a referência canônica da posição pré-trib.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/rapturequestion0000john' }]
       },
       {
         id: "gundry-church-tribulation",
@@ -265,7 +273,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-310-25401-0",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Gundry (PhD, Manchester; professor emérito do Westmont College) oferece o tratamento acadêmico mais rigoroso do pós-tribucionismo da segunda metade do séc. XX. Ao contrário de Ladd, que escreveu para o público amplo, Gundry apresenta uma análise exegética densa — imobilidade/iminência, a ira divina e a proteção da Igreja, o Discurso do Monte das Oliveiras, e os pontos críticos do Apocalipse (Ap 4–19, a colheita de Ap 14, a ceia das bodas em Ap 19). Sua crítica à distinção Israel/Igreja e ao argumento da imobilidade do arrebatamento pré-trib é considerada a mais substancial da literatura pós-trib."
+        review: "Gundry (PhD, Manchester; professor emérito do Westmont College) oferece o tratamento acadêmico mais rigoroso do pós-tribucionismo da segunda metade do séc. XX. Ao contrário de Ladd, que escreveu para o público amplo, Gundry apresenta uma análise exegética densa — imobilidade/iminência, a ira divina e a proteção da Igreja, o Discurso do Monte das Oliveiras, e os pontos críticos do Apocalipse (Ap 4–19, a colheita de Ap 14, a ceia das bodas em Ap 19). Sua crítica à distinção Israel/Igreja e ao argumento da imobilidade do arrebatamento pré-trib é considerada a mais substancial da literatura pós-trib.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/churchtribulatio0000gund' }]
       },
       {
         id: "rosenthal-prewrath-rapture",
@@ -276,7 +285,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8407-3160-9",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Rosenthal, ex-diretor da Friends of Israel Gospel Ministry e pré-tribucionista por 30 anos, apresentou nesta obra a posição pré-ira (pre-wrath) — distinção entre a 'Grande Tribulação' (Mt 24.21, perseguição satânica) e a 'ira de Deus' (o Dia do Senhor), com o arrebatamento ocorrendo entre os dois eventos, após a abertura do 6.º selo mas antes das 7 trombetas. A obra inclui 25 gráficos e recebeu acolhida mista: foi amplamente criticada por pré-tribucionistas (resposta de Thomas Ice) mas gerou uma corrente própria com representantes acadêmicos como Alan Hultberg. É a referência primária para compreender a posição pré-ira."
+        review: "Rosenthal, ex-diretor da Friends of Israel Gospel Ministry e pré-tribucionista por 30 anos, apresentou nesta obra a posição pré-ira (pre-wrath) — distinção entre a 'Grande Tribulação' (Mt 24.21, perseguição satânica) e a 'ira de Deus' (o Dia do Senhor), com o arrebatamento ocorrendo entre os dois eventos, após a abertura do 6.º selo mas antes das 7 trombetas. A obra inclui 25 gráficos e recebeu acolhida mista: foi amplamente criticada por pré-tribucionistas (resposta de Thomas Ice) mas gerou uma corrente própria com representantes acadêmicos como Alan Hultberg. É a referência primária para compreender a posição pré-ira.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/prewrathraptureo00rose' }]
       },
       {
         id: "hultberg-ed-three-views-rapture",
@@ -321,7 +331,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-2174-4",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "O comentário técnico mais abrangente e influente sobre o Apocalipse na erudição evangélica contemporânea. Beale (PhD, Cambridge; Westminster Theological Seminary) dedica sua introdução de 178 páginas a gênero, estrutura, datação, uso do AT e posição hermenêutica — idealismo com elementos futuristas ('já e ainda não'). O coração metodológico de Beale é intertextual: cada imagem joanina é rastreada a seus antecedentes veterotestamentários (Daniel, Ezequiel, Isaías, Êxodo, Salmos) através da tradição exegética judaica, mostrando que o chave para o Apocalipse é o AT, não eventos históricos do séc. XX. Richard Bauckham (nesta categoria) o descreveu como 'uma conquista magnífica'; D.A. Carson recomendou-o como o comentário que 'melhor combina abrangência, fidelidade bíblica e reflexão teológica'. Obra de referência insubstituível."
+        review: "O comentário técnico mais abrangente e influente sobre o Apocalipse na erudição evangélica contemporânea. Beale (PhD, Cambridge; Westminster Theological Seminary) dedica sua introdução de 178 páginas a gênero, estrutura, datação, uso do AT e posição hermenêutica — idealismo com elementos futuristas ('já e ainda não'). O coração metodológico de Beale é intertextual: cada imagem joanina é rastreada a seus antecedentes veterotestamentários (Daniel, Ezequiel, Isaías, Êxodo, Salmos) através da tradição exegética judaica, mostrando que o chave para o Apocalipse é o AT, não eventos históricos do séc. XX. Richard Bauckham (nesta categoria) o descreveu como 'uma conquista magnífica'; D.A. Carson recomendou-o como o comentário que 'melhor combina abrangência, fidelidade bíblica e reflexão teológica'. Obra de referência insubstituível.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/bookofrevelation0000beal' }]
       },
       {
         id: "bauckham-theology-revelation",
@@ -333,7 +344,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-521-35691-6",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Em apenas 169 páginas, Bauckham (PhD, Cambridge; Ridley Hall, Cambridge) oferece a melhor introdução teológica ao Apocalipse independente de posição sistemática. O argumento central: Apocalipse não é cifra de eventos futuros mas visão teocêntrica — Deus e o Cordeiro no trono — contextualizada na Roma imperial e seus cultos. Bauckham analisa a estrutura literária (cartas + selos + trombetas + taças), o simbolismo numérico, a teologia da testemunha (*martyria*) como método de conquista, e o universalismo missionário (as nações convocadas para o reino). Embora Bauckham não seja primariamente um debatedor de sistemas escatológicos, sua leitura contextual é a mais citada em obras de hermenêutica apocalíptica. Livro de entrada ideal antes de Beale ou Osborne."
+        review: "Em apenas 169 páginas, Bauckham (PhD, Cambridge; Ridley Hall, Cambridge) oferece a melhor introdução teológica ao Apocalipse independente de posição sistemática. O argumento central: Apocalipse não é cifra de eventos futuros mas visão teocêntrica — Deus e o Cordeiro no trono — contextualizada na Roma imperial e seus cultos. Bauckham analisa a estrutura literária (cartas + selos + trombetas + taças), o simbolismo numérico, a teologia da testemunha (*martyria*) como método de conquista, e o universalismo missionário (as nações convocadas para o reino). Embora Bauckham não seja primariamente um debatedor de sistemas escatológicos, sua leitura contextual é a mais citada em obras de hermenêutica apocalíptica. Livro de entrada ideal antes de Beale ou Osborne.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/theologyofbookof0000bauc' }]
       },
       {
         id: "osborne-revelation-becnt",
@@ -362,7 +374,8 @@ export const categories: BibCategory[] = [
           isbn: "978-85-7622-530-0"
         },
         level: "intermediário",
-        review: "Sproul (PhD, Vrije Universiteit Amsterdam; fundador da Ligonier Ministries) apresenta o preterismo parcial de forma acessível — distinção fundamental para quem aborda o Apocalipse e Mt 24: a iminência dos eventos (Mc 13.30: 'esta geração') é cumprida em 70 d.C. (destruição de Jerusalém por Tito), mas o retorno final de Cristo permanece futuro. Sproul refuta a tese de que Jesus teria sido um 'profeta falso' (David Strauss, Bertrand Russell) ao mostrar que seus oráculos de julgamento foram literalmente cumpridos no prazo anunciado. O livro cobre o Discurso do Monte das Oliveiras em Mateus, Marcos e Lucas, as epístolas paulinas ('últimos dias' como referência ao séc. I), e o papel de João e Ap. Indicado por Kenneth Gentry Jr. como 'exegese cuidadosa e direta'. Disponível em pt-BR pela Cultura Cristã."
+        review: "Sproul (PhD, Vrije Universiteit Amsterdam; fundador da Ligonier Ministries) apresenta o preterismo parcial de forma acessível — distinção fundamental para quem aborda o Apocalipse e Mt 24: a iminência dos eventos (Mc 13.30: 'esta geração') é cumprida em 70 d.C. (destruição de Jerusalém por Tito), mas o retorno final de Cristo permanece futuro. Sproul refuta a tese de que Jesus teria sido um 'profeta falso' (David Strauss, Bertrand Russell) ao mostrar que seus oráculos de julgamento foram literalmente cumpridos no prazo anunciado. O livro cobre o Discurso do Monte das Oliveiras em Mateus, Marcos e Lucas, as epístolas paulinas ('últimos dias' como referência ao séc. I), e o papel de João e Ap. Indicado por Kenneth Gentry Jr. como 'exegese cuidadosa e direta'. Disponível em pt-BR pela Cultura Cristã.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/lastdaysaccordin0000spro' }]
       }
     ]
   },
@@ -380,7 +393,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8755-2418-4",
         originalLanguage: "en",
         level: "avançado",
-        review: "Obra canônica da teologia do pacto reformada contemporânea. Robertson (ThD, Union Theological Seminary) define o pacto bíblico como 'um vínculo de sangue soberanamente administrado' e percorre todos os pactos principais — criação, Noé, Abraão, Moisés, Davi e a Nova Aliança — mostrando sua progressão unitária em direção a Cristo. O excursus comparativo entre a teologia do pacto e o dispensacionalismo (cap. 4) é o trecho mais citado no debate. Derek Kidner elogiou sua clareza e equilíbrio; R. O. Zorn (Vox Reformata) indicou-o como referência para compreender o pacto como eixo da mensagem bíblica. Lido antes de Robertson, o leitor terá o andaime conceitual para avaliar qualquer debate subsequente sobre continuidade/descontinuidade AT–NT."
+        review: "Obra canônica da teologia do pacto reformada contemporânea. Robertson (ThD, Union Theological Seminary) define o pacto bíblico como 'um vínculo de sangue soberanamente administrado' e percorre todos os pactos principais — criação, Noé, Abraão, Moisés, Davi e a Nova Aliança — mostrando sua progressão unitária em direção a Cristo. O excursus comparativo entre a teologia do pacto e o dispensacionalismo (cap. 4) é o trecho mais citado no debate. Derek Kidner elogiou sua clareza e equilíbrio; R. O. Zorn (Vox Reformata) indicou-o como referência para compreender o pacto como eixo da mensagem bíblica. Lido antes de Robertson, o leitor terá o andaime conceitual para avaliar qualquer debate subsequente sobre continuidade/descontinuidade AT–NT.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/christofcovenant0000robe' }]
       },
       {
         id: "ryrie-dispensationalism",
@@ -391,7 +405,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8024-2187-6",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Ryrie (ThD, Dallas Theological Seminary; PhD, University of Edinburgh) escreveu o único apologético de fôlego para o dispensacionalismo clássico produzido por um erudito de primeiro nível. A obra define os 'três elementos essenciais' do dispensacionalismo (distinção Israel/Igreja, hermenêutica consistentemente literal, glória de Deus como telos único da história), contesta a teologia do pacto e o pré-milenarismo histórico, e na edição de 1995 acrescenta capítulo respondendo ao dispensacionalismo progressivo de Blaising e Bock (Cat. 2). Ryrie admite honestamente que 'nenhuma passagem ensina explicitamente o arrebatamento pré-tribulacionista' — afirmação que tornou o livro referência tanto para defensores como para críticos do sistema."
+        review: "Ryrie (ThD, Dallas Theological Seminary; PhD, University of Edinburgh) escreveu o único apologético de fôlego para o dispensacionalismo clássico produzido por um erudito de primeiro nível. A obra define os 'três elementos essenciais' do dispensacionalismo (distinção Israel/Igreja, hermenêutica consistentemente literal, glória de Deus como telos único da história), contesta a teologia do pacto e o pré-milenarismo histórico, e na edição de 1995 acrescenta capítulo respondendo ao dispensacionalismo progressivo de Blaising e Bock (Cat. 2). Ryrie admite honestamente que 'nenhuma passagem ensina explicitamente o arrebatamento pré-tribulacionista' — afirmação que tornou o livro referência tanto para defensores como para críticos do sistema.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/dispensationalis0000ryri' }]
       },
       {
         id: "gentry-wellum-kingdom-through-covenant",
@@ -461,7 +476,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-4600-6",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Cooper (PhD, Calvin Theological Seminary; professor de teologia filosófica no Calvin) oferece a defesa acadêmica mais rigorosa do 'dualismo holístico' — posição que afirma a distinção ontológica alma/corpo sem cair no dualismo cartesiano platônico. O argumento central: a doutrina bíblica do estado intermediário (a existência consciente 'com Cristo' entre a morte individual e a ressurreição geral) *pressupõe* algum tipo de dualismo; qualquer monismo consistente é forçado a adotar ressurreição imediata, sono da alma ou extinção/recriação. Cooper examina AT, literatura intertestamentária, Evangelhos, Paulinas e Não-Paulinas, respondendo a seis objeções filosóficas e teológicas. Leitura técnica indispensável antes de Fudge e Morgan/Peterson (nesta categoria)."
+        review: "Cooper (PhD, Calvin Theological Seminary; professor de teologia filosófica no Calvin) oferece a defesa acadêmica mais rigorosa do 'dualismo holístico' — posição que afirma a distinção ontológica alma/corpo sem cair no dualismo cartesiano platônico. O argumento central: a doutrina bíblica do estado intermediário (a existência consciente 'com Cristo' entre a morte individual e a ressurreição geral) *pressupõe* algum tipo de dualismo; qualquer monismo consistente é forçado a adotar ressurreição imediata, sono da alma ou extinção/recriação. Cooper examina AT, literatura intertestamentária, Evangelhos, Paulinas e Não-Paulinas, respondendo a seis objeções filosóficas e teológicas. Leitura técnica indispensável antes de Fudge e Morgan/Peterson (nesta categoria).",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/bodysoullifeever0000coop' }]
       },
       {
         id: "wright-surprised-by-hope",
@@ -479,7 +495,8 @@ export const categories: BibCategory[] = [
           isbn: "978-85-7779-034-0"
         },
         level: "intermediário",
-        review: "Wright (PhD, Oxford; Bispo de Durham) desafia a confusão popular sobre a esperança cristã: a meta não é 'ir para o céu' mas a ressurreição corporal e a nova criação. Em duas partes, Wright apresenta a evidência histórica para a ressurreição de Jesus e extrai dela as implicações escatológicas — estado intermediário como 'estar com Cristo' (Fp 1.23), segunda vinda como Parusia que transformará a criação, ressurreição final como consumação. A crítica ao dispensacionalismo (1Ts 4 como acolhida imperial, não fuga) e à espiritualidade escapista é frontal. Premiado pela Christianity Today (Prêmio de Mérito em Teologia e Ética, 2009). Disponível em pt-BR pela Editora Ultimato."
+        review: "Wright (PhD, Oxford; Bispo de Durham) desafia a confusão popular sobre a esperança cristã: a meta não é 'ir para o céu' mas a ressurreição corporal e a nova criação. Em duas partes, Wright apresenta a evidência histórica para a ressurreição de Jesus e extrai dela as implicações escatológicas — estado intermediário como 'estar com Cristo' (Fp 1.23), segunda vinda como Parusia que transformará a criação, ressurreição final como consumação. A crítica ao dispensacionalismo (1Ts 4 como acolhida imperial, não fuga) e à espiritualidade escapista é frontal. Premiado pela Christianity Today (Prêmio de Mérito em Teologia e Ética, 2009). Disponível em pt-BR pela Editora Ultimato.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/surprisedbyhoper0000wrig' }]
       },
       {
         id: "fudge-fire-that-consumes",
@@ -491,7 +508,8 @@ export const categories: BibCategory[] = [
         isbn: "978-1-608999-30-9",
         originalLanguage: "en",
         level: "avançado",
-        review: "A obra canônica do aniquilacionismo evangélico. Fudge (mestre em línguas bíblicas, Abilene Christian University; advogado) percorre toda a Escritura — AT, literatura intertestamentária, Evangelhos, Paulinas, Hebreus, Apocalipse — e conclui que o castigo final dos ímpios é extinção definitiva (annihilation), não tormento eterno consciente. A 3.ª edição (2011) responde a 17 autores tradicionalistas e incorpora três décadas de debate. Richard Bauckham o recomendou como 'referência padrão'; a Christianity Today o elegeu um dos quatro livros mais importantes do debate. Lido em confronto com Morgan & Peterson (nesta categoria), permite ao leitor avaliar as duas posições com textos primários de cada lado."
+        review: "A obra canônica do aniquilacionismo evangélico. Fudge (mestre em línguas bíblicas, Abilene Christian University; advogado) percorre toda a Escritura — AT, literatura intertestamentária, Evangelhos, Paulinas, Hebreus, Apocalipse — e conclui que o castigo final dos ímpios é extinção definitiva (annihilation), não tormento eterno consciente. A 3.ª edição (2011) responde a 17 autores tradicionalistas e incorpora três décadas de debate. Richard Bauckham o recomendou como 'referência padrão'; a Christianity Today o elegeu um dos quatro livros mais importantes do debate. Lido em confronto com Morgan & Peterson (nesta categoria), permite ao leitor avaliar as duas posições com textos primários de cada lado.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/firethatconsumes00fudg' }]
       },
       {
         id: "morgan-peterson-eds-hell-under-fire",
@@ -523,7 +541,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-7279-1",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Collins (Yale Divinity School; ex-presidente da Society of Biblical Literature) publicou a primeira edição desta obra em 1984, e ela rapidamente se tornou o texto padrão do campo. A 3.ª edição (2016) atualiza bibliografias (+21 páginas), revisita Qumran à luz de novas publicações dos Manuscritos do Mar Morto e incorpora os debates do Enoch Seminar. Collins percorre a literatura proto-apocalíptica do AT, os livros de 1 Enoque, Daniel, os Oráculos Sibilinos, os Testamentos, as Similitudes, 4 Esdras, 2 Baruque e o Apocalipse de Abraão, e conclui com o apocaliptismo no início do Cristianismo. A definição de Collins de 'apocalipse' como gênero literário (*Semeia* 14, 1979) estruturou três décadas de pesquisa. John S. Kloppenborg (Toronto) descreveu-a como 'o mapa mais confiável do terreno complexo e variado da literatura do Judaísmo do Segundo Templo'."
+        review: "Collins (Yale Divinity School; ex-presidente da Society of Biblical Literature) publicou a primeira edição desta obra em 1984, e ela rapidamente se tornou o texto padrão do campo. A 3.ª edição (2016) atualiza bibliografias (+21 páginas), revisita Qumran à luz de novas publicações dos Manuscritos do Mar Morto e incorpora os debates do Enoch Seminar. Collins percorre a literatura proto-apocalíptica do AT, os livros de 1 Enoque, Daniel, os Oráculos Sibilinos, os Testamentos, as Similitudes, 4 Esdras, 2 Baruque e o Apocalipse de Abraão, e conclui com o apocaliptismo no início do Cristianismo. A definição de Collins de 'apocalipse' como gênero literário (*Semeia* 14, 1979) estruturou três décadas de pesquisa. John S. Kloppenborg (Toronto) descreveu-a como 'o mapa mais confiável do terreno complexo e variado da literatura do Judaísmo do Segundo Templo'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/apocalypticimagi0000coll_c8d2' }]
       },
       {
         id: "nickelsburg-jewish-literature",
@@ -535,7 +554,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-9915-4",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Nickelsburg (emérito, University of Iowa) publica desde 1981 o texto-base para o estudo da literatura judaica intertestamentária. A 2.ª edição (2005) expande substancialmente o tratamento dos Manuscritos do Mar Morto e atualiza bibliografias. A organização é histórica: a cada período (diáspora, Alexandre, crise macabeiana, Hasmoneus, Qumran, Egito, período romano, destruição e reconstrução) correspondem os textos literários que podem ser datados nele. O livro cobre Apócrifos (1 Macabeus, Sabedoria de Ben Sira), Pseudepigrafia (1 Enoque, Jubileus, Testamentos dos Doze Patriarcas, 4 Esdras, 2 Baruque), Manuscritos do Mar Morto, Filo e Josefo. John J. Collins o descreveu como o guia mais criterioso e equilibrado do campo."
+        review: "Nickelsburg (emérito, University of Iowa) publica desde 1981 o texto-base para o estudo da literatura judaica intertestamentária. A 2.ª edição (2005) expande substancialmente o tratamento dos Manuscritos do Mar Morto e atualiza bibliografias. A organização é histórica: a cada período (diáspora, Alexandre, crise macabeiana, Hasmoneus, Qumran, Egito, período romano, destruição e reconstrução) correspondem os textos literários que podem ser datados nele. O livro cobre Apócrifos (1 Macabeus, Sabedoria de Ben Sira), Pseudepigrafia (1 Enoque, Jubileus, Testamentos dos Doze Patriarcas, 4 Esdras, 2 Baruque), Manuscritos do Mar Morto, Filo e Josefo. John J. Collins o descreveu como o guia mais criterioso e equilibrado do campo.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/jewishliterature0000nick_v2g9' }]
       },
       {
         id: "wright-nt-people-of-god",
@@ -547,7 +567,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-2681-5",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Primeiro volume da série monumental de Wright sobre origens cristãs. A parte central do livro (caps. 7–10) é o mapa mais acessível e influente da 'visão de mundo' do judaísmo do Segundo Templo para leitores do NT: a narrativa de Israel (criação → queda → Torá → exílio → retorno esperado), os símbolos (Templo, Torá, terra, identidade racial), as práticas e as esperanças escatológicas (Dia do Senhor, Messias, ressurreição, restauração de Israel). Wright argumenta que Jesus e Paulo operaram *dentro* dessa estrutura e a ressignificaram em torno da Parusia e da ressurreição. A abordagem de 'realismo crítico' torna o livro leitura obrigatória antes de qualquer estudo de teologia paulina ou cristologia. John S. Kloppenborg chamou-o de 'extraordinariamente acessível para estudantes, e provocativo para acadêmicos'."
+        review: "Primeiro volume da série monumental de Wright sobre origens cristãs. A parte central do livro (caps. 7–10) é o mapa mais acessível e influente da 'visão de mundo' do judaísmo do Segundo Templo para leitores do NT: a narrativa de Israel (criação → queda → Torá → exílio → retorno esperado), os símbolos (Templo, Torá, terra, identidade racial), as práticas e as esperanças escatológicas (Dia do Senhor, Messias, ressurreição, restauração de Israel). Wright argumenta que Jesus e Paulo operaram *dentro* dessa estrutura e a ressignificaram em torno da Parusia e da ressurreição. A abordagem de 'realismo crítico' torna o livro leitura obrigatória antes de qualquer estudo de teologia paulina ou cristologia. John S. Kloppenborg chamou-o de 'extraordinariamente acessível para estudantes, e provocativo para acadêmicos'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/newtestamentpeop00wrig' }]
       },
       {
         id: "sanders-judaism-practice-belief",
@@ -559,7 +580,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-334-02470-5",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Obra-irmã do seminal *Paul and Palestinian Judaism* (1977), considerada o estudo mais abrangente do judaísmo do Segundo Templo na era do NT. Sanders (Duke University) desafia a imagem de um judaísmo dominado pelos fariseus e pelo legalismo, mostrando que o que unia a maioria dos judeus era o 'judaísmo comum' — adesão ao Templo, Torá, práticas de pureza, sábado, festas e as esperanças escatológicas que sustentavam a identidade coletiva. O livro cobre: funcionamento diário do Templo, sacerdotes e levitas, purity system, sacrifícios, dízimos, sábado, festas anuais, além de um capítulo dedicado a 'esperanças para o futuro' (ressurreição, julgamento, restauração nacional). É o contexto histórico-social imprescindível para compreender como Jesus e Paulo comunicaram sua mensagem escatológica."
+        review: "Obra-irmã do seminal *Paul and Palestinian Judaism* (1977), considerada o estudo mais abrangente do judaísmo do Segundo Templo na era do NT. Sanders (Duke University) desafia a imagem de um judaísmo dominado pelos fariseus e pelo legalismo, mostrando que o que unia a maioria dos judeus era o 'judaísmo comum' — adesão ao Templo, Torá, práticas de pureza, sábado, festas e as esperanças escatológicas que sustentavam a identidade coletiva. O livro cobre: funcionamento diário do Templo, sacerdotes e levitas, purity system, sacrifícios, dízimos, sábado, festas anuais, além de um capítulo dedicado a 'esperanças para o futuro' (ressurreição, julgamento, restauração nacional). É o contexto histórico-social imprescindível para compreender como Jesus e Paulo comunicaram sua mensagem escatológica.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/judaismpracticeb0000sand_z2a1' }]
       },
       {
         id: "wright-resurrection-son-of-god",
@@ -571,7 +593,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-2679-2",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "O estudo mais exaustivo já produzido sobre a esperança na ressurreição — parte III do projeto de Wright sobre origens cristãs. As partes I–III (700 páginas) percorrem a ideia de vida após a morte no mundo greco-romano, no AT, na literatura intertestamentária (1 Enoque, 2 Macabeus, 4 Esdras, 2 Baruque, Qumran, Josefo, Filo) e nos primeiros cristãos. A tese central é que 'ressurreição' no judaísmo do Segundo Templo tinha sempre sentido corporal e físico — o que torna a proclamação cristã historicamente inteligível e teologicamente específica. A parte final examina as narrativas pascais dos Evangelhos, 1Co 15 e Rm 1. Marcus Borg e Dale Allison o classificaram como a obra mais importante sobre a ressurreição de Jesus desde Schweitzer. Complemento indispensável ao *Surprised by Hope* (Categoria 6)."
+        review: "O estudo mais exaustivo já produzido sobre a esperança na ressurreição — parte III do projeto de Wright sobre origens cristãs. As partes I–III (700 páginas) percorrem a ideia de vida após a morte no mundo greco-romano, no AT, na literatura intertestamentária (1 Enoque, 2 Macabeus, 4 Esdras, 2 Baruque, Qumran, Josefo, Filo) e nos primeiros cristãos. A tese central é que 'ressurreição' no judaísmo do Segundo Templo tinha sempre sentido corporal e físico — o que torna a proclamação cristã historicamente inteligível e teologicamente específica. A parte final examina as narrativas pascais dos Evangelhos, 1Co 15 e Rm 1. Marcus Borg e Dale Allison o classificaram como a obra mais importante sobre a ressurreição de Jesus desde Schweitzer. Complemento indispensável ao *Surprised by Hope* (Categoria 6).",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/resurrectionofso0000wrig' }]
       }
     ]
   },
@@ -590,7 +613,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8010-4597-4",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Daley SJ (Catherine F. Huisking Professor of Theology, University of Notre Dame) produziu a primeira síntese abrangente — em qualquer idioma — da escatologia dos Padres da Igreja, cobrindo as tradições gregas (Ireneu, Orígenes, Gregório de Nissa, João Damasceno), latinas (Tertuliano, Agostinho, Gregório Magno), siríacas, coptas e armênias do séc. 2 ao 7. A tese central é que havia unidade fundamental nas expectativas escatológicas patrísticas a despeito das peculiaridades de cada autor. O livro é organizado por autores e correntes (pré-nicenos, nicenos, pós-nicenos) e inclui discussão das controvérsias sobre o estado intermediário, o milenarismo de Ireneu e Papias, a apokatastasis de Orígenes e a codificação agostiniana que moldaria toda a tradição ocidental. Church History o chamou de 'bem-pesquisado e indispensável para qualquer estudante do desenvolvimento da doutrina cristã'."
+        review: "Daley SJ (Catherine F. Huisking Professor of Theology, University of Notre Dame) produziu a primeira síntese abrangente — em qualquer idioma — da escatologia dos Padres da Igreja, cobrindo as tradições gregas (Ireneu, Orígenes, Gregório de Nissa, João Damasceno), latinas (Tertuliano, Agostinho, Gregório Magno), siríacas, coptas e armênias do séc. 2 ao 7. A tese central é que havia unidade fundamental nas expectativas escatológicas patrísticas a despeito das peculiaridades de cada autor. O livro é organizado por autores e correntes (pré-nicenos, nicenos, pós-nicenos) e inclui discussão das controvérsias sobre o estado intermediário, o milenarismo de Ireneu e Papias, a apokatastasis de Orígenes e a codificação agostiniana que moldaria toda a tradição ocidental. Church History o chamou de 'bem-pesquisado e indispensável para qualquer estudante do desenvolvimento da doutrina cristã'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/hopeofearlychurc0000dale' }]
       },
       {
         id: "hill-regnum-caelorum",
@@ -614,7 +638,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-231-11257-4",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "McGinn (Naomi Shenstone Donnelley Professor, University of Chicago) organizou a antologia mais completa de fontes primárias da tradição apocalíptica cristã medieval, com introduções históricas e textos comentados em tradução. A cobertura vai de Pseudo-Efraim e Pseudo-Metódio (séc. 6–7) passando por Adso de Montier-en-Der, Joaquim de Fiore, Boaventura e os Espirituais Franciscanos até os Hussitas, Savonarola e Cristóvão Colombo. A introdução de McGinn distingue escatologia, apocaliptismo e milenarismo como categorias analíticas — distinção que se tornou padrão no campo. O *Library Journal* a descreveu como 'a história textual mais provável a se tornar a introdução padrão ao apocaliptismo cristão'. Edição com novo prefácio (1998) e bibliografia ampliada."
+        review: "McGinn (Naomi Shenstone Donnelley Professor, University of Chicago) organizou a antologia mais completa de fontes primárias da tradição apocalíptica cristã medieval, com introduções históricas e textos comentados em tradução. A cobertura vai de Pseudo-Efraim e Pseudo-Metódio (séc. 6–7) passando por Adso de Montier-en-Der, Joaquim de Fiore, Boaventura e os Espirituais Franciscanos até os Hussitas, Savonarola e Cristóvão Colombo. A introdução de McGinn distingue escatologia, apocaliptismo e milenarismo como categorias analíticas — distinção que se tornou padrão no campo. O *Library Journal* a descreveu como 'a história textual mais provável a se tornar a introdução padrão ao apocaliptismo cristão'. Edição com novo prefácio (1998) e bibliografia ampliada.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/visionsofendapoc00mcgi' }]
       },
       {
         id: "weber-living-shadow-second-coming",
@@ -626,7 +651,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-226-87732-7",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Weber (PhD, University of Chicago; ex-professor de história da Igreja no Denver Seminary e Southern Baptist Theological Seminary) traça o desenvolvimento do pré-milenarismo americano desde a disseminação do sistema de Darby nos EUA (anos 1870s, convenções Niagara) até o evangelicalismo da era Reagan. A edição revisada de 1987 expande a análise até 1982 e adiciona novo prefácio. Weber examina a relação do pré-milenarismo com o fundamentalismo, os movimentos de santidade, a Conferência de Edimburgo, as duas Guerras Mundiais e o surgimento do Estado de Israel como 'confirmação' profética. Fundamenta historicamente debates que permanecem ativos hoje — do arrebatamento à teologia política dos evangelicais americanos. Complementar a Boyer (moderna) e Daley (patrística) para a visão de longa duração."
+        review: "Weber (PhD, University of Chicago; ex-professor de história da Igreja no Denver Seminary e Southern Baptist Theological Seminary) traça o desenvolvimento do pré-milenarismo americano desde a disseminação do sistema de Darby nos EUA (anos 1870s, convenções Niagara) até o evangelicalismo da era Reagan. A edição revisada de 1987 expande a análise até 1982 e adiciona novo prefácio. Weber examina a relação do pré-milenarismo com o fundamentalismo, os movimentos de santidade, a Conferência de Edimburgo, as duas Guerras Mundiais e o surgimento do Estado de Israel como 'confirmação' profética. Fundamenta historicamente debates que permanecem ativos hoje — do arrebatamento à teologia política dos evangelicais americanos. Complementar a Boyer (moderna) e Daley (patrística) para a visão de longa duração.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/livinginshadowof00webe' }]
       },
       {
         id: "boyer-when-time-shall-be-no-more",
@@ -638,7 +664,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-674-95095-6",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Boyer (professor emérito de história americana na University of Wisconsin-Madison) produziu o estudo historiográfico mais abrangente sobre o impacto da crença na profecia bíblica na cultura americana do séc. 20. Com base em análise de fontes populares — livros de profecia (Hal Lindsey, Tim LaHaye), sermões, programas de rádio, filmes, e pesquisas de opinião — Boyer demonstra que a crença no fim dos tempos moldou atitudes americanas em relação à política externa, à guerra nuclear, ao ambientalismo e ao Estado de Israel. O livro mapeou a penetração cultural do dispensacionalismo e antecipou muitos dos debates que explodiram após o 11 de setembro e durante a saga do *Left Behind*. Grant Wacker (Duke) o descreveu como 'o trabalho mais rigoroso e abrangente sobre profecias na vida pública americana'."
+        review: "Boyer (professor emérito de história americana na University of Wisconsin-Madison) produziu o estudo historiográfico mais abrangente sobre o impacto da crença na profecia bíblica na cultura americana do séc. 20. Com base em análise de fontes populares — livros de profecia (Hal Lindsey, Tim LaHaye), sermões, programas de rádio, filmes, e pesquisas de opinião — Boyer demonstra que a crença no fim dos tempos moldou atitudes americanas em relação à política externa, à guerra nuclear, ao ambientalismo e ao Estado de Israel. O livro mapeou a penetração cultural do dispensacionalismo e antecipou muitos dos debates que explodiram após o 11 de setembro e durante a saga do *Left Behind*. Grant Wacker (Duke) o descreveu como 'o trabalho mais rigoroso e abrangente sobre profecias na vida pública americana'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/whentimeshallben00boye' }]
       }
     ]
   },
@@ -663,7 +690,8 @@ export const categories: BibCategory[] = [
           isbn: "978-6-5550-4317-4"
         },
         level: "acadêmico",
-        review: "Moltmann (professor emérito de teologia sistemática, Universidade de Tübingen) lançou este livro em 1964 e em poucos anos transformou a teologia ocidental ao propor que a escatologia não é apêndice da dogmática mas seu *fundamento*. Em resposta a Bloch (*Princípio Esperança*) e ao existencialismo de Bultmann, Moltmann recentrou a teologia cristã na *promessa*: o Deus bíblico é o Deus que vem, e a ressurreição de Jesus inaugura uma história de cumprimento ainda incompleta que impele a ação transformadora no presente. O efeito sobre a teologia da libertação, o ecumenismo e a teologia política foi imenso. Richard Bauckham escreveu a introdução à edição Fortress. A Loyola publicou a tradução em pt-BR, tornando-o acessível para leitores brasileiros."
+        review: "Moltmann (professor emérito de teologia sistemática, Universidade de Tübingen) lançou este livro em 1964 e em poucos anos transformou a teologia ocidental ao propor que a escatologia não é apêndice da dogmática mas seu *fundamento*. Em resposta a Bloch (*Princípio Esperança*) e ao existencialismo de Bultmann, Moltmann recentrou a teologia cristã na *promessa*: o Deus bíblico é o Deus que vem, e a ressurreição de Jesus inaugura uma história de cumprimento ainda incompleta que impele a ação transformadora no presente. O efeito sobre a teologia da libertação, o ecumenismo e a teologia política foi imenso. Richard Bauckham escreveu a introdução à edição Fortress. A Loyola publicou a tradução em pt-BR, tornando-o acessível para leitores brasileiros.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/theologyofhopeon00molt' }]
       },
       {
         id: "moltmann-coming-of-god",
@@ -675,7 +703,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-3666-1",
         originalLanguage: "de",
         level: "acadêmico",
-        review: "Volume final da sistemática de Moltmann e vencedor do Grawemeyer Award (2000). O livro estrutura a escatologia em três níveis progressivos: escatologia *pessoal* (vida eterna, ressurreição, estado intermediário), escatologia *histórica* (reino de Deus, milenarismo, pós-historia) e escatologia *cósmica* (nova criação, sabbath cósmico, panenteísmo). Moltmann rejeita tanto o apocaliptismo catastrófico ('solução final') quanto a dissolução da escatologia no presente, propondo a 'esperança missionária' da nova criação como postura básica do cristão. A análise do milenarismo medieval e do milenarismo americano é historicamente acurada. Lido em sequência com *Theology of Hope*, representa a síntese de três décadas de reflexão."
+        review: "Volume final da sistemática de Moltmann e vencedor do Grawemeyer Award (2000). O livro estrutura a escatologia em três níveis progressivos: escatologia *pessoal* (vida eterna, ressurreição, estado intermediário), escatologia *histórica* (reino de Deus, milenarismo, pós-historia) e escatologia *cósmica* (nova criação, sabbath cósmico, panenteísmo). Moltmann rejeita tanto o apocaliptismo catastrófico ('solução final') quanto a dissolução da escatologia no presente, propondo a 'esperança missionária' da nova criação como postura básica do cristão. A análise do milenarismo medieval e do milenarismo americano é historicamente acurada. Lido em sequência com *Theology of Hope*, representa a síntese de três décadas de reflexão.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/comingofgodchris0000molt' }]
       },
       {
         id: "ratzinger-eschatology",
@@ -687,7 +716,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8132-1516-7",
         originalLanguage: "de",
         level: "acadêmico",
-        review: "Ratzinger (então professor em Regensburg, mais tarde Prefeito da CDF e Papa Bento XVI) escreveu este volume como parte de uma série dogmática alemã em 1977. É reconhecido internacionalmente como a declaração sistemática mais rigorosa e equilibrada da escatologia católica do séc. 20. O livro examina os dados exegéticos (proclamação do Reino de Jesus, aguardo imediato), o desenvolvimento histórico da doutrina (Sheol, apocaliptismo judaico, patrística, escolástica), e articula posições sistemáticas sobre imortalidade da alma e ressurreição corporal, estado intermediário, purgatório, juízo particular e universal, inferno e céu. Ratzinger interage criticamente com a Teologia da Esperança (Moltmann) e com as propostas de ressurreição imediata (Greshake). A 2.ª edição inglesa inclui prefácio do autor como Bento XVI."
+        review: "Ratzinger (então professor em Regensburg, mais tarde Prefeito da CDF e Papa Bento XVI) escreveu este volume como parte de uma série dogmática alemã em 1977. É reconhecido internacionalmente como a declaração sistemática mais rigorosa e equilibrada da escatologia católica do séc. 20. O livro examina os dados exegéticos (proclamação do Reino de Jesus, aguardo imediato), o desenvolvimento histórico da doutrina (Sheol, apocaliptismo judaico, patrística, escolástica), e articula posições sistemáticas sobre imortalidade da alma e ressurreição corporal, estado intermediário, purgatório, juízo particular e universal, inferno e céu. Ratzinger interage criticamente com a Teologia da Esperança (Moltmann) e com as propostas de ressurreição imediata (Greshake). A 2.ª edição inglesa inclui prefácio do autor como Bento XVI.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/eschatologydeath0000bene' }]
       },
       {
         id: "balthasar-dare-we-hope",
@@ -699,7 +729,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8987-0207-1",
         originalLanguage: "de",
         level: "acadêmico",
-        review: "Von Balthasar (1905–1988), o teólogo católico mais influente do séc. 20 ao lado de Rahner, provocou amplo debate ao questionar se podemos afirmar com certeza que algum ser humano está no inferno. A obra reúne dois textos: *Was dürfen wir hoffen?* e *Kleiner Diskurs über die Hölle* (Breve Discurso sobre o Inferno). Balthasar não afirma universalismo — a condenação é real e a Igreja nunca declara um indivíduo condenado — mas argumenta que a misericórdia de Deus e a liberdade humana *permitem esperançar* pela salvação de todos, o que é diferente de *afirmar* que todos serão salvos. O prefácio de Robert Barron (2.ª ed.) e as respostas de Avery Dulles e outros tornam o debate acessível. Lido em conjunto com Ratzinger (Cat. 9) e Morgan/Peterson (Cat. 6), monta o triângulo do debate contemporâneo sobre o inferno."
+        review: "Von Balthasar (1905–1988), o teólogo católico mais influente do séc. 20 ao lado de Rahner, provocou amplo debate ao questionar se podemos afirmar com certeza que algum ser humano está no inferno. A obra reúne dois textos: *Was dürfen wir hoffen?* e *Kleiner Diskurs über die Hölle* (Breve Discurso sobre o Inferno). Balthasar não afirma universalismo — a condenação é real e a Igreja nunca declara um indivíduo condenado — mas argumenta que a misericórdia de Deus e a liberdade humana *permitem esperançar* pela salvação de todos, o que é diferente de *afirmar* que todos serão salvos. O prefácio de Robert Barron (2.ª ed.) e as respostas de Avery Dulles e outros tornam o debate acessível. Lido em conjunto com Ratzinger (Cat. 9) e Morgan/Peterson (Cat. 6), monta o triângulo do debate contemporâneo sobre o inferno.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/darewehopethatal0000balt' }]
       },
       {
         id: "beale-nt-biblical-theology",
@@ -730,7 +761,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-913-836-31-6",
         originalLanguage: "fr",
         level: "acadêmico",
-        review: "Lossky (1903–1958), teólogo russo da diáspora em Paris e figura central do renascimento neo-patrístico, escreveu este livro para articular a teologia ortodoxa ao Ocidente com rigor filosófico e fidelidade patrística. A obra demonstra que a tradição oriental nunca separou mística e dogma: a *theosis* (deificação) não é meta de poucos contemplativos mas o destino escatológico de todo ser humano criado à imagem de Deus. Os capítulos sobre energias incriadas (teologia palamita), imagem e semelhança, e o 'festim do Reino' (capítulo final) são indispensáveis para compreender como a Ortodoxia entende a consumação escatológica como participação na vida divina — diferença radical em relação às tradições ocidentais. Georges Florovsky descreveu este livro como 'síntese neopatrística'. Lossky morreu antes de concluir os tomos planejados de uma dogmática sistemática."
+        review: "Lossky (1903–1958), teólogo russo da diáspora em Paris e figura central do renascimento neo-patrístico, escreveu este livro para articular a teologia ortodoxa ao Ocidente com rigor filosófico e fidelidade patrística. A obra demonstra que a tradição oriental nunca separou mística e dogma: a *theosis* (deificação) não é meta de poucos contemplativos mas o destino escatológico de todo ser humano criado à imagem de Deus. Os capítulos sobre energias incriadas (teologia palamita), imagem e semelhança, e o 'festim do Reino' (capítulo final) são indispensáveis para compreender como a Ortodoxia entende a consumação escatológica como participação na vida divina — diferença radical em relação às tradições ocidentais. Georges Florovsky descreveu este livro como 'síntese neopatrística'. Lossky morreu antes de concluir os tomos planejados de uma dogmática sistemática.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/mysticaltheology0000vlad' }]
       },
       {
         id: "schmemann-for-life-of-world",
@@ -742,7 +774,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-913-836-08-8",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Schmemann (1921–1983), decano do St. Vladimir's Orthodox Theological Seminary e figura decisiva no diálogo ecuménico do séc. 20, propõe neste clássico uma teologia da existência cristã inteiramente estruturada pela experiência litúrgica. A tese central: a liturgia — especialmente a Eucaristia — não é um 'rito sagrado' separado da vida, mas a manifestação e antecipação da realidade escatológica do Reino de Deus. 'Antes de mais nada, o Cristianismo não é uma religião, mas a revelação e a dádiva de uma nova vida.' O livro desenvolve uma visão de escatologia 'inaugurada' em que cada celebração eucarística é uma *parousia* sacramental — a forma ortodoxa de responder à mesma tensão já/ainda-não que Cullmann, Ladd e Wright abordam a partir do NT. Influenciou gerações de teólogos e liturgistas de múltiplas tradições."
+        review: "Schmemann (1921–1983), decano do St. Vladimir's Orthodox Theological Seminary e figura decisiva no diálogo ecuménico do séc. 20, propõe neste clássico uma teologia da existência cristã inteiramente estruturada pela experiência litúrgica. A tese central: a liturgia — especialmente a Eucaristia — não é um 'rito sagrado' separado da vida, mas a manifestação e antecipação da realidade escatológica do Reino de Deus. 'Antes de mais nada, o Cristianismo não é uma religião, mas a revelação e a dádiva de uma nova vida.' O livro desenvolve uma visão de escatologia 'inaugurada' em que cada celebração eucarística é uma *parousia* sacramental — a forma ortodoxa de responder à mesma tensão já/ainda-não que Cullmann, Ladd e Wright abordam a partir do NT. Influenciou gerações de teólogos e liturgistas de múltiplas tradições.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/forlifeofworldsa0000schm' }]
       },
       {
         id: "ware-orthodox-church",
@@ -753,7 +786,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-140-14656-1",
         originalLanguage: "en",
         level: "introdutório",
-        review: "Ware (1934–2022), Metropolita Kallistos de Diocleia e Spalding Lecturer em Oxford por 35 anos, produziu a referência em língua inglesa sobre a Igreja Ortodoxa há mais de seis décadas. Estruturado em duas partes — história e doutrina — o livro dedica a Parte II à teologia e à adoração ortodoxas, com capítulos sobre Deus, criação, pecado, salvação, sacramentos e escatologia. A visão ortodoxa de morte, ressurreição, juízo final, 'estado intermediário como consciência em espera', céu como theosis e a questão do purgatório (rejeitado pela Ortodoxia em termos latinos) são tratados com clareza e equanimidade. Complementar a Lossky (profundidade mística) e Meyendorff (rigor histórico-doutrinal) para uma visão integrada do que a Ortodoxia crê sobre os fins."
+        review: "Ware (1934–2022), Metropolita Kallistos de Diocleia e Spalding Lecturer em Oxford por 35 anos, produziu a referência em língua inglesa sobre a Igreja Ortodoxa há mais de seis décadas. Estruturado em duas partes — história e doutrina — o livro dedica a Parte II à teologia e à adoração ortodoxas, com capítulos sobre Deus, criação, pecado, salvação, sacramentos e escatologia. A visão ortodoxa de morte, ressurreição, juízo final, 'estado intermediário como consciência em espera', céu como theosis e a questão do purgatório (rejeitado pela Ortodoxia em termos latinos) são tratados com clareza e equanimidade. Complementar a Lossky (profundidade mística) e Meyendorff (rigor histórico-doutrinal) para uma visão integrada do que a Ortodoxia crê sobre os fins.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/orthodoxchurch00ware' }]
       },
       {
         id: "meyendorff-byzantine-theology",
@@ -765,7 +799,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-823-20967-5",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Meyendorff (1926–1992), sacerdote ortodoxo russo e professor na Fordham University, produziu a síntese mais rigorosa da teologia cristã oriental disponível em inglês. A obra divide-se em tendências históricas (Calcedônia, iconoclasmo, monaquismo, Palamismo, Lux Orandi) e temas doutrinais (criação, homem, Cristo, Espírito, Trindade, sacramentos, Igreja e escatologia). O capítulo final, 'A Igreja no Mundo', desenvolve a visão ortodoxa de missão e escatologia a partir da liturgia e da pneumatologia, mostrando como a Ortodoxia entende o cristão como 'cidadão do Reino' já antecipado na Eucaristia. Jaroslav Pelikan descreveu-o como 'o tratamento mais iluminador da teologia bizantina disponível a leitores de língua inglesa'."
+        review: "Meyendorff (1926–1992), sacerdote ortodoxo russo e professor na Fordham University, produziu a síntese mais rigorosa da teologia cristã oriental disponível em inglês. A obra divide-se em tendências históricas (Calcedônia, iconoclasmo, monaquismo, Palamismo, Lux Orandi) e temas doutrinais (criação, homem, Cristo, Espírito, Trindade, sacramentos, Igreja e escatologia). O capítulo final, 'A Igreja no Mundo', desenvolve a visão ortodoxa de missão e escatologia a partir da liturgia e da pneumatologia, mostrando como a Ortodoxia entende o cristão como 'cidadão do Reino' já antecipado na Eucaristia. Jaroslav Pelikan descreveu-o como 'o tratamento mais iluminador da teologia bizantina disponível a leitores de língua inglesa'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/byzantinetheolog00meye' }]
       },
       {
         id: "ware-orthodox-way",
@@ -776,7 +811,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-913-836-58-3",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Companheiro teológico de *The Orthodox Church*, escrito por Ware especificamente para aprofundar os fundamentos doutrinais e espirituais. O capítulo 'Morte e Ressurreição' é o tratamento mais acessível e completo da escatologia ortodoxa em livro de bolso: aborda o estado intermediário como esperança consciente (não sono da alma), a oração pelos mortos, a ressurreição corporal, o Juízo, a natureza do inferno e do céu na perspectiva ortodoxa (que rejeita tanto o purgatório latino quanto o aniquilacionismo), e a esperança na salvação de todos como oração mas não como dogma. A seção sobre theosis como destino humano — 'Deus se fez homem para que o homem pudesse tornar-se deus' — contextualiza escatologicamente toda a soteriologia ortodoxa. Influenciou convertidos e académicos em igual medida."
+        review: "Companheiro teológico de *The Orthodox Church*, escrito por Ware especificamente para aprofundar os fundamentos doutrinais e espirituais. O capítulo 'Morte e Ressurreição' é o tratamento mais acessível e completo da escatologia ortodoxa em livro de bolso: aborda o estado intermediário como esperança consciente (não sono da alma), a oração pelos mortos, a ressurreição corporal, o Juízo, a natureza do inferno e do céu na perspectiva ortodoxa (que rejeita tanto o purgatório latino quanto o aniquilacionismo), e a esperança na salvação de todos como oração mas não como dogma. A seção sobre theosis como destino humano — 'Deus se fez homem para que o homem pudesse tornar-se deus' — contextualiza escatologicamente toda a soteriologia ortodoxa. Influenciou convertidos e académicos em igual medida.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/orthodoxway0000ware' }]
       }
     ]
   },
@@ -795,7 +831,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-816-31176-7",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Knight (professor emérito de teologia adventista, Andrews University) produziu o estudo histórico mais completo sobre o movimento milerita e a origem do Adventismo do Sétimo Dia. O livro narra o desenvolvimento das profecias de William Miller (Daniel 8:14), a expectativa do retorno de Cristo em 22 de outubro de 1844, a destruição dessas esperanças (a 'Grande Decepção'), e as diversas tentativas dos sobreviventes de reinterpretar o evento — o que gerou múltiplas denominações adventistas. A análise de como comunidades de fé lidam com profecia falseada é de importância central para qualquer estudo de escatologia heterodoxa. Church History (Cambridge) e American Historical Review avaliaram-o como pesquisa rigorosa, elogiando o uso de fontes primárias. Lido em paralelo com Boyer (Cat. 8), oferece contexto histórico direto para o dispensacionalismo americano."
+        review: "Knight (professor emérito de teologia adventista, Andrews University) produziu o estudo histórico mais completo sobre o movimento milerita e a origem do Adventismo do Sétimo Dia. O livro narra o desenvolvimento das profecias de William Miller (Daniel 8:14), a expectativa do retorno de Cristo em 22 de outubro de 1844, a destruição dessas esperanças (a 'Grande Decepção'), e as diversas tentativas dos sobreviventes de reinterpretar o evento — o que gerou múltiplas denominações adventistas. A análise de como comunidades de fé lidam com profecia falseada é de importância central para qualquer estudo de escatologia heterodoxa. Church History (Cambridge) e American Historical Review avaliaram-o como pesquisa rigorosa, elogiando o uso de fontes primárias. Lido em paralelo com Boyer (Cat. 8), oferece contexto histórico direto para o dispensacionalismo americano.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/millennialfevere0000knig' }]
       },
       {
         id: "penton-apocalypse-delayed",
@@ -807,7 +844,8 @@ export const categories: BibCategory[] = [
         isbn: "978-1-442-61605-9",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Penton (PhD, University of Iowa; professor emérito na University of Lethbridge) é ex-TJ de 4.ª geração, excomungado em 1981. Sua obra tornou-se o estudo definitivo do movimento desde 1985. A 3.ª edição (2015) acrescenta informação substancial sobre as fontes teológicas de Russell, os primeiros líderes, e desenvolvimentos recentes da organização. A estrutura tripartite — histórica, doutrinária, sociológica — permite ao leitor acompanhar como as sucessivas profecias de datas (1878, 1914, 1918, 1925, 1975) foram formuladas, falharam e foram reinterpretadas sem romper a coesão institucional. M. Darrol Bryant (University of Waterloo) classificou-o como 'obra monumental de erudição, bem escrita e exaustiva'. Timothy P. Weber considerou-o 'leitura obrigatória para qualquer um interessado em milenarismo moderno'."
+        review: "Penton (PhD, University of Iowa; professor emérito na University of Lethbridge) é ex-TJ de 4.ª geração, excomungado em 1981. Sua obra tornou-se o estudo definitivo do movimento desde 1985. A 3.ª edição (2015) acrescenta informação substancial sobre as fontes teológicas de Russell, os primeiros líderes, e desenvolvimentos recentes da organização. A estrutura tripartite — histórica, doutrinária, sociológica — permite ao leitor acompanhar como as sucessivas profecias de datas (1878, 1914, 1918, 1925, 1975) foram formuladas, falharam e foram reinterpretadas sem romper a coesão institucional. M. Darrol Bryant (University of Waterloo) classificou-o como 'obra monumental de erudição, bem escrita e exaustiva'. Timothy P. Weber considerou-o 'leitura obrigatória para qualquer um interessado em milenarismo moderno'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/apocalypsedelaye0000pent' }]
       },
       {
         id: "davies-introduction-mormonism",
@@ -830,7 +868,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-764-22821-6",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Referência canônica da apologética cristã-evangélica desde 1965, com edições revisadas em 1985, 1997 e 2003. Martin (fundador do Christian Research Institute) examina em cada capítulo a história, a terminologia e as doutrinas dos principais grupos (TJ, SUD, Ciência Cristã, Adventismo, Unitarismo, Bahaísmo, Nova Era, Scientology, entre outros), contrastando-as sistematicamente com a teologia bíblica ortodoxa. Para o leitor de escatologia, os capítulos sobre TJ (1914, o corpo eleito de 144.000, o Armagédon como destruição iminente) e SUD (exaltação, reinos de glória, milênio terrestre) são os mais relevantes. A 3.ª ed. inclui Ravi Zacharias como editor-geral, responsável por atualizações e novas seções. Obra de primeira consulta para pastores e leigos no Brasil."
+        review: "Referência canônica da apologética cristã-evangélica desde 1965, com edições revisadas em 1985, 1997 e 2003. Martin (fundador do Christian Research Institute) examina em cada capítulo a história, a terminologia e as doutrinas dos principais grupos (TJ, SUD, Ciência Cristã, Adventismo, Unitarismo, Bahaísmo, Nova Era, Scientology, entre outros), contrastando-as sistematicamente com a teologia bíblica ortodoxa. Para o leitor de escatologia, os capítulos sobre TJ (1914, o corpo eleito de 144.000, o Armagédon como destruição iminente) e SUD (exaltação, reinos de glória, milênio terrestre) são os mais relevantes. A 3.ª ed. inclui Ravi Zacharias como editor-geral, responsável por atualizações e novas seções. Obra de primeira consulta para pastores e leigos no Brasil.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/kingdomofcults0000mart_t1a4' }]
       },
       {
         id: "newport-apocalypse-millennium",
@@ -861,7 +900,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-1899-5",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Sanders (Duke University) reorientou os estudos paulinos ao demonstrar que o judaísmo do Segundo Templo não era um sistema de 'obras-merecimento' mas de 'nomismo pactual': a entrada no povo de Deus é por graça do pacto; a permanência é pelo cumprimento da Torá. Isso implica que Paulo não polemizava contra o legalismo judaico, mas contra a exclusividade étnica do povo de Deus. A categoria de 'escatologia participacionista' que Sanders propõe — estar 'em Cristo' como nova realidade escatológica — tornou-se o ponto de partida para décadas de debate sobre 'nova perspectiva sobre Paulo'. Os últimos 150 páginas sobre Paulo especificamente contêm as teses escatológicas centrais. Sem este livro, o debate contemporâneo sobre Dunn, Wright e a escatologia paulina é incompreensível."
+        review: "Sanders (Duke University) reorientou os estudos paulinos ao demonstrar que o judaísmo do Segundo Templo não era um sistema de 'obras-merecimento' mas de 'nomismo pactual': a entrada no povo de Deus é por graça do pacto; a permanência é pelo cumprimento da Torá. Isso implica que Paulo não polemizava contra o legalismo judaico, mas contra a exclusividade étnica do povo de Deus. A categoria de 'escatologia participacionista' que Sanders propõe — estar 'em Cristo' como nova realidade escatológica — tornou-se o ponto de partida para décadas de debate sobre 'nova perspectiva sobre Paulo'. Os últimos 150 páginas sobre Paulo especificamente contêm as teses escatológicas centrais. Sem este livro, o debate contemporâneo sobre Dunn, Wright e a escatologia paulina é incompreensível.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/paulpalestinianj0000sand' }]
       },
       {
         id: "dunn-theology-paul-apostle",
@@ -872,7 +912,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-3844-5",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Dunn (Lightfoot Professor of Divinity, Durham; 1939–2020) utilizou Romanos como estrutura vertebral para uma exposição temática completa da teologia paulina. A Parte VI ('The Life of Grace', caps. 16–23) e os capítulos sobre ressurreição e escatologia (caps. 20–23) representam o tratamento mais detalhado da tensão 'já/ainda-não' em Paulo disponível em um único volume. Dunn integra as categorias de Sanders (nomismo pactual) e debate com Bultmann, Käsemann e Wright. C. F. D. Moule o descreveu como 'leitura obrigatória' e *Theology Today* como 'síntese de grande poder e beleza'. *Christianity Today* colocou-o entre os 25 livros do ano de 1999."
+        review: "Dunn (Lightfoot Professor of Divinity, Durham; 1939–2020) utilizou Romanos como estrutura vertebral para uma exposição temática completa da teologia paulina. A Parte VI ('The Life of Grace', caps. 16–23) e os capítulos sobre ressurreição e escatologia (caps. 20–23) representam o tratamento mais detalhado da tensão 'já/ainda-não' em Paulo disponível em um único volume. Dunn integra as categorias de Sanders (nomismo pactual) e debate com Bultmann, Käsemann e Wright. C. F. D. Moule o descreveu como 'leitura obrigatória' e *Theology Today* como 'síntese de grande poder e beleza'. *Christianity Today* colocou-o entre os 25 livros do ano de 1999.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/theologyofpaulap0000dunn' }]
       },
       {
         id: "witherington-jesus-paul-end-world",
@@ -884,7 +925,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-830-81759-7",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Witherington (PhD, Durham; Professor de NT no Asbury Theological Seminary) responde diretamente a Albert Schweitzer — 'Jesus acreditava que o fim apocalíptico estava iminente?' — e examina a continuidade entre a escatologia de Jesus e a de Paulo. Os seis tópicos cobertos (linguagem de iminência, domínio de Deus, comunidade de Cristo, Israel de Deus, dia do Senhor, ressurreição dos mortos) permitem comparação sistemática e crítica. Witherington conclui que Jesus e Paulo compartilham uma escatologia inaugurada comum — o Reino já começou mas ainda não se consumou — e que Paulo não distorceu o ensino de Jesus. Leitura acessível para o leitor acadêmico não especialista, e referência essencial antes de estudos em qualquer das epístolas paulinas."
+        review: "Witherington (PhD, Durham; Professor de NT no Asbury Theological Seminary) responde diretamente a Albert Schweitzer — 'Jesus acreditava que o fim apocalíptico estava iminente?' — e examina a continuidade entre a escatologia de Jesus e a de Paulo. Os seis tópicos cobertos (linguagem de iminência, domínio de Deus, comunidade de Cristo, Israel de Deus, dia do Senhor, ressurreição dos mortos) permitem comparação sistemática e crítica. Witherington conclui que Jesus e Paulo compartilham uma escatologia inaugurada comum — o Reino já começou mas ainda não se consumou — e que Paulo não distorceu o ensino de Jesus. Leitura acessível para o leitor acadêmico não especialista, e referência essencial antes de estudos em qualquer das epístolas paulinas.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/jesuspaulendofwo0000with' }]
       },
       {
         id: "thiselton-first-corinthians-nigtc",
@@ -907,7 +949,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-3767-5",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Baseado em conferências para o British and Foreign Bible Society, este volume oferece o resumo mais acessível das grandes teses de Wright sobre Paulo — a síntese que prepara para *Paul and the Faithfulness of God* (2013). Wright estrutura a teologia paulina em torno de três pares: criação e nova criação, Israel e humanidade, Messias e Espírito. A escatologia é tratada como 'nova criação inaugurada': a ressurreição de Jesus é o início da nova criação (já), a transformação plena do cosmos está por vir (ainda não). Wright critica explicitamente tanto o dispensacionalismo (que lê Paulo sem contexto judaico) quanto o luteranismo antinômico (que dissolve a continuidade AT-NT). Para quem estudou Sanders e Dunn, este livro representa a terceira perspectiva da 'nova perspectiva sobre Paulo'."
+        review: "Baseado em conferências para o British and Foreign Bible Society, este volume oferece o resumo mais acessível das grandes teses de Wright sobre Paulo — a síntese que prepara para *Paul and the Faithfulness of God* (2013). Wright estrutura a teologia paulina em torno de três pares: criação e nova criação, Israel e humanidade, Messias e Espírito. A escatologia é tratada como 'nova criação inaugurada': a ressurreição de Jesus é o início da nova criação (já), a transformação plena do cosmos está por vir (ainda não). Wright critica explicitamente tanto o dispensacionalismo (que lê Paulo sem contexto judaico) quanto o luteranismo antinômico (que dissolve a continuidade AT-NT). Para quem estudou Sanders e Dunn, este livro representa a terceira perspectiva da 'nova perspectiva sobre Paulo'.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/paulfreshperspec0000wrig' }]
       }
     ]
   },
@@ -938,7 +981,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-567-29290-7",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Coleção de estudos exegéticos de Bauckham (St Andrews) que aprofundam a sua *Theology of the Book of Revelation* (Cat. 4) com análise técnica detalhada. O livro examina: a estrutura numérica do Apocalipse (séries de sete e suas interrelações), as citações e alusões ao AT (Ezequiel, Daniel, Isaías), a retórica de oposição ao Império Romano, o significado dos 144.000 e da grande multidão, a cosmologia de Ap 21–22 e a crítica à Babilônia (Roma). Os capítulos 'The Apocalypse as a Christian War Scroll' e 'The Riches of Babylon' são os mais citados em comentários posteriores. Para quem vai trabalhar o texto grego do Apocalipse, este livro responde as questões que os comentários-parágrafo-a-parágrafo não têm espaço para abordar."
+        review: "Coleção de estudos exegéticos de Bauckham (St Andrews) que aprofundam a sua *Theology of the Book of Revelation* (Cat. 4) com análise técnica detalhada. O livro examina: a estrutura numérica do Apocalipse (séries de sete e suas interrelações), as citações e alusões ao AT (Ezequiel, Daniel, Isaías), a retórica de oposição ao Império Romano, o significado dos 144.000 e da grande multidão, a cosmologia de Ap 21–22 e a crítica à Babilônia (Roma). Os capítulos 'The Apocalypse as a Christian War Scroll' e 'The Riches of Babylon' são os mais citados em comentários posteriores. Para quem vai trabalhar o texto grego do Apocalipse, este livro responde as questões que os comentários-parágrafo-a-parágrafo não têm espaço para abordar.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/climaxofprophecy0000bauc' }]
       },
       {
         id: "smalley-1-2-3-john-wbc",
@@ -950,7 +994,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8499-0229-1",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Smalley (professor de NT e deão da Catedral de Chester) produziu o comentário WBC sobre as Epístolas Joaninas, combinando análise histórico-crítica com sensibilidade teológica. Para a escatologia, as seções mais relevantes são: 1Jo 2:18 ('última hora' — *eschate hora*), que indica que a comunidade joanina se via vivendo no tempo escatológico final; a doutrina dos 'anticristos' como figura profética com implicações cristológicas; e 1Jo 4:17 ('perfeita no amor para que tenhamos confiança no dia do juízo'). Smalley demonstra que a escatologia das Epístolas é coerente com a do Evangelho: o julgamento já está em curso na decisão de crer ou não, enquanto um julgamento final ainda é esperado. Complementa Köstenberger para o corpus completo."
+        review: "Smalley (professor de NT e deão da Catedral de Chester) produziu o comentário WBC sobre as Epístolas Joaninas, combinando análise histórico-crítica com sensibilidade teológica. Para a escatologia, as seções mais relevantes são: 1Jo 2:18 ('última hora' — *eschate hora*), que indica que a comunidade joanina se via vivendo no tempo escatológico final; a doutrina dos 'anticristos' como figura profética com implicações cristológicas; e 1Jo 4:17 ('perfeita no amor para que tenhamos confiança no dia do juízo'). Smalley demonstra que a escatologia das Epístolas é coerente com a do Evangelho: o julgamento já está em curso na decisão de crer ou não, enquanto um julgamento final ainda é esperado. Complementa Köstenberger para o corpus completo.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/123john0000smal' }]
       },
       {
         id: "koester-revelation-ayb",
@@ -974,7 +1019,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-3683-0",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Carson (Research Professor of NT, Trinity Evangelical Divinity School) produziu o comentário de nível acadêmico mais amplamente utilizado sobre o Evangelho de João no evangelicalismo anglófono. Para a escatologia joanina, os capítulos mais decisivos são Jo 5:24-29 — onde a expressão 'a hora que vem e *agora* é' cria a tensão clássica entre escatologia realizada ('já ouve a voz do Filho de Deus e vive') e futura ('os mortos *ouvirão* a voz do Filho de Deus') — e o ciclo de Jo 6 sobre o 'pão da vida'. Carson demonstra que João não dissolve a escatologia futura na realizada (como Bultmann fez) nem vice-versa: ambas coexistem em tensão intencional, refletindo a perspectiva de inauguração sem consumação. Com Thiselton (Cat. 12), representa o polo evangélico-reformado na exegese joanina."
+        review: "Carson (Research Professor of NT, Trinity Evangelical Divinity School) produziu o comentário de nível acadêmico mais amplamente utilizado sobre o Evangelho de João no evangelicalismo anglófono. Para a escatologia joanina, os capítulos mais decisivos são Jo 5:24-29 — onde a expressão 'a hora que vem e *agora* é' cria a tensão clássica entre escatologia realizada ('já ouve a voz do Filho de Deus e vive') e futura ('os mortos *ouvirão* a voz do Filho de Deus') — e o ciclo de Jo 6 sobre o 'pão da vida'. Carson demonstra que João não dissolve a escatologia futura na realizada (como Bultmann fez) nem vice-versa: ambas coexistem em tensão intencional, refletindo a perspectiva de inauguração sem consumação. Com Thiselton (Cat. 12), representa o polo evangélico-reformado na exegese joanina.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/gospelaccordingt0000cars_g2k1' }]
       }
     ]
   },
@@ -993,7 +1039,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8006-6010-9",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Collins (Holmes Professor of OT Criticism and Interpretation, Yale Divinity School) produziu o comentário padrão sobre Daniel na tradição histórico-crítica, com particular atenção ao período macabeano (170–164 a.C.) como contexto da composição de Daniel 7–12. O comentário analisa os quatro reinos (Dan 2 e 7), o Filho do Homem (Dan 7:13–14), a visão das 70 semanas (Dan 9:24–27) e o 'tempo do fim' (Dan 11–12) com tradução própria, notas textuais e excursuses sobre cada tradição interpretativa. Collins demonstra que Daniel 7 é o texto seminal da imaginação apocalíptica — 'Filho do Homem' como ser celeste e como símbolo do povo dos santos — e que 1 Enoque, o NT e o apocaliptismo cristão dependem diretamente deste modelo. Leitura obrigatória antes de qualquer exegese de Mc 13, 1Ts 4, Ap 12–13."
+        review: "Collins (Holmes Professor of OT Criticism and Interpretation, Yale Divinity School) produziu o comentário padrão sobre Daniel na tradição histórico-crítica, com particular atenção ao período macabeano (170–164 a.C.) como contexto da composição de Daniel 7–12. O comentário analisa os quatro reinos (Dan 2 e 7), o Filho do Homem (Dan 7:13–14), a visão das 70 semanas (Dan 9:24–27) e o 'tempo do fim' (Dan 11–12) com tradução própria, notas textuais e excursuses sobre cada tradição interpretativa. Collins demonstra que Daniel 7 é o texto seminal da imaginação apocalíptica — 'Filho do Homem' como ser celeste e como símbolo do povo dos santos — e que 1 Enoque, o NT e o apocaliptismo cristão dependem diretamente deste modelo. Leitura obrigatória antes de qualquer exegese de Mc 13, 1Ts 4, Ap 12–13.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/danielcommentary00coll' }]
       },
       {
         id: "fee-first-corinthians-nicnt",
@@ -1005,7 +1052,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-6777-3",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Fee (PhD, USC; professor emérito de NT no Regent College, Vancouver) produziu o comentário mais amplamente utilizado sobre 1 Coríntios no nível intermediário-avançado, entre os dois polos do Thiselton (NIGTC, 1.446 páginas) e dos comentários populares. A edição revisada de 2014 atualiza a bibliografia e refina as posições de Fee sobre baptismo pelos mortos (15:29), o corpo espiritual e a natureza da ressurreição corporal. O capítulo 15 (pp. 711–882) é tratado como 'ápice da carta' — o argumento escatológico que dá sentido a todos os problemas pastorais anteriores: se não há ressurreição, a ética, a comunidade e o sofrimento carecem de fundamento. Fee é pré-milenarista histórico e pré-tribulacionista moderado, mas mantém rigor exegético que torna a obra útil para leitores de qualquer posição."
+        review: "Fee (PhD, USC; professor emérito de NT no Regent College, Vancouver) produziu o comentário mais amplamente utilizado sobre 1 Coríntios no nível intermediário-avançado, entre os dois polos do Thiselton (NIGTC, 1.446 páginas) e dos comentários populares. A edição revisada de 2014 atualiza a bibliografia e refina as posições de Fee sobre baptismo pelos mortos (15:29), o corpo espiritual e a natureza da ressurreição corporal. O capítulo 15 (pp. 711–882) é tratado como 'ápice da carta' — o argumento escatológico que dá sentido a todos os problemas pastorais anteriores: se não há ressurreição, a ética, a comunidade e o sofrimento carecem de fundamento. Fee é pré-milenarista histórico e pré-tribulacionista moderado, mas mantém rigor exegético que torna a obra útil para leitores de qualquer posição.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/firstepistleto0000feeg' }]
       },
       {
         id: "wanamaker-thessalonians-nigtc",
@@ -1017,7 +1065,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-2394-6",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Wanamaker (University of Cape Town; doutorou-se em NT sob C. K. Barrett em Durham) integrou análise sociológica e retórica à exegese histórico-crítica tradicional. Para a escatologia, os textos capitais são: 1Ts 4:13–5:11 (Parusia, arrebatamento, 'como um ladrão na noite') e 2Ts 2:1–12 (o 'Homem do Pecado', o *katechon* que retém e a apostasia). Wanamaker trata a questão da autenticidade de 2 Tessalonicenses com equilíbrio, concluindo que as evidências favorecem a autoria paulina. Sua discussão sobre 1Ts 4:17 (ἁρπαγησόμεθα — 'seremos arrebatados') é a mais tecnicamente precisa disponível em inglês para entender a origem do conceito de 'arrebatamento' sem pressupor o sistema dispensacionalista. Complemento indispensável a Weber (Cat. 8) e Hultberg/Blaising/Moo (Cat. 3)."
+        review: "Wanamaker (University of Cape Town; doutorou-se em NT sob C. K. Barrett em Durham) integrou análise sociológica e retórica à exegese histórico-crítica tradicional. Para a escatologia, os textos capitais são: 1Ts 4:13–5:11 (Parusia, arrebatamento, 'como um ladrão na noite') e 2Ts 2:1–12 (o 'Homem do Pecado', o *katechon* que retém e a apostasia). Wanamaker trata a questão da autenticidade de 2 Tessalonicenses com equilíbrio, concluindo que as evidências favorecem a autoria paulina. Sua discussão sobre 1Ts 4:17 (ἁρπαγησόμεθα — 'seremos arrebatados') é a mais tecnicamente precisa disponível em inglês para entender a origem do conceito de 'arrebatamento' sem pressupor o sistema dispensacionalista. Complemento indispensável a Weber (Cat. 8) e Hultberg/Blaising/Moo (Cat. 3).",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/epistlestothessa0000wana' }]
       },
       {
         id: "mounce-revelation-nicnt",
@@ -1029,7 +1078,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8028-2537-7",
         originalLanguage: "en",
         level: "intermediário",
-        review: "Mounce (presidente emérito do Whitworth College) produziu o comentário NICNT sobre o Apocalipse que por décadas serviu como texto padrão para seminários e cursos de doutorado. A edição revisada de 1998 incorporou os debates sobre preterismo, futurismo e idealismo suscitados pelo trabalho de Beale, Bauckham e Collins. Mounce adota um futurismo histórico-gramatical (pré-milenarismo histórico) e rejeita tanto o dispensacionalismo rígido quanto o preterismo total. Para as seções mais disputadas — Ap 7 (144.000), Ap 12 (mulher e dragão), Ap 20 (milênio) e Ap 21–22 (Nova Jerusalém) — a análise de Mounce é sempre clara, documenta as principais posições e apresenta sua própria exegese com razões. Mais acessível que Beale (NIGTC) e Osborne (BECNT), mantendo rigor suficiente para uso acadêmico."
+        review: "Mounce (presidente emérito do Whitworth College) produziu o comentário NICNT sobre o Apocalipse que por décadas serviu como texto padrão para seminários e cursos de doutorado. A edição revisada de 1998 incorporou os debates sobre preterismo, futurismo e idealismo suscitados pelo trabalho de Beale, Bauckham e Collins. Mounce adota um futurismo histórico-gramatical (pré-milenarismo histórico) e rejeita tanto o dispensacionalismo rígido quanto o preterismo total. Para as seções mais disputadas — Ap 7 (144.000), Ap 12 (mulher e dragão), Ap 20 (milênio) e Ap 21–22 (Nova Jerusalém) — a análise de Mounce é sempre clara, documenta as principais posições e apresenta sua própria exegese com razões. Mais acessível que Beale (NIGTC) e Osborne (BECNT), mantendo rigor suficiente para uso acadêmico.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/bookofrevelation00moun' }]
       },
       {
         id: "aune-revelation-wbc",
@@ -1041,7 +1091,8 @@ export const categories: BibCategory[] = [
         isbn: "978-0-8499-0228-4",
         originalLanguage: "en",
         level: "acadêmico",
-        review: "Aune (professor de NT e Christian Origins na Notre Dame) produziu o comentário mais extenso sobre o Apocalipse em qualquer língua moderna. A obra em três volumes (WBC 52A–C) examina cada versículo com: (a) tradução e notas textuais; (b) forma/estrutura/contexto; (c) comentário verso a verso; (d) explicação. Aune incorporou de modo mais sistemático que qualquer outro comentarista o amplo material greco-romano (papiros, inscrições, oráculo délfico, papiros mágicos, cartas reais, proclamações imperiais) que ilumina o vocabulário e as imagens do Apocalipse. Sua análise do gênero ('prophetisches Sendschreiben'), do 'Filho do Homem' em Ap 1 e das visões do trono (Ap 4–5) continua sendo referência. Críticos apontam que às vezes a erudição ofusca a visão de conjunto — daí a utilidade de Mounce e Koester para leituras complementares."
+        review: "Aune (professor de NT e Christian Origins na Notre Dame) produziu o comentário mais extenso sobre o Apocalipse em qualquer língua moderna. A obra em três volumes (WBC 52A–C) examina cada versículo com: (a) tradução e notas textuais; (b) forma/estrutura/contexto; (c) comentário verso a verso; (d) explicação. Aune incorporou de modo mais sistemático que qualquer outro comentarista o amplo material greco-romano (papiros, inscrições, oráculo délfico, papiros mágicos, cartas reais, proclamações imperiais) que ilumina o vocabulário e as imagens do Apocalipse. Sua análise do gênero ('prophetisches Sendschreiben'), do 'Filho do Homem' em Ap 1 e das visões do trono (Ap 4–5) continua sendo referência. Críticos apontam que às vezes a erudição ofusca a visão de conjunto — daí a utilidade de Mounce e Koester para leituras complementares.",
+        onlineLinks: [{ label: 'Archive.org', url: 'https://archive.org/details/revelation0000aune' }]
       }
     ]
   }

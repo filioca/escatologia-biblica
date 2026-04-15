@@ -8,7 +8,13 @@
       "Bash(node_modules/.bin/firebase --version)",
       "WebFetch(domain:bible.helloao.org)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(grep -n \"refs\" /c/dev/escatologia-biblica/src/components/*.tsx)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "Bash(node c:/dev/escatologia-biblica/update-bibliography.mjs)",
+      "Bash(node c:/dev/escatologia-biblica/fix-remaining.mjs)"
     ]
   }
 }
