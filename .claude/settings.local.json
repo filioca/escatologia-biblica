@@ -14,7 +14,9 @@
       "Bash(npm run *)",
       "Bash(node -e ' *)",
       "Bash(node c:/dev/escatologia-biblica/update-bibliography.mjs)",
-      "Bash(node c:/dev/escatologia-biblica/fix-remaining.mjs)"
+      "Bash(node c:/dev/escatologia-biblica/fix-remaining.mjs)",
+      "Bash(xargs grep *)",
+      "Bash(ls /c/dev/escatologia-biblica/*.mjs /c/dev/escatologia-biblica/*.js)"
     ]
   }
 }

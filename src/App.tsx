@@ -280,7 +280,7 @@ export default function App() {
           {/* Group Header */}
           <div className="flex items-center gap-2 px-4 pt-4 pb-2 text-text-muted">
             {group.icon}
-            <span className="font-display text-[0.6rem] tracking-[0.15em] uppercase font-semibold">
+            <span className="font-display text-xs tracking-[0.15em] uppercase font-semibold">
               {group.label}
             </span>
           </div>
@@ -292,7 +292,7 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => handleNavigate(item.id)}
-                className={`w-full text-left px-4 py-2 font-sans text-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold ${
+                className={`w-full text-left px-4 py-2.5 font-sans text-base transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold ${
                   isActive
                     ? 'text-gold bg-surface2 border-r-2 border-gold font-semibold'
                     : 'text-text-dim hover:text-gold hover:bg-surface/60'
