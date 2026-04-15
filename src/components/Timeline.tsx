@@ -34,12 +34,12 @@ export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, co
           aria-controls={`timeline-body-${num}`}
           className="w-full text-left px-6 py-5 flex items-center gap-4 hover:bg-surface2 transition-colors duration-150"
         >
-          <span className="font-display text-sm font-semibold text-gold opacity-80 tracking-widest min-w-[2rem]">{num}</span>
+          <span className="font-display text-sm font-semibold text-gold tracking-widest min-w-[2rem]">{num}</span>
           <span className="font-serif text-2xl font-semibold text-text-main flex-1">{title}</span>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.25 }}
-            className="text-text-muted"
+            className="text-text-dim"
             aria-hidden="true"
           >
             <ChevronDown size={18} />
@@ -56,14 +56,14 @@ export const TimelineEvent: React.FC<EventProps> = ({ num, title, body, refs, co
               className="overflow-hidden"
             >
               <div id={`timeline-body-${num}`} className="px-6 pb-6 border-t border-border/50 pt-5">
-                <div className="space-y-4 text-base text-text-dim leading-[1.85]">
+                <div className="space-y-4 text-base text-text-main/80 leading-[1.85]">
                   {body.map((paragraph, idx) => (
                     <p key={idx}><RichText text={paragraph} /></p>
                   ))}
                 </div>
                 
                 {refs && (
-                  <div className="mt-6 p-4 bg-surface3 border border-border rounded-md text-sm text-text-muted">
+                  <div className="mt-6 p-4 bg-surface3 border border-border rounded-md text-sm text-text-dim">
                     <strong className="font-display text-xs tracking-widest text-gold block mb-2 uppercase">Textos-chave</strong>
                     <div className="flex flex-wrap gap-x-3 gap-y-1">
                       {refs.split('·').map(r => r.trim()).map((ref, i) => (

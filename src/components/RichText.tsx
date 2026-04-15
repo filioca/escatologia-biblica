@@ -42,8 +42,8 @@ export function RichText({ text }: { text: string }) {
         }
 
         const formatted = part
-          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-text-main font-semibold">$1</strong>')
-          .replace(/\*(.*?)\*/g, '<em class="text-text-main italic">$1</em>');
+          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gold font-semibold">$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em class="text-text-main/90 italic">$1</em>');
 
         return <span key={idx} dangerouslySetInnerHTML={{ __html: formatted }} />;
       })}

@@ -37,7 +37,7 @@ interface NavGroup {
 const navGroups: NavGroup[] = [
   {
     label: 'Fundamentos',
-    icon: <BookOpen size={15} aria-hidden="true" />,
+    icon: <BookOpen size={18} aria-hidden="true" />,
     items: [
       { id: 'visaoGeral',     label: 'Visão Geral' },
       { id: 'jaEAindaNao',   label: 'Já e Ainda Não' },
@@ -47,7 +47,7 @@ const navGroups: NavGroup[] = [
   },
   {
     label: 'Chaves Hermenêuticas',
-    icon: <Key size={15} aria-hidden="true" />,
+    icon: <Key size={18} aria-hidden="true" />,
     items: [
       { id: 'pactoVsDispensacional',   label: 'Pacto vs. Dispensacionalismo' },
       { id: 'hermeneuticaApocalipse',  label: 'Hermenêutica do Apocalipse' },
@@ -56,14 +56,14 @@ const navGroups: NavGroup[] = [
   },
   {
     label: 'Escatologia Individual',
-    icon: <User size={15} aria-hidden="true" />,
+    icon: <User size={18} aria-hidden="true" />,
     items: [
       { id: 'estadoIntermediario', label: 'Estado Intermediário' },
     ],
   },
   {
     label: 'Sistemas e Tradições',
-    icon: <Landmark size={15} aria-hidden="true" />,
+    icon: <Landmark size={18} aria-hidden="true" />,
     items: [
       { id: 'sistemas',                label: 'Sistemas' },
       { id: 'sistemasHeterodoxos',     label: 'Sistemas Heterodoxos' },
@@ -74,7 +74,7 @@ const navGroups: NavGroup[] = [
   },
   {
     label: 'Eventos Finais',
-    icon: <CalendarDays size={15} aria-hidden="true" />,
+    icon: <CalendarDays size={18} aria-hidden="true" />,
     items: [
       { id: 'arrebatamento',  label: 'Arrebatamento' },
       { id: 'tribulacao',     label: 'Grande Tribulação' },
@@ -87,7 +87,7 @@ const navGroups: NavGroup[] = [
   },
   {
     label: 'Síntese',
-    icon: <GitBranch size={15} aria-hidden="true" />,
+    icon: <GitBranch size={18} aria-hidden="true" />,
     items: [
       { id: 'cronologias', label: 'Cronologias' },
       { id: 'bibliografia', label: 'Bibliografia' },
@@ -170,14 +170,14 @@ export default function App() {
         </h2>
 
         {sectionData.intro && (
-          <p className="font-serif text-xl md:text-2xl text-text-dim italic mb-10 pb-6 border-b border-border leading-relaxed" style={{ textWrap: 'pretty' }}>
+          <p className="font-serif text-xl md:text-2xl text-text-main/90 italic mb-10 pb-6 border-b border-border leading-relaxed" style={{ textWrap: 'pretty' }}>
             {sectionData.intro}
           </p>
         )}
 
         {/* Body Paragraphs (Overview) */}
         {'body' in sectionData && Array.isArray(sectionData.body) && !('events' in sectionData) && !('table' in sectionData) && (
-          <div className="space-y-6 text-base text-text-dim leading-[1.85]">
+          <div className="space-y-6 text-base text-text-main/80 leading-[1.85]">
             {sectionData.body.map((p, idx) => (
               <p key={idx}><RichText text={p} /></p>
             ))}
@@ -186,9 +186,9 @@ export default function App() {
 
         {/* Quote */}
         {'quote' in sectionData && (
-          <blockquote className="border-l-2 border-gold my-10 pl-6 py-2 font-serif text-2xl italic text-text-dim">
+          <blockquote className="border-l-2 border-gold my-10 pl-6 py-2 font-serif text-2xl italic text-text-main/90">
             “{sectionData.quote.text}”
-            <cite className="block mt-3 text-base not-italic text-text-muted font-sans">— {sectionData.quote.cite}</cite>
+            <cite className="block mt-3 text-base not-italic text-text-dim font-sans">— {sectionData.quote.cite}</cite>
           </blockquote>
         )}
 
@@ -223,7 +223,7 @@ export default function App() {
                 {sectionData.table.rows.map((row, i) => (
                   <tr key={i} className="border-b border-border/50 hover:bg-surface/50">
                     {row.map((cell, j) => (
-                      <td key={j} className={`px-4 py-3 ${j === 0 ? 'text-text-main font-semibold' : 'text-text-dim'}`}>
+                      <td key={j} className={`px-4 py-3 ${j === 0 ? 'text-text-main font-semibold' : 'text-text-main/80'}`}>
                         {cell}
                       </td>
                     ))}
@@ -236,7 +236,7 @@ export default function App() {
 
         {/* Millennium Body */}
         {'table' in sectionData && 'body' in sectionData && (
-          <div className="space-y-6 text-base text-text-dim leading-[1.85] mt-8">
+          <div className="space-y-6 text-base text-text-main/80 leading-[1.85] mt-8">
             {sectionData.body.map((p, idx) => (
               <p key={idx}><RichText text={p} /></p>
             ))}
@@ -256,7 +256,7 @@ export default function App() {
                     {sys.steps.map((step, sIdx) => {
                       const isSub = step.trim().startsWith('—');
                       return (
-                        <p key={sIdx} className={`${isSub ? 'pl-4 text-text-dim' : ''}`}>
+                        <p key={sIdx} className={`${isSub ? 'pl-4 text-text-main/70' : ''}`}>
                           <RichText text={step} />
                         </p>
                       );
@@ -276,23 +276,23 @@ export default function App() {
   const SidebarContent = () => (
     <nav aria-label="Navegação principal">
       {navGroups.map((group, gIdx) => (
-        <div key={group.label} className={gIdx > 0 ? 'mt-1 pt-1 border-t border-border/50' : ''}>
-          {/* Group Header */}
-          <div className="flex items-center gap-2 px-4 pt-4 pb-2 text-text-muted">
+        <div key={group.label} className={gIdx > 0 ? 'mt-3 pt-3 border-t border-border/50' : ''}>
+          {/* Group Header - Increased font size and contrast */}
+          <div className="flex items-center gap-3 px-4 pt-4 pb-2 text-gold">
             {group.icon}
-            <span className="font-display text-xs tracking-[0.15em] uppercase font-semibold">
+            <span className="font-display text-base tracking-[0.1em] uppercase font-bold">
               {group.label}
             </span>
           </div>
 
-          {/* Group Items */}
+          {/* Group Items - Reduced size for better hierarchy */}
           {group.items.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavigate(item.id)}
-                className={`w-full text-left px-4 py-2.5 font-sans text-base transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold ${
+                className={`w-full text-left px-4 py-2.5 font-sans text-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold ${
                   isActive
                     ? 'text-gold bg-surface2 border-r-2 border-gold font-semibold'
                     : 'text-text-dim hover:text-gold hover:bg-surface/60'
@@ -353,10 +353,10 @@ export default function App() {
       {/* ── Body: Sidebar + Main ────────────────────────────────────── */}
       <div className="flex flex-1">
 
-        {/* Desktop Sidebar */}
+        {/* Desktop Sidebar - Premium Glassmorphism */}
         <aside
           aria-label="Sidebar de navegação"
-          className="hidden md:flex flex-col w-60 shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-border bg-deep/95 backdrop-blur-md transition-colors duration-300"
+          className="hidden md:flex flex-col w-64 shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-border bg-deep/90 backdrop-blur-md transition-colors duration-300 shadow-xl"
         >
           <SidebarContent />
         </aside>
@@ -385,7 +385,7 @@ export default function App() {
               aria-hidden="true"
             />
 
-            {/* Drawer */}
+            {/* Drawer - Premium Glassmorphism */}
             <motion.div
               id="mobile-drawer"
               key="drawer"
@@ -396,7 +396,7 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: prefersReducedMotion ? 0 : '-100%' }}
               transition={{ type: 'tween', duration: prefersReducedMotion ? 0 : 0.28, ease: 'easeOut' }}
-              className="fixed top-0 left-0 z-50 h-full w-72 bg-deep border-r border-border overflow-y-auto overscroll-contain md:hidden"
+              className="fixed top-0 left-0 z-50 h-full w-72 bg-deep/90 backdrop-blur-md border-r border-border overflow-y-auto overscroll-contain md:hidden"
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between px-4 py-4 border-b border-border">
