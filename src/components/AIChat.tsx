@@ -5,7 +5,11 @@ import { useAuth } from '../context/AuthContext';
 
 const CHAT_API_URL = 'https://us-central1-apocalipse-biblico.cloudfunctions.net/apiV1/api/chat';
 
-export default function AIChat() {
+interface AIChatProps {
+  activeSection?: string;
+}
+
+export default function AIChat({ activeSection }: AIChatProps) {
   const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai'; text: string }[]>([
@@ -64,7 +68,9 @@ export default function AIChat() {
         },
         body: JSON.stringify({
           // Enviamos o histórico completo + a nova mensagem para o backend recuperar o contexto
-          messages: [...chatHistory, { role: 'user', content: userMessage }]
+          // Adicionamos o sectionId (activeSection) para possibilitar o Metadata Filtering no RAG
+          messages: [...chatHistory, { role: 'user', content: userMessage }],
+          sectionId: activeSection
         }),
       });
 

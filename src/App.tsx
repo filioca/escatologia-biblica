@@ -417,7 +417,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* ── AI Chat (fixed, unaffected by layout) ───────────────────── */}
-      <AIChat />
+      <AIChat activeSection={activeSection} />
     </div>
     </AuthProvider>
   );
