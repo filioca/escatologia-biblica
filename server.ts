@@ -2,8 +2,16 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import path from "path";
+import dotenv from "dotenv";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+dotenv.config();
+
+const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+if (!apiKey) {
+  console.warn("⚠️ Warning: No Gemini API Key found in environment variables.");
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey || "" });
 
 async function startServer() {
   const app = express();

@@ -4,8 +4,9 @@ import { X, Loader2, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   parseRef,
-  buildChapterUrl,
-  extractVerseText,
+  loadBible,
+  lookupChapter,
+  buildVerseHtml,
   TRANSLATIONS,
   TRANSLATION_STORAGE_KEY,
   type Translation,
@@ -14,66 +15,53 @@ import {
 
 interface ChapterData {
   chapterNum: number;
-  text: string;
+  html: string;
 }
 
 export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen,  setIsOpen]  = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error,   setError]   = useState('');
   const [mounted, setMounted] = useState(false);
   const [translation, setTranslation] = useState<Translation>(
-    () => (localStorage.getItem(TRANSLATION_STORAGE_KEY) as Translation) || 'porARC'
+    () => (localStorage.getItem(TRANSLATION_STORAGE_KEY) as Translation) || 'pt_acf'
   );
   const [chaptersData, setChaptersData] = useState<ChapterData[] | null>(null);
 
-  // Cache across translation changes: "porNVI:Mt 5-7" → ChapterData[]
-  const cache = useRef<Map<string, ChapterData[]>>(new Map());
-
-  // Parse the reference once
+  // Per-component cache: "{translation}:{reference}" → ChapterData[]
+  const cache     = useRef<Map<string, ChapterData[]>>(new Map());
   const parsedRef = useRef<ParsedBibleRef | null>(parseRef(reference));
 
   useEffect(() => { setMounted(true); }, []);
 
   const fetchFor = async (trans: Translation) => {
-    const cacheKey = `${trans}:${reference}`;
-    const cached = cache.current.get(cacheKey);
-    if (cached) {
-      setChaptersData(cached);
-      return;
-    }
+    const key = `${trans}:${reference}`;
+    const hit  = cache.current.get(key);
+    if (hit) { setChaptersData(hit); return; }
 
     const parsed = parsedRef.current;
-    if (!parsed) {
-      setError('Referência não reconhecida');
-      return;
-    }
+    if (!parsed) { setError('Referência não reconhecida'); return; }
 
     setLoading(true);
     setError('');
     setChaptersData(null);
 
     try {
-      const results: ChapterData[] = [];
-      const isMultiChapter = parsed.chapters.length > 1;
+      // Load full Bible JSON (~3-4 MB, cached after first use per translation)
+      const books = await loadBible(trans);
+      const isRange = parsed.chapters.length > 1;
 
-      for (const chapterNum of parsed.chapters) {
-        const url = buildChapterUrl(parsed.bookCode, chapterNum, trans);
-        const res = await fetch(url);
-        if (!res.ok) throw new Error();
-        const data = await res.json();
-
-        // Only apply verse filter for single-chapter references
-        const text = extractVerseText(
-          data.chapter?.content ?? [],
-          isMultiChapter ? undefined : parsed.verseStart,
-          isMultiChapter ? undefined : parsed.verseEnd,
+      const results: ChapterData[] = parsed.chapters.map((chapterNum: number) => {
+        const verses = lookupChapter(books, parsed.abbr, chapterNum, trans);
+        const html   = buildVerseHtml(
+          verses,
+          isRange ? undefined : parsed.verseStart,
+          isRange ? undefined : parsed.verseEnd,
         );
+        return { chapterNum, html };
+      });
 
-        results.push({ chapterNum, text });
-      }
-
-      cache.current.set(cacheKey, results);
+      cache.current.set(key, results);
       setChaptersData(results);
     } catch {
       setError('Não foi possível carregar a passagem.');
@@ -94,11 +82,10 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
     fetchFor(newTrans);
   };
 
-  // Build display title from parsed ref
-  const parsed = parsedRef.current;
-  const restPart = reference.includes(' ') ? reference.slice(reference.indexOf(' ') + 1) : '';
+  const parsed       = parsedRef.current;
+  const restPart     = reference.includes(' ') ? reference.slice(reference.indexOf(' ') + 1) : '';
   const displayTitle = parsed ? `${parsed.bookName} ${restPart}` : reference;
-  const isMultiChapter = (parsed?.chapters.length ?? 0) > 1;
+  const isMulti      = (parsed?.chapters.length ?? 0) > 1;
 
   return (
     <>
@@ -120,10 +107,10 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                 initial={{ opacity: 0, scale: 0.95, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                onClick={e => e.stopPropagation()}
+                onClick={(e: React.MouseEvent) => e.stopPropagation()}
                 className="bg-surface border border-border rounded-xl shadow-2xl max-w-lg w-full max-h-[80vh] flex flex-col overflow-hidden"
               >
-                {/* Header */}
+                {/* ── Header ── */}
                 <div className="px-4 py-3 border-b border-border bg-surface2 flex items-center gap-3 flex-wrap">
                   <div className="flex items-center gap-2 text-gold flex-1 min-w-0">
                     <BookOpen size={18} className="shrink-0" />
@@ -132,7 +119,7 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                     </h3>
                   </div>
 
-                  {/* Translation selector */}
+                  {/* Translation tabs */}
                   <div className="flex rounded-lg overflow-hidden border border-border shrink-0">
                     {TRANSLATIONS.map(t => (
                       <button
@@ -158,27 +145,29 @@ export const VerseLink: React.FC<{ reference: string }> = ({ reference }) => {
                   </button>
                 </div>
 
-                {/* Body */}
+                {/* ── Body ── */}
                 <div className="p-6 overflow-y-auto">
                   {loading ? (
                     <div className="flex items-center justify-center py-8 gap-3 text-gold">
                       <Loader2 className="animate-spin" size={24} />
-                      <span className="text-sm">Buscando passagem…</span>
+                      <span className="text-sm">Carregando tradução…</span>
                     </div>
                   ) : error ? (
                     <div className="text-sys-red text-center py-4 text-sm">{error}</div>
                   ) : chaptersData ? (
                     <div className="space-y-6">
-                      {chaptersData.map(({ chapterNum, text }) => (
+                      {chaptersData.map(({ chapterNum, html }) => (
                         <div key={chapterNum}>
-                          {isMultiChapter && (
-                            <p className="text-xs font-mono uppercase tracking-widest text-gold/70 mb-3">
+                          {isMulti && (
+                            <p className="text-xs font-mono uppercase tracking-widest text-gold/60 mb-3">
                               Capítulo {chapterNum}
                             </p>
                           )}
-                          <p className="text-xl md:text-2xl text-text-main leading-relaxed font-sans text-justify whitespace-pre-wrap not-italic">
-                            {text}
-                          </p>
+                          {/* eslint-disable-next-line react/no-danger */}
+                          <div
+                            className="text-xl md:text-2xl text-text-main leading-relaxed font-sans text-justify not-italic"
+                            dangerouslySetInnerHTML={{ __html: html }}
+                          />
                         </div>
                       ))}
                     </div>
