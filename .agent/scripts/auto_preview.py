@@ -2,10 +2,10 @@
 """
 Auto Preview - Antigravity Kit
 ==============================
-Manages (start/stop/status) the local development server for previewing the application.
+Gerencia (iniciar/parar/status) o servidor de desenvolvimento local para visualização da aplicação.
 
-Usage:
-    python .agent/scripts/auto_preview.py start [port]
+Uso:
+    python .agent/scripts/auto_preview.py start [porta]
     python .agent/scripts/auto_preview.py stop
     python .agent/scripts/auto_preview.py status
 """
@@ -18,6 +18,11 @@ import signal
 import argparse
 import subprocess
 from pathlib import Path
+
+# Forçar UTF-8 para evitar UnicodeEncodeError no Windows com Emojis
+if sys.platform == "win32":
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 AGENT_DIR = Path(".agent")
 PID_FILE = AGENT_DIR / "preview.pid"
@@ -53,23 +58,23 @@ def start_server(port=3000):
         try:
             pid = int(PID_FILE.read_text().strip())
             if is_running(pid):
-                print(f"Preview already running (PID: {pid})")
+                print(f"⚠️  Preview já está em execução (PID: {pid})")
                 return
         except:
-            pass # Invalid PID file
+            pass # Arquivo PID inválido
 
     root = get_project_root()
     cmd = get_start_command(root)
     
     if not cmd:
-        print("No 'dev' or 'start' script found in package.json")
+        print("❌ Nenhum script 'dev' ou 'start' encontrado no package.json")
         sys.exit(1)
     
-    # Add port env var if needed (simple heuristic)
+    # Adiciona variável de ambiente PORT se necessário
     env = os.environ.copy()
     env["PORT"] = str(port)
     
-    print(f"Starting preview on port {port}...")
+    print(f"🚀 Iniciando preview na porta {port}...")
     
     with open(LOG_FILE, "w") as log:
         process = subprocess.Popen(
@@ -78,29 +83,29 @@ def start_server(port=3000):
             stdout=log,
             stderr=log,
             env=env,
-            shell=True # Required for npm on windows often, or consistent path handling
+            shell=True # Necessário para npm no Windows
         )
     
     PID_FILE.write_text(str(process.pid))
-    print(f"Preview started! (PID: {process.pid})")
+    print(f"✅ Preview iniciado! (PID: {process.pid})")
     print(f"   Logs: {LOG_FILE}")
     print(f"   URL: http://localhost:{port}")
 
 def stop_server():
     if not PID_FILE.exists():
-        print("ℹ️  No preview server found.")
+        print("ℹ️  Nenhum servidor de preview encontrado.")
         return
 
     try:
         pid = int(PID_FILE.read_text().strip())
         if is_running(pid):
-            # Try gentle kill first
+            # Tenta finalização gentil primeiro
             os.kill(pid, signal.SIGTERM) if sys.platform != 'win32' else subprocess.call(['taskkill', '/F', '/T', '/PID', str(pid)])
-            print(f"Preview stopped (PID: {pid})")
+            print(f"🛑 Preview parado (PID: {pid})")
         else:
-            print("Process was not running.")
+            print("ℹ️  O processo não estava em execução.")
     except Exception as e:
-        print(f"❌ Error stopping server: {e}")
+        print(f"❌ Erro ao parar o servidor: {e}")
     finally:
         if PID_FILE.exists():
             PID_FILE.unlink()
@@ -108,26 +113,25 @@ def stop_server():
 def status_server():
     running = False
     pid = None
-    url = "Unknown"
+    url = "Desconhecida"
     
     if PID_FILE.exists():
         try:
             pid = int(PID_FILE.read_text().strip())
             if is_running(pid):
                 running = True
-                # Heuristic for URL, strictly we should save it
                 url = "http://localhost:3000" 
         except:
             pass
             
-    print("\n=== Preview Status ===")
+    print("\n=== Status do Preview ===")
     if running:
-        print(f"Status: Running")
-        print(f"PID: {pid}")
-        print(f"URL: {url}")
-        print(f"Logs: {LOG_FILE}")
+        print(f"✅ Status: Em execução")
+        print(f"🔢 PID: {pid}")
+        print(f"🌐 URL: {url} (Provável)")
+        print(f"📝 Logs: {LOG_FILE}")
     else:
-        print("Status: Stopped")
+        print("⚪ Status: Parado")
     print("===================\n")
 
 def main():

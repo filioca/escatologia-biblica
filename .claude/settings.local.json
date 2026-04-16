@@ -16,7 +16,8 @@
       "Bash(node c:/dev/escatologia-biblica/update-bibliography.mjs)",
       "Bash(node c:/dev/escatologia-biblica/fix-remaining.mjs)",
       "Bash(xargs grep *)",
-      "Bash(ls /c/dev/escatologia-biblica/*.mjs /c/dev/escatologia-biblica/*.js)"
+      "Bash(ls /c/dev/escatologia-biblica/*.mjs /c/dev/escatologia-biblica/*.js)",
+      "Bash(grep -E \"^\\\\s+[a-zA-Z0-9]+:\\\\s+\\\\{$\" /c/dev/escatologia-biblica/src/data/content.ts)"
     ]
   }
 }
