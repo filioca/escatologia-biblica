@@ -17,7 +17,11 @@
       "Bash(node c:/dev/escatologia-biblica/fix-remaining.mjs)",
       "Bash(xargs grep *)",
       "Bash(ls /c/dev/escatologia-biblica/*.mjs /c/dev/escatologia-biblica/*.js)",
-      "Bash(grep -E \"^\\\\s+[a-zA-Z0-9]+:\\\\s+\\\\{$\" /c/dev/escatologia-biblica/src/data/content.ts)"
+      "Bash(grep -E \"^\\\\s+[a-zA-Z0-9]+:\\\\s+\\\\{$\" /c/dev/escatologia-biblica/src/data/content.ts)",
+      "Bash(/c/Users/Filipe/AppData/Roaming/npm/firebase deploy *)",
+      "Bash(npm --version)",
+      "Bash(firebase deploy *)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:/c/Users/Filipe/AppData/Roaming/npm:$PATH\")"
     ]
   }
 }
