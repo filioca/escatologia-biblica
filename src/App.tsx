@@ -90,6 +90,7 @@ const navGroups: NavGroup[] = [
     icon: <GitBranch size={18} aria-hidden="true" />,
     items: [
       { id: 'cronologias', label: 'Cronologias' },
+      { id: 'eticaEsperanca', label: 'Ética da Esperança' },
       { id: 'bibliografia', label: 'Bibliografia' },
     ],
   },
