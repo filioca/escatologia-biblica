@@ -2844,11 +2844,19 @@ EUSÉBIO DE CESAREIA. *História Eclesiástica*. Trad. Wolfgang Fischer. São Pa
 
 FLÁVIO JOSEFO. *Guerra dos Judeus*. Trad. Vicente Pedroso. Curitiba: Juruá, 2002. [Original: *Bellum Judaicum*, c. 75 d.C. Fonte histórica para a destruição do templo em 70 d.C., citada no Cap. 15 (Abominação da Desolação).]
 
-IRENEU DE LIÃO. *Contra as Heresias*. Trad. Lourenço Costa. São Paulo: Paulus, 1995. (Coleção Patrística, vol. 4) [Original: *Adversus Haereses*, c. 180 d.C. Livro V trata do quiliasmo patrístico.]
+AGOSTINHO DE HIPONA. *A Cidade de Deus*. Trad. Oscar Paes Leme. 2 vols. São Paulo: Paulus, 2012. (Coleção Patrística) [Original: *De Civitate Dei*, 413–426 d.C. Livros XVII–XXII são a matriz do amilenarismo ocidental; Ap 20 relido como era da Igreja. ISBN: 978-85-349-3568-6.]
+
+CALVINO, João. *As Institutas da Religião Cristã*. 4 vols. Trad. Waldyr Carvalho Luz. São Paulo: Unesp / Cultura Cristã, 2008. [Original: *Institutio Christianae Religionis*, ed. definitiva 1559. Livros III.9, III.25 e IV.20 são centrais para a escatologia reformada e a rejeição do quiliasmo.]
+
+IRENEU DE LIÃO. *Contra as Heresias*. Trad. Lourenço Costa. São Paulo: Paulus, 1995. (Coleção Patrística, vol. 4) [Original: *Adversus Haereses*, c. 180 d.C. Livro V trata do quiliasmo patrístico e da doutrina da recapitulação (ἀνακεφαλαίωσις).]
+
+JOAQUIM DE FIORE. *Expositio in Apocalypsim*. Venetiis: [s.n.], 1527. Reimpr.: Frankfurt: Minerva, 1964. [Original: c. 1183–1200. Fonte da doutrina das três idades e do hermenêutica concórdica medieval. Discutido no Cap. 12 como precursor das 'escatologias seculares' modernas.]
 
 JUSTINO MÁRTIR. *Diálogo com Trifão*. Trad. Ivo Storniolo e Euclides M. Balancin. São Paulo: Paulus, 1995. (Coleção Patrística, vol. 3) [Original: *Dialogus cum Tryphone*, c. 155–160 d.C.]
 
-TERTULIANO. *Contra Marcião*. Trad. Ivo Storniolo. São Paulo: Paulus. [Original: *Adversus Marcionem*, c. 208 d.C. Livro III trata da escatologia.]
+LUTERO, Martinho. *Da Vontade Cativa (De Servo Arbitrio)*. In: *Obras Selecionadas*, vol. 4. São Leopoldo: Sinodal; São Paulo: Concórdia, 1998. [Original: *De Servo Arbitrio*, 1525. Distinção *Deus absconditus* / *Deus revelatus* — fundamento da esperança escatológica luterana.]
+
+TERTULIANO, Quinto Séptimio Florente. *Contra Marcião*. Trad. Ivo Storniolo. São Paulo: Paulus. [Original: *Adversus Marcionem*, c. 207–212 d.C. Livros III–V tratam da ressurreição corporal como resposta ao dualismo gnóstico.]
 
 TYCONIUS. *Book of Rules (Liber Regularum)*. Introdução, trad. e notas de William S. Babcock. Atlanta: Scholars Press, 1989. (Texts and Translations 31, Early Christian Literature Series 7) [Original: *Liber Regularum*, c. 380 d.C. Fonte antecedente do amilenarismo agostiniano.]
 

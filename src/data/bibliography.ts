@@ -601,8 +601,97 @@ export const categories: BibCategory[] = [
   {
     id: 'historiaDoutrina',
     title: 'História da Doutrina Escatológica',
-    intro: 'Patrística (séc. 2–7) · Apocalíptica medieval (séc. 5–15) · Reforma e pós-Reforma · Pré-milenarismo americano moderno.',
+    intro: 'Fontes primárias (Ireneu, Tertuliano, Agostinho, Joaquim, Lutero, Calvino) · Patrística (séc. 2–7) · Apocalíptica medieval (séc. 5–15) · Reforma e pós-Reforma · Pré-milenarismo americano moderno.',
     entries: [
+      {
+        id: "ireneu-adversus-haereses",
+        author: "Ireneu de Lião",
+        title: "Adversus Haereses",
+        subtitle: "Contra as Heresias",
+        publisher: "Paulus (trad. bras. parcial)",
+        year: "c. 180 (trad. bras. 1995)",
+        originalLanguage: "gr",
+        level: "fonte primária",
+        review: "Ireneu (c. 130–202), bispo de Lião e discípulo de Policarpo de Esmirna, escreveu o *Adversus Haereses* em cinco livros como refutação ao gnosticismo valentiniano. Do ponto de vista escatológico, os livros IV–V são capitais: Ireneu é o primeiro teólogo a articular a *recapitulação* (ἀνακεφαλαίωσις, *anakephalaiōsis*) — doutrina de que Cristo recapitula em si mesmo toda a história adâmica, revertendo a queda e consumando a criação material. Em AH V.28–36, Ireneu defende explicitamente o milenarismo corporal terrestre: a ressurreição será literal e corporal, os justos habitarão a terra renovada por um milênio antes do juízo final, e essa consumação material honra a bondade original da criação contra o dualismo gnóstico. Essa escatologia material e criacional tornou Ireneu a contra-referência de Orígenes (que alegorizou a escatologia) e o ponto de partida de todo milenarismo patrístico posterior. A edição crítica está em *Sources Chrétiennes* (vols. 100, 152, 153, 210, 211, 263, 264, 293, 294); em português, a tradução parcial da Paulus cobre os livros mais relevantes para a escatologia.",
+        onlineLinks: [
+          { label: 'CCEL — Adversus Haereses (trad. inglesa, ANF vol. 1)', url: 'https://www.ccel.org/ccel/schaff/anf01.ix.html' },
+        ]
+      },
+      {
+        id: "tertuliano-adversus-marcionem",
+        author: "Tertuliano, Quinto Séptimio Florente",
+        title: "Adversus Marcionem",
+        subtitle: "Contra Marcião",
+        publisher: "Oxford University Press (ed. crítica Evans)",
+        year: "c. 207–212 (ed. Evans 1972)",
+        originalLanguage: "la",
+        level: "fonte primária",
+        review: "Tertuliano (c. 155–220), o primeiro grande teólogo latino, escreveu *Adversus Marcionem* em cinco livros como refutação ao sistema gnóstico-dualista de Marcião de Sinope, que rejeitava o Antigo Testamento e o Deus Criador. Para a escatologia, os livros III–V são de primeira importância: Tertuliano defende a ressurreição *corporal* (anticipo do seu tratado *De Resurrectione Carnis*) como consequência necessária da bondade da criação material, e argumenta que a consumação escatológica não é fuga do corpo, mas sua redenção. Tertuliano é o primeiro a usar o conceito de *satisfactio* em teologia da redenção e articulou a doutrina da alma como substância corpórea leve (*De Anima*) — contexto indispensável para compreender as disputas patrísticas sobre o estado intermediário. A edição crítica padrão em inglês é a de Ernest Evans (Oxford, 1972, 2 vols.); o texto latino está em *Corpus Christianorum Series Latina* (CCL 1). Citado no Cap. 12 em relação à ressurreição corporal e ao antimilenarismo orgênico.",
+        onlineLinks: [
+          { label: 'CCEL — Adversus Marcionem (trad. inglesa, ANF vol. 3)', url: 'https://www.ccel.org/ccel/schaff/anf03.v.html' },
+        ]
+      },
+      {
+        id: "agostinho-de-civitate-dei",
+        author: "Agostinho de Hipona",
+        title: "De Civitate Dei",
+        subtitle: "A Cidade de Deus",
+        publisher: "Paulus (trad. bras.)",
+        year: "413–426 (trad. bras. 2012)",
+        isbn: "978-85-349-3568-6",
+        originalLanguage: "la",
+        level: "fonte primária",
+        review: "Redigida em resposta ao saque de Roma por Alarico (410), *A Cidade de Deus* (22 livros) tornou-se a mais influente obra teológica do Ocidente até Tomás de Aquino. Do ponto de vista escatológico, os livros XVII–XXII são definidores: Agostinho articula a tese do *amilenarismo*, relendo Ap 20 como descritivo do reinado espiritual presente da Igreja entre as duas vindas (o 'milênio' é a era da Igreja), não de reino terrestre futuro. Com isso ele revirou o consenso milenarista anterior (Ireneu, Papias, Justino) que ele próprio havia sustentado em juventude (*De Vera Religione*). O livro XX trata do juízo final, ressurreição e segunda vinda; o livro XXI, das penas do inferno; o livro XXII, da beatitude final. Sua interpretação das 'duas cidades' (Cidade de Deus vs. Cidade dos Homens) como duas amores entrelaçados na história tornou-se o paradigma da filosofia cristã da história. A interpretação amilenarista de Agostinho dominou a teologia ocidental por mil anos e ainda é a posição da maioria das tradições reformadas. Edição crítica em *Corpus Christianorum Series Latina* (CCL 47–48); em português, a tradução da Paulus (2012) é a primeira completa no idioma.",
+        onlineLinks: [
+          { label: 'CCEL — De Civitate Dei (trad. inglesa, NPNF vol. 2)', url: 'https://www.ccel.org/ccel/schaff/npnf102.html' },
+          { label: 'Archive.org — ed. latina', url: 'https://archive.org/details/desanctiaureliia00augu' },
+        ]
+      },
+      {
+        id: "joaquim-expositio-apocalypsim",
+        author: "Joaquim de Fiore",
+        title: "Expositio in Apocalypsim",
+        subtitle: "Exposição do Apocalipse",
+        publisher: "Venetiis (ed. príncipe 1527; reimpr. Frankfurt: Minerva, 1964)",
+        year: "c. 1183–1200",
+        originalLanguage: "la",
+        level: "fonte primária",
+        review: "Joaquim de Fiore (c. 1135–1202), abade calabrês e visionário, revolucionou a hermenêutica profética medieval com três obras principais: *Liber Concordiae Novi ac Veteris Testamenti*, *Expositio in Apocalypsim* e *Psalterium Decem Chordarum*. Sua tese central é a doutrina das **três idades** (tria tempora, ou tres status): ① a Idade do Pai (AT, lei e carne); ② a Idade do Filho (Igreja do NT, fé e graça); ③ a Idade iminente do Espírito Santo (vita contemplativa, monges, plena contemplação espiritual), que começaria por volta de 1260. Essa tripartição introduziu na teologia ocidental o conceito de progresso histórico em direção a um estágio superior — conceito que Karl Löwith (*Meaning in History*, 1949) e Eric Voegelin (*The New Science of Politics*, 1952) rastrearam como ancestral do hegelianismo, do positivismo comtiano e das utopias revolucionárias modernas. A *Expositio* comenta o Apocalipse versículo por versículo com método concórdico (AT e NT paralelos), identificando o papa Inocêncio III com a prostituta de Babilônia — o que gerou condenação póstuma no IV Concílio de Latrão (1215). Joaquim é discutido no Cap. 12 como pivô da escatologia medieval e precursor involuntário das 'escatologias seculares' modernas.",
+        onlineLinks: [
+          { label: 'Archive.org — Expositio (ed. 1527)', url: 'https://archive.org/details/expositioinapoca00joac' },
+        ]
+      },
+      {
+        id: "lutero-de-servo-arbitrio",
+        author: "Lutero, Martinho",
+        title: "De Servo Arbitrio",
+        subtitle: "Sobre o Arbítrio Escravo",
+        publisher: "Cultura Cristã (trad. bras.)",
+        year: "1525 (trad. bras. 2009)",
+        isbn: "978-85-7622-165-9",
+        originalLanguage: "la",
+        level: "fonte primária",
+        review: "Escrito em resposta ao *Diatribe de Libero Arbitrio* de Erasmo, o *De Servo Arbitrio* (1525) é a obra sistemática mais importante de Lutero e a que ele próprio considerava a única indispensável de sua produção. Embora primariamente sobre a graça e o arbítrio, o tratado tem implicações escatológicas de primeira ordem: ① Lutero desenvolve a distinção entre *Deus absconditus* (Deus oculto nos mistérios do destino e da providência) e *Deus revelatus* (Deus revelado na Palavra e no Evangelho), distinção que molda toda a sua teologia da esperança escatológica — o cristão vive entre o oculto e o revelado, esperando a manifestação plena. ② A argumentação contra o livre-arbítrio implica uma filosofia da história inteiramente dependente da eleição divina: a escatologia não é resultado de decisões humanas, mas de decreto soberano. ③ No final do tratado, Lutero articula de forma mais clara que em qualquer outro lugar seu entendimento do *escândalo da fé* — que Deus condena para salvar, que a cruz precede a glória — estrutura que é propriamente 'teologia da cruz' com dimensão escatológica. Para compreender por que os reformadores abandonaram o milenarismo medieval e abraçaram visões a-milenaristas 'inauguradas', o *De Servo Arbitrio* é texto fundamental.",
+        onlineLinks: [
+          { label: 'Archive.org — trad. inglesa (Luther: Bondage of the Will, Packer/Johnston)', url: 'https://archive.org/details/bondageofwill0000luth' },
+        ]
+      },
+      {
+        id: "calvino-institutio-christianae-religionis",
+        author: "Calvino, João",
+        title: "Institutio Christianae Religionis",
+        subtitle: "As Institutas da Religião Cristã",
+        publisher: "Unesp / Cultura Cristã (trad. bras.)",
+        year: "1559 (ed. definitiva; trad. bras. 2008)",
+        isbn: "978-85-7353-750-9",
+        originalLanguage: "la",
+        level: "fonte primária",
+        review: "As *Institutas* (4 livros, ed. definitiva de 1559) são a exposição sistemática mais influente da teologia reformada. Para a escatologia, os livros I e III–IV são capitais: ① No Livro I (cc. 16–18), Calvino desenvolve a doutrina da providência como fundamento da esperança: a história está sob governo soberano, portanto a esperança escatológica é ancoragem racional, não fuga. ② No Livro III (cc. 9–10 e 25), Calvino trata da meditação da vida futura (*meditatio futurae vitae*) e da ressurreição dos mortos. A seção III.9 ('Meditação da Vida Futura') é das mais belas da literatura cristã reformada — o cristão deve desprender-se do presente sem desprezá-lo, estimado pelo valor correto à luz da eternidade. ③ No Livro III.25 ('A Ressurreição Final'), Calvino expõe em detalhe a doutrina da ressurreição corporal, do julgamento final e do estado eterno, refutando espiritualização platônica e milenarismo chiliástico com base bíblica. ④ A rejeição do quiliasmo (*chiliasmus*) em III.25.5 tornou-se a posição padrão da ortodoxia reformada durante séculos. As *Institutas* são referência incontornável para a escatologia reformada discutida nos Caps. 9 e 12 do ebook.",
+        onlineLinks: [
+          { label: 'CCEL — Institutas (trad. inglesa, Beveridge)', url: 'https://www.ccel.org/ccel/calvin/institutes.html' },
+          { label: 'Archive.org — ed. brasileira', url: 'https://archive.org/details/asinstitutas0000calv' },
+        ]
+      },
       {
         id: "daley-hope-early-church",
         author: "Daley, Brian E.",

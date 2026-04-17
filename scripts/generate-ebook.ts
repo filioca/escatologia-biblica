@@ -53,9 +53,10 @@ const navGroups = [
     ]
   },
   {
-    title: "Parte VI — Síntese e Cronologia Comparada",
+    title: "Parte VI — Síntese, Cronologia e Ética",
     items: [
-      { id: "cronologias", label: "Quadros e Cronologias" }
+      { id: "cronologias", label: "Quadros e Cronologias" },
+      { id: "eticaEsperanca", label: "Ética da Esperança" },
     ]
   }
 ];
